@@ -3,282 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学习路线 - 练习题库</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <title>📚 Python 学习路线 - 练习题库</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            'from': { boxShadow: '0 0 10px #0ea5e9, 0 0 20px #0ea5e9' },
+                            'to': { boxShadow: '0 0 20px #0ea5e9, 0 0 30px #0ea5e9' },
+                        }
+                    }
+                }
+            }
         }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            font-family: 'Noto Sans SC', sans-serif;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #ec4899 100%);
         }
         
-        h1 {
-            color: white;
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            backdrop-filter: blur(10px);
         }
         
-        .roadmaps {
-            display: grid;
-            gap: 30px;
+        .topic-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .roadmap-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
+        .topic-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         
-        .roadmap-card:hover {
-            transform: translateY(-5px);
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
         }
         
-        .roadmap-title {
-            font-size: 1.5em;
-            color: #333;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .topic-icon {
+            font-size: 2.5rem;
+            animation: float 4s ease-in-out infinite;
         }
         
-        .roadmap-title .icon {
-            font-size: 1.2em;
-        }
-        
-        .topics {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-        }
-        
-        .topic-btn {
-            display: block;
-            padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 12px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .topic-btn:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            transform: scale(1.02);
-        }
-        
-        .topic-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .topic-stats {
-            font-size: 0.9em;
-            color: #666;
-        }
-        
-        .topic-btn:hover .topic-stats {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .stats-bar {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            background: rgba(255,255,255,0.2);
-            padding: 15px 30px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-        }
-        
-        .stat-label {
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-        
-        .my-answers {
-            margin-top: 40px;
-            text-align: center;
-        }
-        
-        .my-answers a {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .my-answers a:hover {
-            background: #ee5a5a;
-            transform: scale(1.05);
-        }
+        .topic-card:nth-child(2) .topic-icon { animation-delay: 0.5s; }
+        .topic-card:nth-child(3) .topic-icon { animation-delay: 1s; }
+        .topic-card:nth-child(4) .topic-icon { animation-delay: 1.5s; }
+        .topic-card:nth-child(5) .topic-icon { animation-delay: 2s; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>📚 Python 学习路线 - 练习题库</h1>
+<body class="gradient-bg min-h-screen">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style="animation-delay: 2s;"></div>
+        </div>
         
-        <div class="roadmaps">
+        <div class="relative z-10 container mx-auto px-4 py-16">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+                    📚 Python 学习路线
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+                    从基础到实战，系统化学习 Python 数据分析与可视化
+                </p>
+            </div>
+            
+            <!-- Stats Bar -->
+            <div class="flex flex-wrap justify-center gap-6 mb-16">
+                <div class="stat-card rounded-2xl px-8 py-4 text-white">
+                    <div class="text-4xl font-bold">20</div>
+                    <div class="text-white/80">个主题</div>
+                </div>
+                <div class="stat-card rounded-2xl px-8 py-4 text-white">
+                    <div class="text-4xl font-bold">1190</div>
+                    <div class="text-white/80">道练习题</div>
+                </div>
+                <div class="stat-card rounded-2xl px-8 py-4 text-white">
+                    <div class="text-4xl font-bold">3</div>
+                    <div class="text-white/80">条学习路线</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Roadmaps Section -->
+    <div class="container mx-auto px-4 py-16 -mt-8">
+        <div class="space-y-16">
+            
             <!-- Python → DDD 路线 -->
-            <div class="roadmap-card">
-                <h2 class="roadmap-title">
-                    <span class="icon">🐍</span>
-                    Python → DDD 架构路线
-                </h2>
-                <div class="topics">
-                    <a href="python-ddd-roadmap/notebooks/Python 环境与基础.html" class="topic-btn">
-                        <div class="topic-name">Python 环境与基础</div>
-                        <div class="topic-stats">70 道练习题</div>
+            <div class="card-gradient rounded-3xl p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="text-5xl">🐍</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">Python → DDD 架构路线</h2>
+                        <p class="text-gray-600">从 Python 基础到领域驱动设计的完整路径</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                    <a href="python-ddd-roadmap/notebooks/Python 环境与基础.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">💻</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Python 环境与基础</h3>
+                        <p class="text-sm text-primary-600 font-medium">70 道练习题</p>
                     </a>
-                    <a href="python-ddd-roadmap/notebooks/变量与数据类型.html" class="topic-btn">
-                        <div class="topic-name">变量与数据类型</div>
-                        <div class="topic-stats">70 道练习题</div>
+                    <a href="python-ddd-roadmap/notebooks/变量与数据类型.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">📦</div>
+                        <h3 class="font-bold text-gray-800 mb-2">变量与数据类型</h3>
+                        <p class="text-sm text-primary-600 font-medium">70 道练习题</p>
                     </a>
-                    <a href="python-ddd-roadmap/notebooks/流程控制.html" class="topic-btn">
-                        <div class="topic-name">流程控制</div>
-                        <div class="topic-stats">65 道练习题</div>
+                    <a href="python-ddd-roadmap/notebooks/流程控制.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🔄</div>
+                        <h3 class="font-bold text-gray-800 mb-2">流程控制</h3>
+                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
                     </a>
-                    <a href="python-ddd-roadmap/notebooks/数据结构.html" class="topic-btn">
-                        <div class="topic-name">数据结构</div>
-                        <div class="topic-stats">65 道练习题</div>
+                    <a href="python-ddd-roadmap/notebooks/数据结构.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🗂️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">数据结构</h3>
+                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
                     </a>
-                    <a href="python-ddd-roadmap/notebooks/函数.html" class="topic-btn">
-                        <div class="topic-name">函数</div>
-                        <div class="topic-stats">65 道练习题</div>
+                    <a href="python-ddd-roadmap/notebooks/函数.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">⚡</div>
+                        <h3 class="font-bold text-gray-800 mb-2">函数</h3>
+                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
                     </a>
                 </div>
             </div>
             
             <!-- 数据分析师路线 -->
-            <div class="roadmap-card">
-                <h2 class="roadmap-title">
-                    <span class="icon">📊</span>
-                    数据分析师路线
-                </h2>
-                <div class="topics">
-                    <a href="data-analyst-roadmap/notebooks/NumPy 数组创建.html" class="topic-btn">
-                        <div class="topic-name">NumPy 数组创建</div>
-                        <div class="topic-stats">60 道练习题</div>
+            <div class="card-gradient rounded-3xl p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="text-5xl">📊</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">数据分析师路线</h2>
+                        <p class="text-gray-600">从 Python 基础到数据分析实战的完整路径</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                    <a href="data-analyst-roadmap/notebooks/NumPy 数组创建.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🔢</div>
+                        <h3 class="font-bold text-gray-800 mb-2">NumPy 数组创建</h3>
+                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/NumPy 数组操作.html" class="topic-btn">
-                        <div class="topic-name">NumPy 数组操作</div>
-                        <div class="topic-stats">60 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/NumPy 数组操作.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">⚙️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">NumPy 数组操作</h3>
+                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/NumPy 索引与切片.html" class="topic-btn">
-                        <div class="topic-name">NumPy 索引与切片</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/NumPy 索引与切片.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🔍</div>
+                        <h3 class="font-bold text-gray-800 mb-2">NumPy 索引与切片</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/NumPy 常用函数.html" class="topic-btn">
-                        <div class="topic-name">NumPy 常用函数</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/NumPy 常用函数.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">📐</div>
+                        <h3 class="font-bold text-gray-800 mb-2">NumPy 常用函数</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas DataFrame.html" class="topic-btn">
-                        <div class="topic-name">Pandas DataFrame</div>
-                        <div class="topic-stats">65 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Pandas DataFrame.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">📋</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Pandas DataFrame</h3>
+                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据读取.html" class="topic-btn">
-                        <div class="topic-name">Pandas 数据读取</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Pandas 数据读取.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">📖</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Pandas 数据读取</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据清洗.html" class="topic-btn">
-                        <div class="topic-name">Pandas 数据清洗</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Pandas 数据清洗.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🧹</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Pandas 数据清洗</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据筛选.html" class="topic-btn">
-                        <div class="topic-name">Pandas 数据筛选</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Pandas 数据筛选.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🎯</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Pandas 数据筛选</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 分组聚合.html" class="topic-btn">
-                        <div class="topic-name">Pandas 分组聚合</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Pandas 分组聚合.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">📈</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Pandas 分组聚合</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据合并.html" class="topic-btn">
-                        <div class="topic-name">Pandas 数据合并</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Pandas 数据合并.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🔗</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Pandas 数据合并</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Matplotlib 可视化.html" class="topic-btn">
-                        <div class="topic-name">Matplotlib 可视化</div>
-                        <div class="topic-stats">60 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Matplotlib 可视化.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">📊</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Matplotlib 可视化</h3>
+                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/Seaborn 可视化.html" class="topic-btn">
-                        <div class="topic-name">Seaborn 可视化</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/Seaborn 可视化.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🎨</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Seaborn 可视化</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="data-analyst-roadmap/notebooks/泰坦尼克号项目实战.html" class="topic-btn">
-                        <div class="topic-name">泰坦尼克号项目实战</div>
-                        <div class="topic-stats">60 道练习题</div>
+                    <a href="data-analyst-roadmap/notebooks/泰坦尼克号项目实战.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🚢</div>
+                        <h3 class="font-bold text-gray-800 mb-2">泰坦尼克号项目实战</h3>
+                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
                     </a>
                 </div>
             </div>
             
             <!-- Streamlit 可视化路线 -->
-            <div class="roadmap-card">
-                <h2 class="roadmap-title">
-                    <span class="icon">🎨</span>
-                    Streamlit 可视化路线
-                </h2>
-                <div class="topics">
-                    <a href="streamlit-roadmap/notebooks/Streamlit 基础.html" class="topic-btn">
-                        <div class="topic-name">Streamlit 基础</div>
-                        <div class="topic-stats">55 道练习题</div>
+            <div class="card-gradient rounded-3xl p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="text-5xl">🎨</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">Streamlit 可视化路线</h2>
+                        <p class="text-gray-600">从 Streamlit 基础到构建交互式数据应用</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <a href="streamlit-roadmap/notebooks/Streamlit 基础.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🏗️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Streamlit 基础</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
-                    <a href="streamlit-roadmap/notebooks/Streamlit 组件.html" class="topic-btn">
-                        <div class="topic-name">Streamlit 组件</div>
-                        <div class="topic-stats">55 道练习题</div>
+                    <a href="streamlit-roadmap/notebooks/Streamlit 组件.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <div class="topic-icon mb-4">🧩</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Streamlit 组件</h3>
+                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
                     </a>
                 </div>
             </div>
+            
         </div>
         
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">20</div>
-                <div class="stat-label">个主题</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1190</div>
-                <div class="stat-label">道练习题</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">3</div>
-                <div class="stat-label">条学习路线</div>
-            </div>
+        <!-- My Answers Section -->
+        <div class="mt-16 text-center">
+            <a href="answers/" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                <span class="text-2xl">📁</span>
+                <span class="text-lg">查看我的答案</span>
+            </a>
         </div>
         
-        <div class="my-answers">
-            <a href="answers/">📁 查看我的答案</a>
+        <!-- Footer -->
+        <div class="mt-16 text-center text-white/60">
+            <p>🚀 学习路线 · 练习题库 · 持续更新</p>
         </div>
     </div>
 </body>

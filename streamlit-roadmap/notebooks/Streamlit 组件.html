@@ -4,645 +4,526 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamlit 组件 - 练习题</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .breadcrumb {
-            color: #666;
-            margin-bottom: 10px;
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 2em;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.9em;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
-        }
-        
-        .question {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .question-number {
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .question-text {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .options {
-            display: grid;
-            gap: 10px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
         
         .option {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
             transition: all 0.2s ease;
-            border: 2px solid transparent;
         }
-        
         .option:hover {
-            background: #e8eaff;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border-color: #0ea5e9;
         }
-        
         .option.selected {
-            border-color: #667eea;
-            background: #e8eaff;
-        }
-        
-        .option input {
-            margin-right: 10px;
-        }
-        
-        .tf-options {
-            display: flex;
-            gap: 20px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            border-color: #0ea5e9;
         }
         
         .tf-option {
-            flex: 1;
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
             transition: all 0.2s ease;
-            border: 2px solid #ddd;
         }
-        
         .tf-option:hover {
-            border-color: #667eea;
+            transform: scale(1.02);
         }
-        
         .tf-option.selected {
-            border-color: #667eea;
-            background: #e8eaff;
-        }
-        
-        .fill-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.2s ease;
-        }
-        
-        .fill-input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .code-area {
-            width: 100%;
-            min-height: 150px;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.9em;
-            resize: vertical;
-        }
-        
-        .code-area:focus {
-            outline: none;
-            border-color: #667eea;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
         }
         
         .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.2em;
-            font-weight: 600;
-            cursor: pointer;
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
             transition: all 0.3s ease;
-            margin-top: 30px;
         }
-        
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        .success-message {
-            display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .difficulty {
-            font-size: 0.8em;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-left: 10px;
-        }
-        
-        .difficulty.easy {
-            background: #28a745;
-            color: white;
-        }
-        
-        .difficulty.medium {
-            background: #ffc107;
-            color: #333;
-        }
-        
-        .difficulty.hard {
-            background: #dc3545;
-            color: white;
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <a href="../../index.html" class="back-link">← 返回首页</a>
-        
-        <div class="header">
-            <div class="breadcrumb">Streamlit 可视化路线</div>
-            <h1>Streamlit 组件</h1>
-            <div class="stats">
-                <span class="stat">选择题: 10 题</span>
-                <span class="stat">判断题: 2 题</span>
-                <span class="stat">填空题: 0 题</span>
-                <span class="stat">编程题: 4 题</span>
-                <span class="stat">总计: 55 题</span>
-            </div>
-        </div>
-        
-        <form id="quiz-form">
-
-        <div class="section">
-            <h2>📝 选择题</h2>
-
-            <div class="question" data-id="mc_1">
-                <div class="question-number">
-                    第 1 题
-                    <span class="difficulty easy">easy</span>
+<body class="bg-gradient-to-br from-primary-50 via-white to-purple-50 min-h-screen">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 text-white py-12">
+        <div class="container mx-auto px-4">
+            <a href="../../index.html" class="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span>返回首页</span>
+            </a>
+            
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div>
+                    <div class="text-white/80 text-sm mb-2">Streamlit 可视化路线</div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Streamlit 组件</h1>
+                    <p class="text-white/90 text-lg">共 55 道练习题</p>
                 </div>
-                <div class="question-text">如何创建文本输入框？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="A">
-                        <span>A. st.text()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="B">
-                        <span>B. st.input()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="C">
-                        <span>C. st.text_input()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="D">
-                        <span>D. st.input_text()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_2">
-                <div class="question-number">
-                    第 2 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何获取用户输入的数字？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="A">
-                        <span>A. st.number()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="B">
-                        <span>B. st.number_input()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="C">
-                        <span>C. st.int_input()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="D">
-                        <span>D. st.float_input()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_3">
-                <div class="question-number">
-                    第 3 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何创建滑块组件？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="A">
-                        <span>A. st.slider()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="B">
-                        <span>B. st.slide()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="C">
-                        <span>C. st.range()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="D">
-                        <span>D. st.drag()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_4">
-                <div class="question-number">
-                    第 4 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何创建复选框？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="A">
-                        <span>A. st.checkbox()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="B">
-                        <span>B. st.check()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="C">
-                        <span>C. st.box()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="D">
-                        <span>D. st.tick()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_5">
-                <div class="question-number">
-                    第 5 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何创建下拉选择框？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="A">
-                        <span>A. st.select()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="B">
-                        <span>B. st.choose()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="C">
-                        <span>C. st.dropdown()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="D">
-                        <span>D. st.pick()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_6">
-                <div class="question-number">
-                    第 6 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何创建单选按钮？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="A">
-                        <span>A. st.radio()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="B">
-                        <span>B. st.select_one()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="C">
-                        <span>C. st.option()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="D">
-                        <span>D. st.choose_one()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_7">
-                <div class="question-number">
-                    第 7 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">如何创建多选框？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="A">
-                        <span>A. st.multiselect()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="B">
-                        <span>B. st.multiple()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="C">
-                        <span>C. st.checkboxes()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="D">
-                        <span>D. st.select_multiple()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_8">
-                <div class="question-number">
-                    第 8 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">如何上传文件？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="A">
-                        <span>A. st.file_upload()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="B">
-                        <span>B. st.upload()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="C">
-                        <span>C. st.file()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="D">
-                        <span>D. st.open()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_9">
-                <div class="question-number">
-                    第 9 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何显示进度条？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="A">
-                        <span>A. st.progress()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="B">
-                        <span>B. st.bar()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="C">
-                        <span>C. st.loading()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="D">
-                        <span>D. st.spinner()</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_10">
-                <div class="question-number">
-                    第 10 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">如何创建日期选择器？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="A">
-                        <span>A. st.date_input()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="B">
-                        <span>B. st.date()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="C">
-                        <span>C. st.calendar()</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="D">
-                        <span>D. st.pick_date()</span>
-                    </label>
+                
+                <div class="flex flex-wrap gap-4">
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">10</div>
+                        <div class="text-white/80 text-sm">选择题</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">2</div>
+                        <div class="text-white/80 text-sm">判断题</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">0</div>
+                        <div class="text-white/80 text-sm">填空题</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">4</div>
+                        <div class="text-white/80 text-sm">编程题</div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="container mx-auto px-4 py-12 -mt-8">
+        <form id="quiz-form" class="space-y-12">
 
-        <div class="section">
-            <h2>✓ 判断题</h2>
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                    <span class="bg-gradient-to-r from-primary-500 to-purple-500 text-white w-10 h-10 rounded-xl flex items-center justify-center">📝</span>
+                    选择题 <span class="text-gray-400 text-lg font-normal">(10 题)</span>
+                </h2>
+                <div class="space-y-6">
 
-            <div class="question" data-id="tf_1">
-                <div class="question-number">
-                    第 1 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Streamlit 组件的返回值会自动显示。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'True')">
-                        ✓ True
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建文本输入框？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.text()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.input()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.text_input()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.input_text()</span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'False')">
-                        ✗ False
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 2 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何获取用户输入的数字？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.number()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.number_input()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.int_input()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.float_input()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 3 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建滑块组件？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.slider()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.slide()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.range()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.drag()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 4 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建复选框？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.checkbox()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.check()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.box()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.tick()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 5 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建下拉选择框？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_5" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.select()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_5" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.choose()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_5" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.dropdown()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_5" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.pick()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 6 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建单选按钮？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_6" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.radio()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_6" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.select_one()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_6" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.option()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_6" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.choose_one()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 7 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建多选框？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_7" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.multiselect()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_7" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.multiple()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_7" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.checkboxes()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_7" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.select_multiple()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 8 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何上传文件？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_8" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.file_upload()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_8" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.upload()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_8" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.file()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_8" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.open()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 9 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何显示进度条？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_9" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.progress()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_9" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.bar()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_9" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.loading()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_9" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.spinner()</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 10 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何创建日期选择器？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_10" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. st.date_input()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_10" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. st.date()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_10" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. st.calendar()</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_10" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. st.pick_date()</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <input type="hidden" name="tf_1" id="tf_1_value">
             </div>
 
-            <div class="question" data-id="tf_2">
-                <div class="question-number">
-                    第 2 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">st.sidebar 将组件添加到侧边栏。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'True')">
-                        ✓ True
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                    <span class="bg-gradient-to-r from-green-500 to-teal-500 text-white w-10 h-10 rounded-xl flex items-center justify-center">✓</span>
+                    判断题 <span class="text-gray-400 text-lg font-normal">(2 题)</span>
+                </h2>
+                <div class="space-y-6">
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Streamlit 组件的返回值会自动显示。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_1', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_1', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_1" id="tf_1_value" value="">
                     </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'False')">
-                        ✗ False
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 2 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">st.sidebar 将组件添加到侧边栏。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_2', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_2', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_2" id="tf_2_value" value="">
                     </div>
                 </div>
-                <input type="hidden" name="tf_2" id="tf_2_value">
             </div>
-        </div>
 
-        <div class="section">
-            <h2>💻 编程题</h2>
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                    <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-xl flex items-center justify-center">💻</span>
+                    编程题 <span class="text-gray-400 text-lg font-normal">(4 题)</span>
+                </h2>
+                <div class="space-y-6">
 
-            <div class="question" data-id="code_1">
-                <div class="question-number">
-                    第 1 题
-                    <span class="difficulty easy">easy</span>
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建文本输入和显示</p>
+                        <textarea name="code_1" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 2 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建滑块并获取值</p>
+                        <textarea name="code_2" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 3 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建下拉选择框</p>
+                        <textarea name="code_3" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 4 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建文件上传组件</p>
+                        <textarea name="code_4" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
                 </div>
-                <div class="question-text">编写程序：创建文本输入和显示</div>
-                <textarea class="code-area" name="code_1" placeholder="在这里编写代码"></textarea>
             </div>
 
-            <div class="question" data-id="code_2">
-                <div class="question-number">
-                    第 2 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">编写程序：创建滑块并获取值</div>
-                <textarea class="code-area" name="code_2" placeholder="在这里编写代码"></textarea>
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="submit-btn inline-flex items-center gap-3 px-12 py-5 text-white font-bold text-xl rounded-2xl shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                    </svg>
+                    <span>提交答案</span>
+                </button>
             </div>
-
-            <div class="question" data-id="code_3">
-                <div class="question-number">
-                    第 3 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">编写程序：创建下拉选择框</div>
-                <textarea class="code-area" name="code_3" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_4">
-                <div class="question-number">
-                    第 4 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">编写程序：创建文件上传组件</div>
-                <textarea class="code-area" name="code_4" placeholder="在这里编写代码"></textarea>
-            </div>
-        </div>
-
-            <button type="submit" class="submit-btn">📤 提交答案</button>
         </form>
         
-        <div class="success-message" id="success-message">
-            ✅ 答案已保存！可以继续完成其他题目，或者让我帮你检查。
+        <!-- Success Message -->
+        <div id="success-message" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl">
+                <div class="text-6xl mb-4">✅</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">答案已提交！</h3>
+                <p class="text-gray-600 mb-6">你的答案已保存，可以继续完成其他题目。</p>
+                <button onclick="closeSuccessMessage()" class="bg-gradient-to-r from-primary-500 to-purple-500 text-white px-8 py-3 rounded-xl font-bold">继续学习</button>
+            </div>
         </div>
     </div>
     
@@ -655,6 +536,11 @@
             });
             element.classList.add('selected');
             document.getElementById(name + '_value').value = value;
+        }
+        
+        // 关闭成功消息
+        function closeSuccessMessage() {
+            document.getElementById('success-message').classList.add('hidden');
         }
         
         // 处理表单提交
@@ -670,7 +556,6 @@
                 answers: {}
             };
             
-            // 收集答案
 
             const mc_1 = formData.get('mc_1');
             if (mc_1) answers.answers['mc_1'] = mc_1;
@@ -733,12 +618,10 @@
             URL.revokeObjectURL(url);
             
             // 显示成功消息
-            document.getElementById('success-message').style.display = 'block';
-            window.scrollTo(0, 0);
+            document.getElementById('success-message').classList.remove('hidden');
             
-            setTimeout(() => {
-                document.getElementById('success-message').style.display = 'none';
-            }, 3000);
+            // 滚动到顶部
+            window.scrollTo(0, 0);
         });
     </script>
 </body>

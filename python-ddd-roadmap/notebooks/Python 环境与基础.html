@@ -4,1164 +4,1063 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python 环境与基础 - 练习题</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .breadcrumb {
-            color: #666;
-            margin-bottom: 10px;
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 2em;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.9em;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
-        }
-        
-        .question {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .question-number {
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .question-text {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .options {
-            display: grid;
-            gap: 10px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
         
         .option {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
             transition: all 0.2s ease;
-            border: 2px solid transparent;
         }
-        
         .option:hover {
-            background: #e8eaff;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border-color: #0ea5e9;
         }
-        
         .option.selected {
-            border-color: #667eea;
-            background: #e8eaff;
-        }
-        
-        .option input {
-            margin-right: 10px;
-        }
-        
-        .tf-options {
-            display: flex;
-            gap: 20px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            border-color: #0ea5e9;
         }
         
         .tf-option {
-            flex: 1;
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
             transition: all 0.2s ease;
-            border: 2px solid #ddd;
         }
-        
         .tf-option:hover {
-            border-color: #667eea;
+            transform: scale(1.02);
         }
-        
         .tf-option.selected {
-            border-color: #667eea;
-            background: #e8eaff;
-        }
-        
-        .fill-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.2s ease;
-        }
-        
-        .fill-input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .code-area {
-            width: 100%;
-            min-height: 150px;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.9em;
-            resize: vertical;
-        }
-        
-        .code-area:focus {
-            outline: none;
-            border-color: #667eea;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
         }
         
         .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.2em;
-            font-weight: 600;
-            cursor: pointer;
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
             transition: all 0.3s ease;
-            margin-top: 30px;
         }
-        
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        .success-message {
-            display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .difficulty {
-            font-size: 0.8em;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-left: 10px;
-        }
-        
-        .difficulty.easy {
-            background: #28a745;
-            color: white;
-        }
-        
-        .difficulty.medium {
-            background: #ffc107;
-            color: #333;
-        }
-        
-        .difficulty.hard {
-            background: #dc3545;
-            color: white;
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <a href="../../index.html" class="back-link">← 返回首页</a>
-        
-        <div class="header">
-            <div class="breadcrumb">Python → DDD 架构路线</div>
-            <h1>Python 环境与基础</h1>
-            <div class="stats">
-                <span class="stat">选择题: 21 题</span>
-                <span class="stat">判断题: 11 题</span>
-                <span class="stat">填空题: 0 题</span>
-                <span class="stat">编程题: 8 题</span>
-                <span class="stat">总计: 70 题</span>
-            </div>
-        </div>
-        
-        <form id="quiz-form">
-
-        <div class="section">
-            <h2>📝 选择题</h2>
-
-            <div class="question" data-id="mc_1">
-                <div class="question-number">
-                    第 1 题
-                    <span class="difficulty easy">easy</span>
+<body class="bg-gradient-to-br from-primary-50 via-white to-purple-50 min-h-screen">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 text-white py-12">
+        <div class="container mx-auto px-4">
+            <a href="../../index.html" class="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span>返回首页</span>
+            </a>
+            
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div>
+                    <div class="text-white/80 text-sm mb-2">Python → DDD 架构路线</div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Python 环境与基础</h1>
+                    <p class="text-white/90 text-lg">共 70 道练习题</p>
                 </div>
-                <div class="question-text">以下哪个不是 Python 语言的特性？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="A">
-                        <span>A. 解释型语言</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="B">
-                        <span>B. 面向对象</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="C">
-                        <span>C. 需要编译</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_1" value="D">
-                        <span>D. 跨平台</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_2">
-                <div class="question-number">
-                    第 2 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 源代码文件的默认扩展名是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="A">
-                        <span>A. .java</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="B">
-                        <span>B. .py</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="C">
-                        <span>C. .cpp</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_2" value="D">
-                        <span>D. .c</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_3">
-                <div class="question-number">
-                    第 3 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何启动 Python 交互式解释器？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="A">
-                        <span>A. python</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="B">
-                        <span>B. py</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="C">
-                        <span>C. python3</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_3" value="D">
-                        <span>D. 都可以</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_4">
-                <div class="question-number">
-                    第 4 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">在 Python 中，单行注释使用什么符号？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="A">
-                        <span>A. //</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="B">
-                        <span>B. #</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="C">
-                        <span>C. /*</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_4" value="D">
-                        <span>D. --</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_5">
-                <div class="question-number">
-                    第 5 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">PEP 是什么的缩写？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="A">
-                        <span>A. Python Enhancement Proposal</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="B">
-                        <span>B. Python Edition Protocol</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="C">
-                        <span>C. Program Enhancement Process</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_5" value="D">
-                        <span>D. Python Execution Path</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_6">
-                <div class="question-number">
-                    第 6 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">以下哪个不是 Python 的实现版本？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="A">
-                        <span>A. CPython</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="B">
-                        <span>B. Jython</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="C">
-                        <span>C. Pyython</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_6" value="D">
-                        <span>D. IronPython</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_7">
-                <div class="question-number">
-                    第 7 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 2.x 和 Python 3.x 的主要区别是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="A">
-                        <span>A. 语法完全相同</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="B">
-                        <span>B. print 语句变为函数</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="C">
-                        <span>C. 没有区别</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_7" value="D">
-                        <span>D. 性能差异很大</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_8">
-                <div class="question-number">
-                    第 8 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何在命令行中运行 Python 脚本？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="A">
-                        <span>A. python script.py</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="B">
-                        <span>B. run script.py</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="C">
-                        <span>C. execute script.py</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_8" value="D">
-                        <span>D. start script.py</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_9">
-                <div class="question-number">
-                    第 9 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">IDLE 是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="A">
-                        <span>A. Python 的集成开发环境</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="B">
-                        <span>B. 一种数据库</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="C">
-                        <span>C. 一种操作系统</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_9" value="D">
-                        <span>D. 一种编程语言</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_10">
-                <div class="question-number">
-                    第 10 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 是一种什么类型的语言？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="A">
-                        <span>A. 编译型语言</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="B">
-                        <span>B. 解释型语言</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="C">
-                        <span>C. 汇编语言</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_10" value="D">
-                        <span>D. 机器语言</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_11">
-                <div class="question-number">
-                    第 11 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">以下哪个不是常用的 Python IDE？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_11" value="A">
-                        <span>A. PyCharm</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_11" value="B">
-                        <span>B. VS Code</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_11" value="C">
-                        <span>C. Eclipse</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_11" value="D">
-                        <span>D. MySQL</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_12">
-                <div class="question-number">
-                    第 12 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">如何查看 Python 版本？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_12" value="A">
-                        <span>A. python --version</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_12" value="B">
-                        <span>B. python -v</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_12" value="C">
-                        <span>C. 两者都可以</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_12" value="D">
-                        <span>D. 都不可以</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_13">
-                <div class="question-number">
-                    第 13 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">pip 是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_13" value="A">
-                        <span>A. Python 包管理工具</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_13" value="B">
-                        <span>B. Python 解释器</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_13" value="C">
-                        <span>C. Python 调试器</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_13" value="D">
-                        <span>D. Python 编译器</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_14">
-                <div class="question-number">
-                    第 14 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">如何安装 Python 包？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_14" value="A">
-                        <span>A. pip install 包名</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_14" value="B">
-                        <span>B. python install 包名</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_14" value="C">
-                        <span>C. install 包名</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_14" value="D">
-                        <span>D. get 包名</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_15">
-                <div class="question-number">
-                    第 15 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">venv 或 virtualenv 是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_15" value="A">
-                        <span>A. 代码编辑器</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_15" value="B">
-                        <span>B. 版本控制系统</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_15" value="C">
-                        <span>C. 虚拟环境管理工具</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_15" value="D">
-                        <span>D. 调试工具</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_16">
-                <div class="question-number">
-                    第 16 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">使用虚拟环境的主要目的是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_16" value="A">
-                        <span>A. 提高运行速度</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_16" value="B">
-                        <span>B. 隔离项目依赖</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_16" value="C">
-                        <span>C. 增加代码安全性</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_16" value="D">
-                        <span>D. 减少内存占用</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_17">
-                <div class="question-number">
-                    第 17 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 的创始人是？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_17" value="A">
-                        <span>A. Guido van Rossum</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_17" value="B">
-                        <span>B. James Gosling</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_17" value="C">
-                        <span>C. Bjarne Stroustrup</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_17" value="D">
-                        <span>D. Dennis Ritchie</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_18">
-                <div class="question-number">
-                    第 18 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">Python 首次发布是在哪一年？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_18" value="A">
-                        <span>A. 1989</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_18" value="B">
-                        <span>B. 1991</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_18" value="C">
-                        <span>C. 1995</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_18" value="D">
-                        <span>D. 2000</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_19">
-                <div class="question-number">
-                    第 19 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">以下哪种不是 Python 的编程范式？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_19" value="A">
-                        <span>A. 面向过程</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_19" value="B">
-                        <span>B. 面向对象</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_19" value="C">
-                        <span>C. 函数式</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_19" value="D">
-                        <span>D. 硬件级编程</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_20">
-                <div class="question-number">
-                    第 20 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">在 Jupyter Notebook 中，运行单元格使用什么快捷键？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_20" value="A">
-                        <span>A. Ctrl+C</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_20" value="B">
-                        <span>B. Shift+Enter</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_20" value="C">
-                        <span>C. Alt+Enter</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_20" value="D">
-                        <span>D. Ctrl+Enter</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="question" data-id="mc_21">
-                <div class="question-number">
-                    第 21 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">Anaconda 是什么？</div>
-                <div class="options">
-
-                    <label class="option">
-                        <input type="radio" name="mc_21" value="A">
-                        <span>A. Python 解释器</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_21" value="B">
-                        <span>B. Python 包发行版</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_21" value="C">
-                        <span>C. 代码编辑器</span>
-                    </label>
-
-                    <label class="option">
-                        <input type="radio" name="mc_21" value="D">
-                        <span>D. 操作系统</span>
-                    </label>
+                
+                <div class="flex flex-wrap gap-4">
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">21</div>
+                        <div class="text-white/80 text-sm">选择题</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">11</div>
+                        <div class="text-white/80 text-sm">判断题</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">0</div>
+                        <div class="text-white/80 text-sm">填空题</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3 text-center">
+                        <div class="text-2xl font-bold">8</div>
+                        <div class="text-white/80 text-sm">编程题</div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="container mx-auto px-4 py-12 -mt-8">
+        <form id="quiz-form" class="space-y-12">
 
-        <div class="section">
-            <h2>✓ 判断题</h2>
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                    <span class="bg-gradient-to-r from-primary-500 to-purple-500 text-white w-10 h-10 rounded-xl flex items-center justify-center">📝</span>
+                    选择题 <span class="text-gray-400 text-lg font-normal">(21 题)</span>
+                </h2>
+                <div class="space-y-6">
 
-            <div class="question" data-id="tf_1">
-                <div class="question-number">
-                    第 1 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 是一种编译型语言。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'True')">
-                        ✓ True
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">以下哪个不是 Python 语言的特性？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 解释型语言</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 面向对象</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 需要编译</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_1" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 跨平台</span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'False')">
-                        ✗ False
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 2 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 源代码文件的默认扩展名是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. .java</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. .py</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. .cpp</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_2" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. .c</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 3 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何启动 Python 交互式解释器？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. python</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. py</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. python3</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_3" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 都可以</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 4 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">在 Python 中，单行注释使用什么符号？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. //</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. #</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. /*</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_4" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. --</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 5 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">PEP 是什么的缩写？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_5" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. Python Enhancement Proposal</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_5" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. Python Edition Protocol</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_5" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. Program Enhancement Process</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_5" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. Python Execution Path</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 6 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">以下哪个不是 Python 的实现版本？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_6" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. CPython</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_6" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. Jython</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_6" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. Pyython</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_6" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. IronPython</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 7 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 2.x 和 Python 3.x 的主要区别是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_7" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 语法完全相同</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_7" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. print 语句变为函数</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_7" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 没有区别</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_7" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 性能差异很大</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 8 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何在命令行中运行 Python 脚本？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_8" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. python script.py</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_8" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. run script.py</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_8" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. execute script.py</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_8" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. start script.py</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 9 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">IDLE 是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_9" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. Python 的集成开发环境</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_9" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 一种数据库</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_9" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 一种操作系统</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_9" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 一种编程语言</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 10 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 是一种什么类型的语言？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_10" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 编译型语言</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_10" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 解释型语言</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_10" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 汇编语言</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_10" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 机器语言</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 11 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">以下哪个不是常用的 Python IDE？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_11" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. PyCharm</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_11" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. VS Code</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_11" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. Eclipse</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_11" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. MySQL</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 12 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何查看 Python 版本？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_12" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. python --version</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_12" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. python -v</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_12" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 两者都可以</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_12" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 都不可以</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 13 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">pip 是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_13" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. Python 包管理工具</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_13" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. Python 解释器</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_13" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. Python 调试器</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_13" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. Python 编译器</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 14 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">如何安装 Python 包？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_14" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. pip install 包名</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_14" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. python install 包名</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_14" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. install 包名</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_14" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. get 包名</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 15 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">venv 或 virtualenv 是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_15" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 代码编辑器</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_15" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 版本控制系统</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_15" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 虚拟环境管理工具</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_15" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 调试工具</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 16 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">使用虚拟环境的主要目的是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_16" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 提高运行速度</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_16" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 隔离项目依赖</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_16" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 增加代码安全性</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_16" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 减少内存占用</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 17 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 的创始人是？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_17" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. Guido van Rossum</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_17" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. James Gosling</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_17" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. Bjarne Stroustrup</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_17" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. Dennis Ritchie</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 18 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 首次发布是在哪一年？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_18" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 1989</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_18" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 1991</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_18" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 1995</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_18" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 2000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 19 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">以下哪种不是 Python 的编程范式？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_19" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. 面向过程</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_19" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. 面向对象</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_19" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 函数式</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-green-500">
+                                <input type="radio" name="mc_19" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 硬件级编程</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 20 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">在 Jupyter Notebook 中，运行单元格使用什么快捷键？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_20" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. Ctrl+C</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_20" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. Shift+Enter</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_20" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. Alt+Enter</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_20" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. Ctrl+Enter</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-primary-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm font-medium">第 21 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Anaconda 是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_21" value="A" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">A. Python 解释器</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_21" value="B" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">B. Python 包发行版</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_21" value="C" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">C. 代码编辑器</span>
+                            </label>
+
+                            <label class="option cursor-pointer flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 hover:border-yellow-500">
+                                <input type="radio" name="mc_21" value="D" class="w-5 h-5 text-primary-500">
+                                <span class="font-medium">D. 操作系统</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <input type="hidden" name="tf_1" id="tf_1_value">
             </div>
 
-            <div class="question" data-id="tf_2">
-                <div class="question-number">
-                    第 2 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 代码在执行前需要先编译。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'True')">
-                        ✓ True
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                    <span class="bg-gradient-to-r from-green-500 to-teal-500 text-white w-10 h-10 rounded-xl flex items-center justify-center">✓</span>
+                    判断题 <span class="text-gray-400 text-lg font-normal">(11 题)</span>
+                </h2>
+                <div class="space-y-6">
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 是一种编译型语言。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_1', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_1', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_1" id="tf_1_value" value="">
                     </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'False')">
-                        ✗ False
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 2 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 代码在执行前需要先编译。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_2', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_2', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_2" id="tf_2_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 3 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 支持多种编程范式。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_3', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_3', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_3" id="tf_3_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 4 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 是开源免费的。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_4', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_4', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_4" id="tf_4_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 5 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 2.x 仍然是官方推荐使用的版本。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_5', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_5', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_5" id="tf_5_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 6 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 代码块通过缩进来定义。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_6', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_6', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_6" id="tf_6_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 7 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">所有 Python 实现都使用 GIL。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_7', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_7', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_7" id="tf_7_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 8 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 可以在 Windows、Linux、Mac 等操作系统上运行。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_8', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_8', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_8" id="tf_8_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 9 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Python 3.x 完全向后兼容 Python 2.x。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_9', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_9', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_9" id="tf_9_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 10 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">在 Python 中，变量不需要声明类型。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_10', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_10', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_10" id="tf_10_value" value="">
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-green-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">第 11 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">Jython 代码可以调用 Java 类库。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_11', 'True')">
+                                <span class="text-2xl mr-2">✓</span>
+                                <span class="font-bold text-lg">True</span>
+                            </div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center cursor-pointer" onclick="selectTF(this, 'tf_11', 'False')">
+                                <span class="text-2xl mr-2">✗</span>
+                                <span class="font-bold text-lg">False</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="tf_11" id="tf_11_value" value="">
                     </div>
                 </div>
-                <input type="hidden" name="tf_2" id="tf_2_value">
             </div>
 
-            <div class="question" data-id="tf_3">
-                <div class="question-number">
-                    第 3 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 支持多种编程范式。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_3', 'True')">
-                        ✓ True
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                    <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-xl flex items-center justify-center">💻</span>
+                    编程题 <span class="text-gray-400 text-lg font-normal">(8 题)</span>
+                </h2>
+                <div class="space-y-6">
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：打印 Hello, World!</p>
+                        <textarea name="code_1" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
                     </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_3', 'False')">
-                        ✗ False
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 2 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：计算并打印 1+2+3+...+100 的和</p>
+                        <textarea name="code_2" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 3 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：打印当前 Python 版本信息</p>
+                        <textarea name="code_3" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 4 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：打印你的名字和当前日期</p>
+                        <textarea name="code_4" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 5 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：查看已安装的所有包及其版本</p>
+                        <textarea name="code_5" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 6 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：在 Python 交互模式下计算 2 的 10 次方</p>
+                        <textarea name="code_6" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 7 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建一个简单的 Python 脚本并运行它</p>
+                        <textarea name="code_7" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                    </div>
+
+                    <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">第 8 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：使用帮助功能查看 print 函数的使用方法</p>
+                        <textarea name="code_8" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
                     </div>
                 </div>
-                <input type="hidden" name="tf_3" id="tf_3_value">
             </div>
 
-            <div class="question" data-id="tf_4">
-                <div class="question-number">
-                    第 4 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 是开源免费的。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_4', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_4', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_4" id="tf_4_value">
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="submit-btn inline-flex items-center gap-3 px-12 py-5 text-white font-bold text-xl rounded-2xl shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                    </svg>
+                    <span>提交答案</span>
+                </button>
             </div>
-
-            <div class="question" data-id="tf_5">
-                <div class="question-number">
-                    第 5 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">Python 2.x 仍然是官方推荐使用的版本。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_5', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_5', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_5" id="tf_5_value">
-            </div>
-
-            <div class="question" data-id="tf_6">
-                <div class="question-number">
-                    第 6 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 代码块通过缩进来定义。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_6', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_6', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_6" id="tf_6_value">
-            </div>
-
-            <div class="question" data-id="tf_7">
-                <div class="question-number">
-                    第 7 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">所有 Python 实现都使用 GIL。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_7', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_7', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_7" id="tf_7_value">
-            </div>
-
-            <div class="question" data-id="tf_8">
-                <div class="question-number">
-                    第 8 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">Python 可以在 Windows、Linux、Mac 等操作系统上运行。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_8', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_8', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_8" id="tf_8_value">
-            </div>
-
-            <div class="question" data-id="tf_9">
-                <div class="question-number">
-                    第 9 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">Python 3.x 完全向后兼容 Python 2.x。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_9', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_9', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_9" id="tf_9_value">
-            </div>
-
-            <div class="question" data-id="tf_10">
-                <div class="question-number">
-                    第 10 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">在 Python 中，变量不需要声明类型。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_10', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_10', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_10" id="tf_10_value">
-            </div>
-
-            <div class="question" data-id="tf_11">
-                <div class="question-number">
-                    第 11 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">Jython 代码可以调用 Java 类库。</div>
-                <div class="tf-options">
-                    <div class="tf-option" onclick="selectTF(this, 'tf_11', 'True')">
-                        ✓ True
-                    </div>
-                    <div class="tf-option" onclick="selectTF(this, 'tf_11', 'False')">
-                        ✗ False
-                    </div>
-                </div>
-                <input type="hidden" name="tf_11" id="tf_11_value">
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>💻 编程题</h2>
-
-            <div class="question" data-id="code_1">
-                <div class="question-number">
-                    第 1 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">编写程序：打印 Hello, World!</div>
-                <textarea class="code-area" name="code_1" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_2">
-                <div class="question-number">
-                    第 2 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">编写程序：计算并打印 1+2+3+...+100 的和</div>
-                <textarea class="code-area" name="code_2" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_3">
-                <div class="question-number">
-                    第 3 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">编写程序：打印当前 Python 版本信息</div>
-                <textarea class="code-area" name="code_3" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_4">
-                <div class="question-number">
-                    第 4 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">编写程序：打印你的名字和当前日期</div>
-                <textarea class="code-area" name="code_4" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_5">
-                <div class="question-number">
-                    第 5 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">编写程序：查看已安装的所有包及其版本</div>
-                <textarea class="code-area" name="code_5" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_6">
-                <div class="question-number">
-                    第 6 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">编写程序：在 Python 交互模式下计算 2 的 10 次方</div>
-                <textarea class="code-area" name="code_6" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_7">
-                <div class="question-number">
-                    第 7 题
-                    <span class="difficulty medium">medium</span>
-                </div>
-                <div class="question-text">编写程序：创建一个简单的 Python 脚本并运行它</div>
-                <textarea class="code-area" name="code_7" placeholder="在这里编写代码"></textarea>
-            </div>
-
-            <div class="question" data-id="code_8">
-                <div class="question-number">
-                    第 8 题
-                    <span class="difficulty easy">easy</span>
-                </div>
-                <div class="question-text">编写程序：使用帮助功能查看 print 函数的使用方法</div>
-                <textarea class="code-area" name="code_8" placeholder="在这里编写代码"></textarea>
-            </div>
-        </div>
-
-            <button type="submit" class="submit-btn">📤 提交答案</button>
         </form>
         
-        <div class="success-message" id="success-message">
-            ✅ 答案已保存！可以继续完成其他题目，或者让我帮你检查。
+        <!-- Success Message -->
+        <div id="success-message" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl">
+                <div class="text-6xl mb-4">✅</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">答案已提交！</h3>
+                <p class="text-gray-600 mb-6">你的答案已保存，可以继续完成其他题目。</p>
+                <button onclick="closeSuccessMessage()" class="bg-gradient-to-r from-primary-500 to-purple-500 text-white px-8 py-3 rounded-xl font-bold">继续学习</button>
+            </div>
         </div>
     </div>
     
@@ -1174,6 +1073,11 @@
             });
             element.classList.add('selected');
             document.getElementById(name + '_value').value = value;
+        }
+        
+        // 关闭成功消息
+        function closeSuccessMessage() {
+            document.getElementById('success-message').classList.add('hidden');
         }
         
         // 处理表单提交
@@ -1189,7 +1093,6 @@
                 answers: {}
             };
             
-            // 收集答案
 
             const mc_1 = formData.get('mc_1');
             if (mc_1) answers.answers['mc_1'] = mc_1;
@@ -1324,12 +1227,10 @@
             URL.revokeObjectURL(url);
             
             // 显示成功消息
-            document.getElementById('success-message').style.display = 'block';
-            window.scrollTo(0, 0);
+            document.getElementById('success-message').classList.remove('hidden');
             
-            setTimeout(() => {
-                document.getElementById('success-message').style.display = 'none';
-            }, 3000);
+            // 滚动到顶部
+            window.scrollTo(0, 0);
         });
     </script>
 </body>
