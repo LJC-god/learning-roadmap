@@ -14,19 +14,19 @@ Python 基础 → NumPy → Pandas → 数据可视化 → 实战项目
 data-analyst-roadmap/
 ├── README.md
 ├── notebooks/
-│   ├── 01_06_numpy_array_creation.ipynb      # NumPy 数组创建
-│   ├── 02_07_numpy_array_operations.ipynb    # NumPy 数组操作
-│   ├── 03_08_numpy_indexing.ipynb            # NumPy 索引与切片
-│   ├── 04_09_numpy_common_functions.ipynb    # NumPy 常用函数
-│   ├── 05_10_pandas_dataframes.ipynb         # Pandas DataFrame
-│   ├── 06_11_pandas_data_reading.ipynb       # Pandas 数据读取
-│   ├── 07_12_pandas_data_cleaning.ipynb      # Pandas 数据清洗
-│   ├── 08_13_pandas_data_filtering.ipynb     # Pandas 数据筛选
-│   ├── 09_14_pandas_groupby.ipynb            # Pandas 分组聚合
-│   ├── 10_15_pandas_merge.ipynb              # Pandas 数据合并
-│   ├── 11_16_visualization_matplotlib.ipynb  # Matplotlib 可视化
-│   ├── 12_17_visualization_seaborn.ipynb     # Seaborn 可视化
-│   └── 13_18_project_titanic.ipynb           # 泰坦尼克号项目实战
+│   ├── NumPy_数组创建.ipynb            # NumPy 数组创建
+│   ├── NumPy_数组操作.ipynb            # NumPy 数组操作
+│   ├── NumPy_索引与切片.ipynb          # NumPy 索引与切片
+│   ├── NumPy_常用函数.ipynb            # NumPy 常用函数
+│   ├── Pandas_DataFrame.ipynb         # Pandas DataFrame
+│   ├── Pandas_数据读取.ipynb           # Pandas 数据读取
+│   ├── Pandas_数据清洗.ipynb           # Pandas 数据清洗
+│   ├── Pandas_数据筛选.ipynb           # Pandas 数据筛选
+│   ├── Pandas_分组聚合.ipynb           # Pandas 分组聚合
+│   ├── Pandas_数据合并.ipynb           # Pandas 数据合并
+│   ├── Matplotlib_可视化.ipynb        # Matplotlib 可视化
+│   ├── Seaborn_可视化.ipynb          # Seaborn 可视化
+│   └── 泰坦尼克号项目实战.ipynb        # 泰坦尼克号项目实战
 ```
 
 ## 📚 学习内容
@@ -57,11 +57,12 @@ data-analyst-roadmap/
 ## 📝 练习说明
 
 每个 notebook 包含：
-- **选择题**: 检验概念理解
-- **判断题**: 巩固基础认知
-- **填空题**: 强化关键词记忆
+- **选择题** (20-30题): 检验概念理解
+- **判断题** (10-20题): 巩固基础认知
+- **填空题** (10-20题): 强化关键词记忆
+- **编程题** (10-20题): 动手实践
 
-**注意**: 本练习册只包含题目，不含答案。
+**注意**: 本练习册只包含题目，不含答案。每个主题约 55-65 道练习题。
 
 ## 🚀 快速开始
 
@@ -71,7 +72,7 @@ git clone https://github.com/LJC-god/learning-roadmap.git
 cd learning-roadmap/data-analyst-roadmap
 
 # 2. 安装依赖
-pip install numpy pandas matplotlib seaborn plotly
+pip install numpy pandas matplotlib seaborn
 
 # 3. 启动 Jupyter
 jupyter lab notebooks/
@@ -90,11 +91,10 @@ jupyter lab notebooks/
 | 1 | Python 基础 | 1 周 |
 | 2 | NumPy | 1 周 |
 | 3 | Pandas | 2 周 |
-| 4 | 数据清洗 | 1 周 |
-| 5 | 数据可视化 | 1 周 |
-| 6 | 实战项目 | 1 周 |
+| 4 | 数据可视化 | 1 周 |
+| 5 | 实战项目 | 1 周 |
 
-**总计**: 约 7 周
+**总计**: 约 6 周
 
 ## 🎯 学习目标
 
