@@ -1,0 +1,142 @@
+{
+  "topic": "数据结构",
+  "total_questions": 65,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "以下哪个不是 Python 的基本数据结构？",
+      "options": ["list", "tuple", "array", "dictionary"],
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "列表使用什么括号？",
+      "options": ["()", "[]", "{}", "<>"],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "元组使用什么括号？",
+      "options": ["()", "[]", "{}", "<>"],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "字典使用什么括号？",
+      "options": ["()", "[]", "{}", "<>"],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "以下哪个数据结构是不可变的？",
+      "options": ["list", "dict", "set", "tuple"],
+      "answer": "D"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何获取列表的第一个元素？",
+      "options": ["list[0]", "list[1]", "list.first()", "list[1:]"],
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "列表的哪个方法可以添加元素？",
+      "options": ["add()", "append()", "insert()", "两者都可以"],
+      "answer": "D"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何删除列表中的元素？",
+      "options": ["remove()", "del", "pop()", "都可以"],
+      "answer": "D"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "set 有什么特点？",
+      "options": ["有序", "无序不重复", "可修改", "可包含所有类型"],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "字典的键有什么限制？",
+      "options": ["必须是字符串", "必须唯一", "必须是数字", "必须有序"],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "列表是有序的数据结构。",
+      "answer": "True"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "元组是不可变的。",
+      "answer": "True"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "集合不支持索引操作。",
+      "answer": "True"
+    },
+    {
+      "id": 14,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 获取列表长度。",
+      "answer": "len()"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 对列表进行排序。",
+      "answer": "sorted()"
+    },
+    {
+      "id": 16,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建列表并添加元素",
+      "requirement": "使用 append() 和 insert()"
+    },
+    {
+      "id": 17,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：使用列表推导式创建新列表",
+      "requirement": "[x*2 for x in range(10)]"
+    },
+    {
+      "id": 18,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：使用字典存储和访问数据",
+      "requirement": "创建学生信息字典"
+    }
+  ]
+}

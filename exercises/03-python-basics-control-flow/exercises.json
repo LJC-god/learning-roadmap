@@ -1,0 +1,280 @@
+{
+  "topic": "流程控制",
+  "total_questions": 65,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "以下哪个不是 Python 的流程控制语句？",
+      "options": ["if", "for", "while", "switch"],
+      "answer": "D"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Python 中 elif 是什么的缩写？",
+      "options": ["else if", "else elif", "elif else", "if else"],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "for 循环通常用于什么情况？",
+      "options": ["无限循环", "遍历序列", "条件循环", "递归"],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "以下哪个可以正确终止循环？",
+      "options": ["break", "stop", "end", "exit"],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "continue 语句的作用是什么？",
+      "options": ["终止程序", "跳过本次循环", "暂停循环", "继续下一次迭代"],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "range(1, 10, 2) 生成什么序列？",
+      "options": ["1,2,3,4,5,6,7,8,9", "1,3,5,7,9", "1,3,5,7,9,11", "2,4,6,8"],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Python 中 pass 语句的作用是什么？",
+      "options": ["跳过代码", "空语句占位", "抛出异常", "终止程序"],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "if-elif-else 结构中，elif 可以出现多少次？",
+      "options": ["0次", "1次", "任意次", "最多2次"],
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "else 子句可以与哪个循环配合使用？",
+      "options": ["只限 for", "只限 while", "for 和 while 都可以", "都不可以"],
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "enumerate() 函数返回什么？",
+      "options": ["索引和值的元组", "只返回值", "只返回索引", "列表"],
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "zip() 函数的作用是什么？",
+      "options": ["压缩文件", "将多个序列打包", "解压缩", "排序"],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "以下哪个运算符用于成员测试？",
+      "options": ["==", "is", "in", "!="],
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "assert 语句的作用是什么？",
+      "options": ["断言条件", "打印信息", "抛出异常", "注释代码"],
+      "answer": "A"
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "三元表达式的语法是什么？",
+      "options": ["a if b else c", "b ? a : c", "if b a else c", "a ? b : c"],
+      "answer": "A"
+    },
+    {
+      "id": 15,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "input() 函数返回什么类型？",
+      "options": ["int", "float", "str", "bool"],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 使用缩进来定义代码块。",
+      "answer": "True"
+    },
+    {
+      "id": 17,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "if 语句必须有 else 子句。",
+      "answer": "False"
+    },
+    {
+      "id": 18,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "for 循环必须指定迭代次数。",
+      "answer": "False"
+    },
+    {
+      "id": 19,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "break 语句只能退出当前层循环。",
+      "answer": "True"
+    },
+    {
+      "id": 20,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "continue 语句会跳过本次循环剩余代码。",
+      "answer": "True"
+    },
+    {
+      "id": 21,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "while 循环必须有终止条件。",
+      "answer": "True"
+    },
+    {
+      "id": 22,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "range(5) 生成 0,1,2,3,4。",
+      "answer": "True"
+    },
+    {
+      "id": 23,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "for 循环的 else 子句在 break 时不执行。",
+      "answer": "True"
+    },
+    {
+      "id": 24,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "列表推导式可以嵌套。",
+      "answer": "True"
+    },
+    {
+      "id": 25,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Python 没有 do-while 循环。",
+      "answer": "True"
+    },
+    {
+      "id": 26,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 关键字定义条件语句。",
+      "answer": "if"
+    },
+    {
+      "id": 27,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 关键字定义循环。",
+      "answer": "for"
+    },
+    {
+      "id": 28,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 关键字跳出循环。",
+      "answer": "break"
+    },
+    {
+      "id": 29,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 关键字跳过本次循环。",
+      "answer": "continue"
+    },
+    {
+      "id": 30,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "range(5) 的起始值默认是 _____。",
+      "answer": "0"
+    },
+    {
+      "id": 31,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "range(start, stop, step) 中 stop 是 _____（包含/不包含）的。",
+      "answer": "不包含"
+    },
+    {
+      "id": 32,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：打印 1 到 10 的所有偶数",
+      "requirement": "使用 for 循环和 if 条件"
+    },
+    {
+      "id": 33,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：计算 1 到 100 的累加和",
+      "requirement": "使用 while 循环"
+    },
+    {
+      "id": 34,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：实现用户登录验证（最多3次尝试）",
+      "requirement": "使用 for 循环和 break"
+    },
+    {
+      "id": 35,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：使用列表推导式生成 1-10 的平方列表",
+      "requirement": "使用 [x**2 for x in range(1,11)]"
+    },
+    {
+      "id": 36,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：使用 enumerate 遍历列表并打印索引和值",
+      "requirement": "使用 enumerate() 函数"
+    },
+    {
+      "id": 37,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：使用 zip 合并两个列表",
+      "requirement": "使用 zip() 函数"
+    }
+  ]
+}

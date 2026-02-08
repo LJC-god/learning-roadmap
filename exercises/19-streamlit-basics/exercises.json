@@ -1,0 +1,156 @@
+{
+  "topic": "Streamlit 基础",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Streamlit 是什么类型的框架？",
+      "options": ["Web 框架", "桌面应用框架", "数据可视化库", "机器学习框架"],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Streamlit 主要用于什么？",
+      "options": ["Web 开发", "数据科学和 ML 应用", "游戏开发", "系统编程"],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何运行 Streamlit 应用？",
+      "options": ["streamlit run app.py", "python app.py", "streamlit start app.py", "python -m streamlit app.py"],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Streamlit 文件的扩展名是什么？",
+      "options": [".streamlit", ".st", ".py", ".stream"],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何导入 Streamlit？",
+      "options": ["import streamlit as st", "import Streamlit", "from streamlit import *", "都可以"],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "st.title() 用于显示什么？",
+      "options": ["普通文本", "标题", "代码块", "图片"],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "st.write() 的功能是什么？",
+      "options": ["只显示文本", "万能显示函数", "显示表格", "显示图片"],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Streamlit 默认运行在哪个端口？",
+      "options": ["8000", "8080", "8501", "5000"],
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何添加页面标题？",
+      "options": ["st.set_page_config()", "st.title()", "st.header()", "st.markdown()"],
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "st.markdown() 用于显示什么？",
+      "options": ["普通文本", "Markdown 格式文本", "HTML", "纯文本"],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Streamlit 应用需要编写 HTML/CSS。",
+      "answer": "False"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Streamlit 支持热重载。",
+      "answer": "True"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Streamlit 应用只能以脚本方式运行。",
+      "answer": "False"
+    },
+    {
+      "id": 14,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "Streamlit 是一个用于构建 _____ 应用的框架。",
+      "answer": "数据 Web"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 命令运行 Streamlit 应用。",
+      "answer": "streamlit run"
+    },
+    {
+      "id": 16,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "Streamlit 默认运行在端口 _____。",
+      "answer": "8501"
+    },
+    {
+      "id": 17,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建第一个 Streamlit 应用",
+      "requirement": "显示标题和欢迎信息"
+    },
+    {
+      "id": 18,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：使用 Markdown 显示格式化文本",
+      "requirement": "使用 st.markdown()"
+    },
+    {
+      "id": 19,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：设置页面标题和图标",
+      "requirement": "使用 st.set_page_config()"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：显示数据框",
+      "requirement": "使用 st.write() 或 st.dataframe()"
+    }
+  ]
+}

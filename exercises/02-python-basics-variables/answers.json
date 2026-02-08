@@ -1,52 +1,254 @@
 {
+  "topic": "变量与数据类型",
+  "total_questions": 70,
   "questions": [
     {
-      "id": "q1",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "列表 (list) 是可变数据类型，可以修改其内容。字符串、元组和数字都是不可变数据类型。"
+      "id": 1,
+      "type": "multiple_choice",
+      "answer": "C"
     },
     {
-      "id": "q2",
-      "type": "choice",
-      "answer": "A",
-      "explanation": "Python 中变量赋值是引用传递。当执行 b = a 时，b 和 a 指向同一个对象。但后续 a = 20 只是将 a 重新指向新的对象，b 的值不变仍然是 10。"
+      "id": 2,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "Python 是动态类型语言，变量在赋值时自动确定类型，不需要像 Java 或 C 那样预先声明类型。"
+      "id": 3,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "在 Python 中，True 等价于 1，False 等价于 0，可以参与数值运算。例如：True + True = 2。"
+      "id": 4,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "type()",
-      "explanation": "type() 是 Python 的内置函数，用于返回变量的数据类型，例如：type(x) 返回 x 的类型。"
+      "id": 5,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "None",
-      "explanation": "None 是 Python 中的特殊常量，表示空值或无值，类似于其他语言中的 null。"
+      "id": 6,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q7",
-      "type": "code",
-      "answer": "name = '张三'; age = 25; height = 1.75; print(name, age, height)",
-      "explanation": "Python 中可以使用逗号分隔多个变量，print 会自动添加空格分隔。也可以使用 f-string：print(f'姓名：{name}，年龄：{age}，身高：{height}')"
+      "id": 7,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q8",
-      "type": "code",
-      "answer": "s = '3.14'; f = float(s); i = 42; result = f * 2; print(f, str(i), result)",
-      "explanation": "使用 float() 将字符串转换为浮点数，使用 str() 将整数转换为字符串。3.14 * 2 = 6.28"
+      "id": 8,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "answer": "D"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 17,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 19,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 20,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 22,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 23,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 24,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 25,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 26,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 27,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 28,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 29,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 30,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 31,
+      "type": "fill_blank",
+      "answer": "bool"
+    },
+    {
+      "id": 32,
+      "type": "fill_blank",
+      "answer": "type"
+    },
+    {
+      "id": 33,
+      "type": "fill_blank",
+      "answer": "int"
+    },
+    {
+      "id": 34,
+      "type": "fill_blank",
+      "answer": "str"
+    },
+    {
+      "id": 35,
+      "type": "fill_blank",
+      "answer": "hex"
+    },
+    {
+      "id": 36,
+      "type": "fill_blank",
+      "answer": "isinstance"
+    },
+    {
+      "id": 37,
+      "type": "fill_blank",
+      "answer": "255"
+    },
+    {
+      "id": 38,
+      "type": "fill_blank",
+      "answer": "4"
+    },
+    {
+      "id": 39,
+      "type": "fill_blank",
+      "answer": "None"
+    },
+    {
+      "id": 40,
+      "type": "fill_blank",
+      "answer": "10"
+    },
+    {
+      "id": 41,
+      "type": "coding",
+      "answer": "a = 10\\nb = 20\\nc = 30",
+      "explanation": "使用赋值运算符分别给变量赋值"
+    },
+    {
+      "id": 42,
+      "type": "coding",
+      "answer": "a, b = b, a",
+      "explanation": "使用元组解包交换变量值"
+    },
+    {
+      "id": 43,
+      "type": "coding",
+      "answer": "x = 'hello'\\nprint(isinstance(x, str))  # True",
+      "explanation": "使用 isinstance() 判断变量类型"
+    },
+    {
+      "id": 44,
+      "type": "coding",
+      "answer": "a = int('10')\\nb = int('20')\\nprint(a + b)  # 30",
+      "explanation": "使用 int() 函数将字符串转换为整数"
+    },
+    {
+      "id": 45,
+      "type": "coding",
+      "answer": "num = 3.14159\\nprint(f\"整数部分: {int(num)}\")\\nprint(f\"小数部分: {num % 1}\")",
+      "explanation": "使用 int() 取整，% 1 取小数部分"
+    },
+    {
+      "id": 46,
+      "type": "coding",
+      "answer": "c = complex(3, 4)\\nprint(f\"实部: {c.real}\")\\nprint(f\"虚部: {c.imag}\")",
+      "explanation": "创建复数并访问 real 和 imag 属性"
+    },
+    {
+      "id": 47,
+      "type": "coding",
+      "answer": "a = 256\\nb = 256\\nprint(a == b)  # True\\nprint(a is b)  # True (可能为 False)",
+      "explanation": "比较 == 和 is 的区别，is 比较内存地址"
+    },
+    {
+      "id": 48,
+      "type": "coding",
+      "answer": "num = 255\\nprint(f\"二进制: {bin(num)}\")\\nprint(f\"八进制: {oct(num)}\")\\nprint(f\"十六进制: {hex(num)}\")",
+      "explanation": "使用 bin()、oct()、hex() 转换进制"
     }
   ]
 }

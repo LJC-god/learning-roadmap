@@ -1,0 +1,110 @@
+{
+  "topic": "Streamlit 基础",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 14,
+      "type": "fill_blank",
+      "answer": "数据 Web"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "answer": "streamlit run"
+    },
+    {
+      "id": 16,
+      "type": "fill_blank",
+      "answer": "8501"
+    },
+    {
+      "id": 17,
+      "type": "coding",
+      "answer": "import streamlit as st\\nst.title('我的第一个应用')\\nst.write('欢迎使用 Streamlit!')",
+      "explanation": "最简单的 Streamlit 应用结构"
+    },
+    {
+      "id": 18,
+      "type": "coding",
+      "answer": "st.markdown('# 一级标题\\n## 二级标题\\n**粗体** *斜体*')",
+      "explanation": "支持标准 Markdown 语法"
+    },
+    {
+      "id": 19,
+      "type": "coding",
+      "answer": "st.set_page_config(page_title='我的应用', page_icon='📊')\\nst.title('欢迎')",
+      "explanation": "设置页面标题和图标"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "answer": "import pandas as pd\\ndf = pd.DataFrame({'A': [1,2,3], 'B': [4,5,6]})\\nst.dataframe(df)",
+      "explanation": "st.dataframe() 专门用于显示数据框"
+    }
+  ]
+}

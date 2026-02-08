@@ -1,52 +1,136 @@
 {
+  "topic": "Pandas DataFrame",
+  "total_questions": 65,
   "questions": [
     {
-      "id": "q1",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "Pandas 2.0+ 版本已移除 Panel，现在主要数据结构是 Series（一维）和 DataFrame（二维）。"
+      "id": 1,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q2",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "DataFrame 的每列可以是不同的数据类型（Series），这是 DataFrame 的强大特性之一。"
+      "id": 2,
+      "type": "multiple_choice",
+      "answer": "D"
     },
     {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "Series 是带索引的一维数组，索引可以是自定义的，不一定是数字。"
+      "id": 3,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "DataFrame 可以看作字典结构，每列是一个 Series，它们共享相同的索引。"
+      "id": 4,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "import",
-      "explanation": "标准导入语句是：import pandas as pd"
+      "id": 5,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "columns",
-      "explanation": "df.columns 返回所有列名（Index 对象），df.columns.tolist() 返回列名列表。"
+      "id": 6,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q7",
-      "type": "code",
-      "answer": "import pandas as pd; s = pd.Series([10, 20, 30, 40], index=['a', 'b', 'c', 'd']); print(s)",
-      "explanation": "Series 的 index 参数指定自定义索引。"
+      "id": 7,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q8",
-      "type": "code",
-      "answer": "import pandas as pd; df = pd.DataFrame({'Name': ['张三', '李四', '王五'], 'Age': [25, 30, 28]}); print(df)",
-      "explanation": "使用字典创建 DataFrame，字典的键是列名，值是列表数据。"
+      "id": 8,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "answer": "D"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 14,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 15,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 16,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 17,
+      "type": "fill_blank",
+      "answer": "DataFrame"
+    },
+    {
+      "id": 18,
+      "type": "fill_blank",
+      "answer": "df.shape"
+    },
+    {
+      "id": 19,
+      "type": "fill_blank",
+      "answer": "df.at[]"
+    },
+    {
+      "id": 20,
+      "type": "fill_blank",
+      "answer": "df[条件]"
+    },
+    {
+      "id": 21,
+      "type": "coding",
+      "answer": "import pandas as pd\\ndata = {'name': ['Alice', 'Bob'], 'age': [25, 30]}\\ndf = pd.DataFrame(data)\\nprint(df)",
+      "explanation": "使用字典的键作为列名创建 DataFrame"
+    },
+    {
+      "id": 22,
+      "type": "coding",
+      "answer": "print(df.head(3))",
+      "explanation": "head(n) 显示前 n 行，默认为 5 行"
+    },
+    {
+      "id": 23,
+      "type": "coding",
+      "answer": "print(df[['name', 'age']])",
+      "explanation": "使用列表选择多列"
+    },
+    {
+      "id": 24,
+      "type": "coding",
+      "answer": "df['city'] = ['Beijing', 'Shanghai']",
+      "explanation": "直接赋值创建新列"
+    },
+    {
+      "id": 25,
+      "type": "coding",
+      "answer": "print(df.loc[1:3])",
+      "explanation": "loc 使用标签索引，包含 stop"
     }
   ]
 }

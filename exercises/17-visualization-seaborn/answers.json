@@ -1,52 +1,18 @@
 {
+  "topic": "Seaborn 可视化",
+  "total_questions": 55,
   "questions": [
-    {
-      "id": "q1",
-      "type": "choice",
-      "answer": "D",
-      "explanation": "标准导入是 import seaborn as sns，也可以直接 import seaborn。"
-    },
-    {
-      "id": "q2",
-      "type": "choice",
-      "answer": "B",
-      "explanation": "scatterplot() 绘制散点图，barplot() 柱状图，lineplot() 折线图，distplot() 分布图（已弃用）。"
-    },
-    {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "Seaborn 构建在 Matplotlib 之上，提供更美观的默认样式和更简单的 API。"
-    },
-    {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "Seaborn 内置数据集包括 iris, tips, titan  ic, flights 等。"
-    },
-    {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "barplot",
-      "explanation": "sns.barplot(x, y) 绘制柱状图，显示分类变量的数值统计。"
-    },
-    {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "主题",
-      "explanation": "set_style() 设置主题，如 'whitegrid', 'darkgrid', 'white', 'dark'。"
-    },
-    {
-      "id": "q7",
-      "type": "code",
-      "answer": "import seaborn as sns; import matplotlib.pyplot as plt; iris = sns.load_dataset('iris'); sns.scatterplot(x='sepal_length', y='sepal_width', data=iris); plt.show()",
-      "explanation": "使用 data 参数指定 DataFrame，直接使用列名。"
-    },
-    {
-      "id": "q8",
-      "type": "code",
-      "answer": "import seaborn as sns; import matplotlib.pyplot as plt; iris = sns.load_dataset('iris'); sns.boxplot(x='species', y='sepal_length', data=iris); plt.show()",
-      "explanation": "boxplot() 绘制箱线图，x 指定分类列，y 指定数值列。"
-    }
+    {"id": 1, "type": "multiple_choice", "answer": "B"},
+    {"id": 2, "type": "multiple_choice", "answer": "C"},
+    {"id": 3, "type": "multiple_choice", "answer": "C"},
+    {"id": 4, "type": "multiple_choice", "answer": "C"},
+    {"id": 5, "type": "multiple_choice", "answer": "C"},
+    {"id": 6, "type": "multiple_choice", "answer": "D"},
+    {"id": 7, "type": "true_false", "answer": "True"},
+    {"id": 8, "type": "true_false", "answer": "True"},
+    {"id": 9, "type": "fill_blank", "answer": "sns.scatterplot()"},
+    {"id": 10, "type": "fill_blank", "answer": "sns.heatmap()"},
+    {"id": 11, "type": "coding", "answer": "sns.scatterplot(data=df, x='x', y='y')"},
+    {"id": 12, "type": "coding", "answer": "sns.regplot(data=df, x='x', y='y')"}
   ]
 }

@@ -1,0 +1,66 @@
+{
+  "topic": "NumPy 索引与切片",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何选择数组的第一个元素？",
+      "options": ["arr[1]", "arr[0]", "arr.first()", "arr[1:]"],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何选择多行？",
+      "options": ["arr[0,1]", "arr[0:2]", "arr(0:2)", "arr{0:2}"],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "什么是布尔索引？",
+      "options": ["按值选择", "按条件选择", "按位置选择", "按标签选择"],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何使用 fancy indexing？",
+      "options": ["arr[[1,2,3]]", "arr[1,2,3]", "两者都可以", "arr{1,2,3}"],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "NumPy 数组切片返回原数组的视图。",
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 进行切片操作。",
+      "answer": ":"
+    },
+    {
+      "id": 7,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：选择数组的特定元素",
+      "requirement": "使用多维索引"
+    },
+    {
+      "id": 8,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：使用布尔索引筛选数据",
+      "requirement": "arr[arr > 5]"
+    }
+  ]
+}

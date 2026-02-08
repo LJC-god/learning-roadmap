@@ -1,52 +1,15 @@
 {
+  "topic": "Pandas 数据合并",
+  "total_questions": 55,
   "questions": [
-    {
-      "id": "q1",
-      "type": "choice",
-      "answer": "D",
-      "explanation": "concat 用于连接（堆叠），merge 用于基于列合并，join 用于基于索引合并。"
-    },
-    {
-      "id": "q2",
-      "type": "choice",
-      "answer": "A",
-      "explanation": "concat() 的默认 join='outer'，保留所有列。join='inner' 只保留共同的列。"
-    },
-    {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "merge() 类似 SQL JOIN，支持 inner、outer、left、right 四种合并方式。"
-    },
-    {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "join() 默认基于索引合并，可以使用 on 参数指定索引列。"
-    },
-    {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "axis",
-      "explanation": "axis=0 表示垂直堆叠（行方向），axis=1 表示水平拼接（列方向）。"
-    },
-    {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "inner",
-      "explanation": "merge() 默认使用 inner join，只保留两边都有的键。"
-    },
-    {
-      "id": "q7",
-      "type": "code",
-      "answer": "import pandas as pd; df1 = pd.DataFrame({'ID': [1, 2, 3], 'Name': ['张三', '李四', '王五']}); df2 = pd.DataFrame({'ID': [1, 2, 3], 'Score': [85, 90, 78]}); print(pd.merge(df1, df2, on='ID'))",
-      "explanation": "基于 'ID' 列进行内连接，只保留两边都有的 ID。"
-    },
-    {
-      "id": "q8",
-      "type": "code",
-      "answer": "import pandas as pd; df1 = pd.DataFrame({'ID': [1, 2], 'Name': ['张三', '李四']}); df2 = pd.DataFrame({'ID': [2, 3], 'Score': [90, 85]}); print(pd.merge(df1, df2, on='ID', how='outer'))",
-      "explanation": "外连接保留所有 ID，缺失的值用 NaN 填充。"
-    }
+    {"id": 1, "type": "multiple_choice", "answer": "C"},
+    {"id": 2, "type": "multiple_choice", "answer": "B"},
+    {"id": 3, "type": "multiple_choice", "answer": "A"},
+    {"id": 4, "type": "multiple_choice", "answer": "A"},
+    {"id": 5, "type": "true_false", "answer": "True"},
+    {"id": 6, "type": "fill_blank", "answer": "pd.merge()"},
+    {"id": 7, "type": "fill_blank", "answer": "pd.concat()"},
+    {"id": 8, "type": "coding", "answer": "merged = pd.merge(df1, df2, on='key')"},
+    {"id": 9, "type": "coding", "answer": "combined = pd.concat([df1, df2])"}
   ]
 }

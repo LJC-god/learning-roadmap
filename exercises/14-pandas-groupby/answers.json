@@ -1,52 +1,14 @@
 {
+  "topic": "Pandas 分组聚合",
+  "total_questions": 55,
   "questions": [
-    {
-      "id": "q1",
-      "type": "choice",
-      "answer": "B",
-      "explanation": "groupby() 是 Pandas 中进行分组操作的标准方法，语法为 df.groupby('列名')。"
-    },
-    {
-      "id": "q2",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "groupby() 只进行分组，返回 GroupBy 对象，不会自动聚合。需要显式调用聚合函数。"
-    },
-    {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "agg() 可以传入列表同时应用多个聚合函数，如 ['sum', 'mean', 'count']。"
-    },
-    {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "df.groupby(['列1', '列2']) 按多列分组，形成层级索引（MultiIndex）。"
-    },
-    {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "mean",
-      "explanation": "mean() 计算数值列的平均值，返回分组后的聚合结果。"
-    },
-    {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "agg",
-      "explanation": "agg() 是 aggregate() 的别名，两者功能相同。"
-    },
-    {
-      "id": "q7",
-      "type": "code",
-      "answer": "import pandas as pd; df = pd.DataFrame({'City': ['北京', '上海', '北京', '上海'], 'Sales': [100, 200, 150, 250]}); print(df.groupby('City')['Sales'].mean())",
-      "explanation": "groupby('City')['Sales'].mean() 按城市分组，计算每个城市的平均销售额。"
-    },
-    {
-      "id": "q8",
-      "type": "code",
-      "answer": "import pandas as pd; df = pd.DataFrame({'City': ['北京', '上海', '北京', '上海'], 'Sales': [100, 200, 150, 250]}); print(df.groupby('City')['Sales'].agg(['mean', 'sum', 'count']))",
-      "explanation": "agg() 传入函数列表，同时计算平均值、总和和计数。"
-    }
+    {"id": 1, "type": "multiple_choice", "answer": "A"},
+    {"id": 2, "type": "multiple_choice", "answer": "B"},
+    {"id": 3, "type": "multiple_choice", "answer": "A"},
+    {"id": 4, "type": "multiple_choice", "answer": "A"},
+    {"id": 5, "type": "true_false", "answer": "True"},
+    {"id": 6, "type": "fill_blank", "answer": "groupby()"},
+    {"id": 7, "type": "coding", "answer": "df.groupby('class')['fare'].mean()"},
+    {"id": 8, "type": "coding", "answer": "df.groupby('class').agg({'age': 'mean', 'fare': ['sum', 'count']})"}
   ]
 }

@@ -1,52 +1,126 @@
 {
+  "topic": "Matplotlib 可视化",
+  "total_questions": 60,
   "questions": [
     {
-      "id": "q1",
-      "type": "choice",
-      "answer": "B",
-      "explanation": "标准导入是 import matplotlib.pyplot as plt，使用 plt. 前缀调用函数。"
+      "id": 1,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q2",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "plt.plot() 创建折线图，plt.bar() 柱状图，plt.scatter() 散点图，plt.hist() 直方图。"
+      "id": 2,
+      "type": "multiple_choice",
+      "answer": "D"
     },
     {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "plt.show() 打开图形窗口显示所有图形，在交互式环境中尤为重要。"
+      "id": 3,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "plt.xlabel() 设置 x 轴标签，plt.ylabel() 设置 y 轴标签，plt.title() 设置标题。"
+      "id": 4,
+      "type": "multiple_choice",
+      "answer": "C"
     },
     {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "plt.savefig",
-      "explanation": "savefig() 保存图形，支持 PNG、PDF、JPG 等多种格式。"
+      "id": 5,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "subplot",
-      "explanation": "subplot(2, 3, 1) 创建 2×3 网格的第 1 个子图。"
+      "id": 6,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q7",
-      "type": "code",
-      "answer": "import matplotlib.pyplot as plt; x = [1,2,3,4,5]; y = [1,4,9,16,25]; plt.plot(x, y); plt.title('平方数'); plt.show()",
-      "explanation": "plot() 自动绘制折线图，title() 设置标题。"
+      "id": 7,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q8",
-      "type": "code",
-      "answer": "import matplotlib.pyplot as plt; x = [1,2,3,4,5]; plt.plot(x, [1,2,3,4,5], label='y=x'); plt.plot(x, [1,4,9,16,25], label='y=x²'); plt.legend(); plt.show()",
-      "explanation": "legend() 显示图例，label 参数为每条线指定名称。"
+      "id": 8,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 14,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "answer": "plt.title()"
+    },
+    {
+      "id": 16,
+      "type": "fill_blank",
+      "answer": "plt.grid()"
+    },
+    {
+      "id": 17,
+      "type": "fill_blank",
+      "answer": "plt.xlabel()"
+    },
+    {
+      "id": 18,
+      "type": "fill_blank",
+      "answer": "plt.savefig('filename.png')"
+    },
+    {
+      "id": 19,
+      "type": "coding",
+      "answer": "import matplotlib.pyplot as plt\\nx = [1, 2, 3]\\ny = [1, 4, 9]\\nplt.plot(x, y)\\nplt.show()",
+      "explanation": "最基本的折线图绑制"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "answer": "plt.scatter(x, y, c='red', s=100)\\nplt.title('散点图示例')\\nplt.xlabel('X 轴')\\nplt.ylabel('Y 轴')\\nplt.show()",
+      "explanation": "c='red' 设置颜色，s 设置点大小"
+    },
+    {
+      "id": 21,
+      "type": "coding",
+      "answer": "categories = ['A', 'B', 'C', 'D']\\nvalues = [3, 7, 5, 2]\\nplt.bar(categories, values)\\nplt.show()",
+      "explanation": "柱状图显示类别数据"
+    },
+    {
+      "id": 22,
+      "type": "coding",
+      "answer": "plt.plot(x, y1, label='数据1')\\nplt.plot(x, y2, label='数据2')\\nplt.legend()\\nplt.show()",
+      "explanation": "legend() 显示图例"
+    },
+    {
+      "id": 23,
+      "type": "coding",
+      "answer": "plt.plot(x, y, color='blue', linestyle='--', marker='o')\\nplt.title('自定义样式')\\nplt.grid(True)\\nplt.show()",
+      "explanation": "自定义颜色、线型和标记"
     }
   ]
 }

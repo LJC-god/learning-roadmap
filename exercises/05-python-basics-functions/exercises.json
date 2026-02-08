@@ -1,0 +1,96 @@
+{
+  "topic": "函数",
+  "total_questions": 65,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何定义函数？",
+      "options": ["function name():", "def name():", "create name():", "make name():"],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "函数参数默认值如何表示？",
+      "options": ["param= value", "param: value", "param == value", "param -> value"],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "什么是 *args？",
+      "options": ["关键字参数", "可变位置参数", "默认参数", "命名参数"],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "什么是 **kwargs？",
+      "options": ["可变位置参数", "可变关键字参数", "默认参数", "返回值"],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "return 语句的作用是什么？",
+      "options": ["打印结果", "返回函数值", "结束函数", "退出程序"],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "以下哪个是有效的函数名？",
+      "options": ["my_function", "my-function", "my function", "1function"],
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "函数必须要有 return 语句。",
+      "answer": "False"
+    },
+    {
+      "id": 8,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Python 函数可以返回多个值。",
+      "answer": "True"
+    },
+    {
+      "id": 9,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 关键字定义函数。",
+      "answer": "def"
+    },
+    {
+      "id": 10,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 返回函数值。",
+      "answer": "return"
+    },
+    {
+      "id": 11,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：定义计算平方的函数",
+      "requirement": "使用 def 关键字"
+    },
+    {
+      "id": 12,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：定义带默认参数的函数",
+      "requirement": "设置默认参数值"
+    }
+  ]
+}

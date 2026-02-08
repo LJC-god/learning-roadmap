@@ -1,0 +1,96 @@
+{
+  "topic": "Seaborn 可视化",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Seaborn 是什么？",
+      "options": ["数据分析库", "数据可视化库", "Web 框架", "机器学习库"],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何导入 Seaborn？",
+      "options": ["import seaborn", "import sns", "两者都可以", "import seaborn as sb"],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何绑制关系图？",
+      "options": ["sns.relplot()", "sns.lineplot()", "两者都可以", "sns.relation()"],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何绑制分类图？",
+      "options": ["sns.catplot()", "sns.barplot()", "两者都可以", "sns.categorical()"],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何设置图表样式？",
+      "options": ["sns.set_style()", "sns.set_theme()", "两者都可以", "sns.style()"],
+      "answer": "C"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "distplot 现在推荐用什么？",
+      "options": ["histplot", "displot", "kdeplot", "两者都可以"],
+      "answer": "D"
+    },
+    {
+      "id": 7,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Seaborn 可以与 Matplotlib 结合使用。",
+      "answer": "True"
+    },
+    {
+      "id": 8,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Seaborn 内置了示例数据集。",
+      "answer": "True"
+    },
+    {
+      "id": 9,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 绑制散点图。",
+      "answer": "sns.scatterplot()"
+    },
+    {
+      "id": 10,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 绑制热力图。",
+      "answer": "sns.heatmap()"
+    },
+    {
+      "id": 11,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：绑制散点图",
+      "requirement": "使用 sns.scatterplot()"
+    },
+    {
+      "id": 12,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：绑制带回归线的图",
+      "requirement": "使用 sns.regplot()"
+    }
+  ]
+}

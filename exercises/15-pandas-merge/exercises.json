@@ -1,0 +1,93 @@
+{
+  "topic": "Pandas 数据合并",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何合并两个 DataFrame？",
+      "options": [
+        "pd.merge()",
+        "pd.concat()",
+        "两者都可以",
+        "pd.join()"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "concat 用于什么类型的合并？",
+      "options": [
+        "横向合并",
+        "纵向拼接",
+        "都可以",
+        "按索引合并"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "merge 的 how 参数有哪些选项？",
+      "options": [
+        "left, right, inner, outer",
+        "inner, outer",
+        "left, right",
+        "都可以"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "join 基于什么进行合并？",
+      "options": [
+        "行索引",
+        "列",
+        "都可以",
+        "指定键"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "inner join 只保留两边都有的键。",
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 横向合并数据框。",
+      "answer": "pd.merge()"
+    },
+    {
+      "id": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 纵向拼接数据框。",
+      "answer": "pd.concat()",
+      "type": "fill_blank"
+    },
+    {
+      "id": 7,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：使用 merge 合并数据",
+      "requirement": "基于共同列合并"
+    },
+    {
+      "id": 8,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：使用 concat 拼接数据",
+      "requirement": "纵向拼接两个 DataFrame"
+    }
+  ]
+}

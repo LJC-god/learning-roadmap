@@ -1,0 +1,200 @@
+{
+  "topic": "NumPy 数组创建",
+  "total_questions": 60,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "NumPy 是什么的缩写？",
+      "options": ["Number Python", "Numerical Python", "New Python", "Numeric Python"],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何导入 NumPy 库？",
+      "options": ["import numpy", "import NumPy", "include numpy", "using numpy"],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "NumPy 数组的核心类型是什么？",
+      "options": ["list", "array", "ndarray", "tensor"],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建一个一维数组？",
+      "options": ["np.array([1, 2, 3])", "np.matrix([1, 2, 3])", "np.list([1, 2, 3])", "np.vector([1, 2, 3])"],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何创建一个全 0 的数组？",
+      "options": ["np.zeros(5)", "np.zero(5)", "np.array([0,0,0,0,0])", "两者都可以"],
+      "answer": "D"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何创建一个全 1 的 3x3 数组？",
+      "options": ["np.ones(3)", "np.ones((3,3))", "np.one(3,3)", "np.ones([3,3])"],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何创建一个单位矩阵？",
+      "options": ["np.identity(3)", "np.eye(3)", "np.unit(3)", "两者都可以"],
+      "answer": "D"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "np.arange(0, 10, 2) 生成什么？",
+      "options": ["[0,1,2,3,4,5,6,7,8,9]", "[0,2,4,6,8]", "[0,2,4,6,8,10]", "[1,3,5,7,9]"],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "np.linspace(0, 1, 5) 生成几个点？",
+      "options": ["4", "5", "6", "10"],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何创建一个随机数组？",
+      "options": ["np.random", "np.random()", "np.rand", "random()"],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "np.random.rand(3, 2) 生成什么形状的数组？",
+      "options": ["3行2列", "2行3列", "3x3", "6个元素"],
+      "answer": "A"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何设置随机数种子？",
+      "options": ["np.seed(42)", "np.random.seed(42)", "random.seed(42)", "set.seed(42)"],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "NumPy 数组比 Python 列表执行数值计算更高效。",
+      "answer": "True"
+    },
+    {
+      "id": 14,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "NumPy 数组的所有元素必须是相同类型。",
+      "answer": "True"
+    },
+    {
+      "id": 15,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "np.arange() 和 np.linspace() 的用法完全相同。",
+      "answer": "False"
+    },
+    {
+      "id": 16,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "np.zeros_like(arr) 创建与 arr 形状相同的全 0 数组。",
+      "answer": "True"
+    },
+    {
+      "id": 17,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "NumPy 的核心数组类型是 _____。",
+      "answer": "ndarray"
+    },
+    {
+      "id": 18,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "np.full((2,3), 5) 创建一个 _____ x _____ 的数组，所有元素都是 _____。",
+      "answer": "2, 3, 5"
+    },
+    {
+      "id": 19,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "np.eye(4) 创建 _____ x _____ 的单位矩阵。",
+      "answer": "4, 4"
+    },
+    {
+      "id": 20,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 创建指定范围的等差数列。",
+      "answer": "np.arange"
+    },
+    {
+      "id": 21,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 创建指定数量和范围的等差数列。",
+      "answer": "np.linspace"
+    },
+    {
+      "id": 22,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建一维数组 [1, 2, 3, 4, 5]",
+      "requirement": "使用 np.array()"
+    },
+    {
+      "id": 23,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建 3x3 的全 0 数组",
+      "requirement": "使用 np.zeros()"
+    },
+    {
+      "id": 24,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：创建包含 10 个元素的数组，值从 0 到 1",
+      "requirement": "使用 np.linspace()"
+    },
+    {
+      "id": 25,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建 2x4 的随机数组",
+      "requirement": "使用 np.random.rand()"
+    },
+    {
+      "id": 26,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：创建 3x3 的单位矩阵",
+      "requirement": "使用 np.eye()"
+    }
+  ]
+}

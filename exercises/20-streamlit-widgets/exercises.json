@@ -1,0 +1,206 @@
+{
+  "topic": "Streamlit 组件",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建文本输入框？",
+      "options": [
+        "st.text()",
+        "st.input()",
+        "st.text_input()",
+        "st.input_text()"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何获取用户输入的数字？",
+      "options": [
+        "st.number()",
+        "st.number_input()",
+        "st.int_input()",
+        "st.float_input()"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建滑块组件？",
+      "options": [
+        "st.slider()",
+        "st.slide()",
+        "st.range()",
+        "st.drag()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建复选框？",
+      "options": [
+        "st.checkbox()",
+        "st.check()",
+        "st.box()",
+        "st.tick()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建下拉选择框？",
+      "options": [
+        "st.select()",
+        "st.choose()",
+        "st.dropdown()",
+        "st.pick()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建单选按钮？",
+      "options": [
+        "st.radio()",
+        "st.select_one()",
+        "st.option()",
+        "st.choose_one()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何创建多选框？",
+      "options": [
+        "st.multiselect()",
+        "st.multiple()",
+        "st.checkboxes()",
+        "st.select_multiple()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何上传文件？",
+      "options": [
+        "st.file_upload()",
+        "st.upload()",
+        "st.file()",
+        "st.open()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何显示进度条？",
+      "options": [
+        "st.progress()",
+        "st.bar()",
+        "st.loading()",
+        "st.spinner()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何创建日期选择器？",
+      "options": [
+        "st.date_input()",
+        "st.date()",
+        "st.calendar()",
+        "st.pick_date()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Streamlit 组件的返回值会自动显示。",
+      "answer": "False"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "st.sidebar 将组件添加到侧边栏。",
+      "answer": "True"
+    },
+    {
+      "id": 13,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 获取文本输入。",
+      "answer": "st.text_input()"
+    },
+    {
+      "id": 14,
+      "difficulty": "easy",
+      "question": "使用 _____ 创建滑块。",
+      "answer": "st.slider()",
+      "type": "fill_blank"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 创建下拉选择框。",
+      "answer": "st.selectbox()"
+    },
+    {
+      "id": 16,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 创建进度条。",
+      "answer": "st.progress()"
+    },
+    {
+      "id": 17,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建文本输入和显示",
+      "requirement": "使用 text_input 获取姓名并显示"
+    },
+    {
+      "id": 18,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：创建滑块并获取值",
+      "requirement": "使用 slider 选择 0-100 的值"
+    },
+    {
+      "id": 19,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：创建下拉选择框",
+      "requirement": "选择不同的数据分析方法"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：创建文件上传组件",
+      "requirement": "使用 file_uploader 上传 CSV"
+    }
+  ]
+}

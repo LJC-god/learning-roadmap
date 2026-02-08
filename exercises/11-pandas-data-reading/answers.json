@@ -1,52 +1,14 @@
 {
+  "topic": "Pandas 数据读取",
+  "total_questions": 55,
   "questions": [
-    {
-      "id": "q1",
-      "type": "choice",
-      "answer": "B",
-      "explanation": "pd.read_csv() 是读取逗号分隔值文件的专用函数，是最常用的数据读取方法。"
-    },
-    {
-      "id": "q2",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "delimiter 和 sep 都可以用于指定分隔符，默认是逗号 ,"
-    },
-    {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "read_csv() 默认 header=0，将第一行作为列名。可以设置 header=None 不使用第一行。"
-    },
-    {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "read_excel() 的 sheet_name 参数可以指定工作表名称或索引，如 sheet_name='Sheet1'"
-    },
-    {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "nrows",
-      "explanation": "nrows=n 只读取前 n 行数据，用于快速预览大文件。"
-    },
-    {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "index_col",
-      "explanation": "index_col='列名' 或 index_col=列号 指定某列作为索引。"
-    },
-    {
-      "id": "q7",
-      "type": "code",
-      "answer": "import pandas as pd; df = pd.read_csv('data.csv'); print(df.head())",
-      "explanation": "head() 默认显示前 5 行，head(n) 显示前 n 行。"
-    },
-    {
-      "id": "q8",
-      "type": "code",
-      "answer": "import pandas as pd; df = pd.read_excel('sales.xlsx', skiprows=1, index_col=2); print(df)",
-      "explanation": "skiprows=1 跳过第一行，index_col=2 将第三列（索引从 0 开始）作为索引。"
-    }
+    {"id": 1, "type": "multiple_choice", "answer": "A"},
+    {"id": 2, "type": "multiple_choice", "answer": "A"},
+    {"id": 3, "type": "multiple_choice", "answer": "C"},
+    {"id": 4, "type": "multiple_choice", "answer": "C"},
+    {"id": 5, "type": "true_false", "answer": "True"},
+    {"id": 6, "type": "fill_blank", "answer": "pd.read_csv()"},
+    {"id": 7, "type": "coding", "answer": "df = pd.read_csv('data.csv')"},
+    {"id": 8, "type": "coding", "answer": "df = pd.read_excel('data.xlsx', sheet_name='Sheet1')"}
   ]
 }

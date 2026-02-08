@@ -1,52 +1,14 @@
 {
+  "topic": "NumPy 常用函数",
+  "total_questions": 55,
   "questions": [
-    {
-      "id": "q1",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "np.mean() 计算平均值，np.sum() 计算总和，np.max() 计算最大值，np.abs() 计算绝对值。"
-    },
-    {
-      "id": "q2",
-      "type": "choice",
-      "answer": "B",
-      "explanation": "np.random.randint(low, high, size) 生成 [low, high) 范围内的随机整数，不包括 high。"
-    },
-    {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "np.unique(arr) 返回数组中的唯一值，去除重复，并默认按升序排列。"
-    },
-    {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "np.where(condition, x, y) 是条件选择函数，条件为真选 x，条件为假选 y。"
-    },
-    {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "randn",
-      "explanation": "np.random.randn(size) 生成服从标准正态分布的随机数。"
-    },
-    {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "sort",
-      "explanation": "np.sort(arr) 返回排序后的新数组，arr.sort() 直接在原数组上排序。"
-    },
-    {
-      "id": "q7",
-      "type": "code",
-      "answer": "import numpy as np; arr = np.array([5, 2, 8, 1, 9]); print('最大值:', np.max(arr)); print('最小值:', np.min(arr)); print('排序:', np.sort(arr))",
-      "explanation": "最大值=9，最小值=1，排序后=[1, 2, 5, 8, 9]。"
-    },
-    {
-      "id": "q8",
-      "type": "code",
-      "answer": "import numpy as np; arr = np.random.randint(0, 101, 10); print('数组:', arr); print('大于50的元素:', arr[arr > 50])",
-      "explanation": "使用布尔索引 arr > 50 筛选大于 50 的元素。"
-    }
+    {"id": 1, "type": "multiple_choice", "answer": "C"},
+    {"id": 2, "type": "multiple_choice", "answer": "C"},
+    {"id": 3, "type": "multiple_choice", "answer": "D"},
+    {"id": 4, "type": "multiple_choice", "answer": "C"},
+    {"id": 5, "type": "true_false", "answer": "True"},
+    {"id": 6, "type": "fill_blank", "answer": "np.sum()"},
+    {"id": 7, "type": "coding", "answer": "np.mean(arr)\\nnp.std(arr)\\nnp.median(arr)"},
+    {"id": 8, "type": "coding", "answer": "arr.sum(axis=0)"}
   ]
 }

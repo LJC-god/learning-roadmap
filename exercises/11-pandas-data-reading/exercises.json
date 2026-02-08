@@ -1,0 +1,66 @@
+{
+  "topic": "Pandas 数据读取",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何读取 CSV 文件？",
+      "options": ["pd.read_csv()", "pd.csv()", "pd.load_csv()", "pd.import_csv()"],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何读取 Excel 文件？",
+      "options": ["pd.read_excel()", "pd.excel()", "pd.load_xlsx()", "pd.import_excel()"],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "read_csv 的哪个参数指定分隔符？",
+      "options": ["delimiter", "sep", "两者都可以", "separator"],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何指定某列为索引？",
+      "options": ["index_col", "set_index", "两者都可以", "key_col"],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Pandas 可以读取 JSON 文件。",
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 读取 CSV 文件。",
+      "answer": "pd.read_csv()"
+    },
+    {
+      "id": 7,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：读取 CSV 文件",
+      "requirement": "使用 read_csv()"
+    },
+    {
+      "id": 8,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：读取 Excel 文件",
+      "requirement": "指定工作表名称"
+    }
+  ]
+}

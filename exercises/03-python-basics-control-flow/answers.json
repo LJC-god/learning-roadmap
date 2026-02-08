@@ -1,52 +1,197 @@
 {
+  "topic": "流程控制",
+  "total_questions": 65,
   "questions": [
     {
-      "id": "q1",
-      "type": "choice",
-      "answer": "C",
-      "explanation": "Python 中使用 for 关键字创建循环，也可以使用 while 关键字。A 选项 switch 是 Java 等语言的关键字，Python 没有 switch。"
+      "id": 1,
+      "type": "multiple_choice",
+      "answer": "D"
     },
     {
-      "id": "q2",
-      "type": "choice",
-      "answer": "B",
-      "explanation": "range(n) 生成从 0 到 n-1 的整数序列，不包括 n。range(5) 生成 0, 1, 2, 3, 4。"
+      "id": 2,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q3",
-      "type": "true-false",
-      "answer": "true",
-      "explanation": "elif 是 'else if' 的缩写，用于在 if 和 else 之间添加多个条件判断。"
+      "id": 3,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q4",
-      "type": "true-false",
-      "answer": "false",
-      "explanation": "break 用于完全退出循环，而 continue 用于跳过当前迭代继续下一次迭代。题目描述的是 continue 的作用。"
+      "id": 4,
+      "type": "multiple_choice",
+      "answer": "A"
     },
     {
-      "id": "q5",
-      "type": "fill-blank",
-      "answer": "break",
-      "explanation": "break 关键字用于立即退出整个循环结构，执行循环之后的代码。"
+      "id": 5,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q6",
-      "type": "fill-blank",
-      "answer": "1, 101",
-      "explanation": "range(start, stop) 生成从 start 到 stop-1 的序列。要生成 1 到 100，应使用 range(1, 101)。"
+      "id": 6,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q7",
-      "type": "code",
-      "answer": "total = 0; for i in range(1, 11): total += i; print(total)",
-      "explanation": "使用累加器 total，初始值为 0，循环累加 1 到 10 的每个数。range(1, 11) 生成 1-10 的整数。"
+      "id": 7,
+      "type": "multiple_choice",
+      "answer": "B"
     },
     {
-      "id": "q8",
-      "type": "code",
-      "answer": "year = 2024; if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0): print('闰年'); else: print('平年')",
-      "explanation": "根据闰年规则判断：能被4整除但不能被100整除，或者能被400整除。2024是闰年，输出'闰年'。"
+      "id": 8,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 15,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 17,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 18,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 19,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 20,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 21,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 22,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 23,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 24,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 25,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 26,
+      "type": "fill_blank",
+      "answer": "if"
+    },
+    {
+      "id": 27,
+      "type": "fill_blank",
+      "answer": "for"
+    },
+    {
+      "id": 28,
+      "type": "fill_blank",
+      "answer": "break"
+    },
+    {
+      "id": 29,
+      "type": "fill_blank",
+      "answer": "continue"
+    },
+    {
+      "id": 30,
+      "type": "fill_blank",
+      "answer": "0"
+    },
+    {
+      "id": 31,
+      "type": "fill_blank",
+      "answer": "不包含"
+    },
+    {
+      "id": 32,
+      "type": "coding",
+      "answer": "for i in range(1, 11):\\n    if i % 2 == 0:\\n        print(i)",
+      "explanation": "遍历 1-10，判断偶数并打印"
+    },
+    {
+      "id": 33,
+      "type": "coding",
+      "answer": "i = 1\\ntotal = 0\\nwhile i <= 100:\\n    total += i\\n    i += 1\\nprint(total)",
+      "explanation": "使用 while 循环累加计算"
+    },
+    {
+      "id": 34,
+      "type": "coding",
+      "answer": "for attempt in range(1, 4):\\n    password = input(f\"第 {attempt} 次尝试: \")\\n    if password == \"123456\":\\n        print(\"登录成功!\")\\n        break\\nelse:\\n    print(\"登录失败!\")",
+      "explanation": "使用 for-else 结构，最多3次尝试"
+    },
+    {
+      "id": 35,
+      "type": "coding",
+      "answer": "squares = [x**2 for x in range(1, 11)]\\nprint(squares)",
+      "explanation": "列表推导式生成平方数列表"
+    },
+    {
+      "id": 36,
+      "type": "coding",
+      "answer": "fruits = ['apple', 'banana', 'orange']\\nfor index, fruit in enumerate(fruits):\\n    print(f\"索引 {index}: {fruit}\")",
+      "explanation": "enumerate 返回 (index, value) 元组"
+    },
+    {
+      "id": 37,
+      "type": "coding",
+      "answer": "names = ['Alice', 'Bob']\\nages = [25, 30]\\nfor name, age in zip(names, ages):\\n    print(f\"{name}: {age}岁\")",
+      "explanation": "zip 合并两个列表并行遍历"
     }
   ]
 }

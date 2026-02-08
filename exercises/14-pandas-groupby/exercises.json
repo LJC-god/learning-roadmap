@@ -1,0 +1,66 @@
+{
+  "topic": "Pandas 分组聚合",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "分组聚合的步骤是什么？",
+      "options": ["split-apply-combine", "combine-apply-split", "apply-combine-split", "split-combine-apply"],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "groupby 用于什么操作？",
+      "options": ["排序", "分组", "筛选", "合并"],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "agg() 函数的作用是什么？",
+      "options": ["聚合计算", "分组", "筛选", "排序"],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何计算分组后的平均值？",
+      "options": ["groupby().mean()", "groupby().avg()", "两者都可以", "groupby().calc()"],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "groupby 可以按多个列分组。",
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 进行分组操作。",
+      "answer": "groupby()"
+    },
+    {
+      "id": 7,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：按类别分组计算均值",
+      "requirement": "使用 groupby().mean()"
+    },
+    {
+      "id": 8,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：使用 agg 进行多种聚合",
+      "requirement": "同时计算 sum、mean、count"
+    }
+  ]
+}

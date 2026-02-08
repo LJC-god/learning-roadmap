@@ -1,0 +1,66 @@
+{
+  "topic": "Pandas 数据清洗",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何检测缺失值？",
+      "options": ["isnull()", "isna()", "两者都可以", "missing()"],
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何删除缺失值？",
+      "options": ["dropna()", "drop_null()", "remove_na()", "clean_na()"],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何填充缺失值？",
+      "options": ["fillna()", "fill_null()", "replace_na()", "patch_na()"],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何删除重复行？",
+      "options": ["drop_duplicates()", "remove_duplicates()", "unique()", "dedup()"],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "dropna() 默认删除包含缺失值的行。",
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 检测缺失值。",
+      "answer": "isnull()"
+    },
+    {
+      "id": 7,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：检测并处理缺失值",
+      "requirement": "使用 fillna() 或 dropna()"
+    },
+    {
+      "id": 8,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：删除重复数据",
+      "requirement": "使用 drop_duplicates()"
+    }
+  ]
+}

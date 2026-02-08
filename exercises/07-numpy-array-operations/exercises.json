@@ -1,0 +1,81 @@
+{
+  "topic": "NumPy 数组操作",
+  "total_questions": 60,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何获取数组的形状？",
+      "options": ["arr.shape", "arr.size", "arr.dims", "arr.length"],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何获取数组的元素总数？",
+      "options": ["arr.shape", "arr.size", "arr.len", "arr.count"],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何重塑数组形状？",
+      "options": ["arr.reshape()", "arr.resize()", "arr.shape()", "arr.change_shape()"],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何转置数组？",
+      "options": ["arr.T", "arr.transpose()", "两者都可以", "arr.swap()"],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何展平数组？",
+      "options": ["arr.flatten()", "arr.flat()", "两者都可以", "arr.reshape(-1)"],
+      "answer": "D"
+    },
+    {
+      "id": 6,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "NumPy 数组支持向量化运算。",
+      "answer": "True"
+    },
+    {
+      "id": 7,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "arr.shape 返回 _____ 类型。",
+      "answer": "tuple"
+    },
+    {
+      "id": 8,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 进行数组切片。",
+      "answer": ":"
+    },
+    {
+      "id": 9,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：进行数组的基本运算",
+      "requirement": "加减乘除操作"
+    },
+    {
+      "id": 10,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：重塑数组形状",
+      "requirement": "使用 reshape()"
+    }
+  ]
+}

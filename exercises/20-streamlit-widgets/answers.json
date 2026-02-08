@@ -1,0 +1,110 @@
+{
+  "topic": "Streamlit 组件",
+  "total_questions": 55,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "answer": "False"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "answer": "True"
+    },
+    {
+      "id": 13,
+      "type": "fill_blank",
+      "answer": "st.text_input()"
+    },
+    {
+      "id": 14,
+      "type": "fill_blank",
+      "answer": "st.slider()"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "answer": "st.selectbox()"
+    },
+    {
+      "id": 16,
+      "type": "fill_blank",
+      "answer": "st.progress()"
+    },
+    {
+      "id": 17,
+      "type": "coding",
+      "answer": "name = st.text_input('请输入您的姓名:')\\nif name:\\n    st.write(f'您好, {name}!')",
+      "explanation": "text_input 返回用户输入的文本"
+    },
+    {
+      "id": 18,
+      "type": "coding",
+      "answer": "value = st.slider('选择值', 0, 100, 50)\\nst.write(f'当前值: {value}')",
+      "explanation": "slider(min, max, default)"
+    },
+    {
+      "id": 19,
+      "type": "coding",
+      "answer": "option = st.selectbox('选择方法', ['平均值', '中位数', '最大值', '最小值'])\\nst.write(f'您选择了: {option}')",
+      "explanation": "selectbox 返回选中的选项"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "answer": "uploaded_file = st.file_uploader('上传 CSV 文件', type=['csv'])\\nif uploaded_file:\\n    st.success('文件上传成功!')",
+      "explanation": "file_uploader 返回上传的文件对象"
+    }
+  ]
+}

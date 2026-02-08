@@ -1,0 +1,227 @@
+{
+  "topic": "Matplotlib 可视化",
+  "total_questions": 60,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Matplotlib 的哪个子模块用于绑图？",
+      "options": [
+        "matplotlib.pylab",
+        "matplotlib.pyplot",
+        "matplotlib.graph",
+        "matplotlib.chart"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何导入 pyplot？",
+      "options": [
+        "import matplotlib.pyplot as plt",
+        "import pyplot",
+        "from matplotlib import pyplot",
+        "都可以"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何创建一个新图表？",
+      "options": [
+        "plt.plot()",
+        "plt.figure()",
+        "plt.new()",
+        "plt.create()"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何绑制折线图？",
+      "options": [
+        "plt.scatter()",
+        "plt.line()",
+        "plt.plot()",
+        "plt.draw()"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何添加图表标题？",
+      "options": [
+        "plt.title()",
+        "plt.heading()",
+        "plt.caption()",
+        "plt.label()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "difficulty": "medium",
+      "question": "如何添加轴标签？",
+      "options": [
+        "plt.xlabel() / plt.ylabel()",
+        "plt.xlabel / plt.ylabel()",
+        "plt.label_x() / plt.label_y()",
+        "plt.axis_label()"
+      ],
+      "answer": "A",
+      "type": "multiple_choice"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何显示图例？",
+      "options": [
+        "plt.legend()",
+        "plt.key()",
+        "plt.show()",
+        "plt.display()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何将图表保存为图片？",
+      "options": [
+        "plt.save()",
+        "plt.savefig()",
+        "plt.export()",
+        "plt.image()"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何绑制散点图？",
+      "options": [
+        "plt.scatter(x, y)",
+        "plt.point(x, y)",
+        "plt.dot(x, y)",
+        "plt.scatterplot(x, y)"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何绑制柱状图？",
+      "options": [
+        "plt.bar()",
+        "plt.histogram()",
+        "plt.column()",
+        "plt.barplot()"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "plt.show() 必须在最后调用以显示图表。",
+      "answer": "True"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "plt.plot() 只能绑制折线图。",
+      "answer": "False"
+    },
+    {
+      "id": 13,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "可以使用 plt.grid(True) 添加网格线。",
+      "answer": "True"
+    },
+    {
+      "id": 14,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "plt.xlim() 和 plt.ylim() 设置坐标轴范围。",
+      "answer": "True"
+    },
+    {
+      "id": 15,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 设置图表标题。",
+      "answer": "plt.title()"
+    },
+    {
+      "id": 16,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 添加网格线。",
+      "answer": "plt.grid()"
+    },
+    {
+      "id": 17,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 设置 x 轴标签。",
+      "answer": "plt.xlabel()"
+    },
+    {
+      "id": 18,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 保存图表为 PNG 格式。",
+      "answer": "plt.savefig('filename.png')"
+    },
+    {
+      "id": 19,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：绑制简单的折线图",
+      "requirement": "绑制 x=[1,2,3], y=[1,4,9] 的折线图"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：绑制带标题和标签的散点图",
+      "requirement": "添加标题、轴标签和颜色"
+    },
+    {
+      "id": 21,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：绑制柱状图比较数据",
+      "requirement": "显示不同类别的数量"
+    },
+    {
+      "id": 22,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：在同一图表中绑制多条线",
+      "requirement": "添加图例区分不同数据"
+    },
+    {
+      "id": 23,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：自定义图表样式",
+      "requirement": "设置颜色、线型和标记"
+    }
+  ]
+}

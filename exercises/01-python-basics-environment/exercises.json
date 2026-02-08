@@ -1,0 +1,377 @@
+{
+  "topic": "Python 环境与基础",
+  "total_questions": 70,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "以下哪个不是 Python 语言的特性？",
+      "options": ["解释型语言", "面向对象", "需要编译", "跨平台"],
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Python 源代码文件的默认扩展名是什么？",
+      "options": [".java", ".py", ".cpp", ".c"],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何启动 Python 交互式解释器？",
+      "options": ["python", "py", "python3", "都可以"],
+      "answer": "D"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "在 Python 中，单行注释使用什么符号？",
+      "options": ["//", "#", "/*", "--"],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "PEP 是什么的缩写？",
+      "options": ["Python Enhancement Proposal", "Python Edition Protocol", "Program Enhancement Process", "Python Execution Path"],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "以下哪个不是 Python 的实现版本？",
+      "options": ["CPython", "Jython", "Pyython", "IronPython"],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Python 2.x 和 Python 3.x 的主要区别是什么？",
+      "options": ["语法完全相同", "print 语句变为函数", "没有区别", "性能差异很大"],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何在命令行中运行 Python 脚本？",
+      "options": ["python script.py", "run script.py", "execute script.py", "start script.py"],
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "IDLE 是什么？",
+      "options": ["Python 的集成开发环境", "一种数据库", "一种操作系统", "一种编程语言"],
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Python 是一种什么类型的语言？",
+      "options": ["编译型语言", "解释型语言", "汇编语言", "机器语言"],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "以下哪个不是常用的 Python IDE？",
+      "options": ["PyCharm", "VS Code", "Eclipse", "MySQL"],
+      "answer": "D"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "如何查看 Python 版本？",
+      "options": ["python --version", "python -v", "两者都可以", "都不可以"],
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "pip 是什么？",
+      "options": ["Python 包管理工具", "Python 解释器", "Python 调试器", "Python 编译器"],
+      "answer": "A"
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何安装 Python 包？",
+      "options": ["pip install 包名", "python install 包名", "install 包名", "get 包名"],
+      "answer": "A"
+    },
+    {
+      "id": 15,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "venv 或 virtualenv 是什么？",
+      "options": ["代码编辑器", "版本控制系统", "虚拟环境管理工具", "调试工具"],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "使用虚拟环境的主要目的是什么？",
+      "options": ["提高运行速度", "隔离项目依赖", "增加代码安全性", "减少内存占用"],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "Python 的创始人是？",
+      "options": ["Guido van Rossum", "James Gosling", "Bjarne Stroustrup", "Dennis Ritchie"],
+      "answer": "A"
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Python 首次发布是在哪一年？",
+      "options": ["1989", "1991", "1995", "2000"],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "以下哪种不是 Python 的编程范式？",
+      "options": ["面向过程", "面向对象", "函数式", "硬件级编程"],
+      "answer": "D"
+    },
+    {
+      "id": 20,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "在 Jupyter Notebook 中，运行单元格使用什么快捷键？",
+      "options": ["Ctrl+C", "Shift+Enter", "Alt+Enter", "Ctrl+Enter"],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Anaconda 是什么？",
+      "options": ["Python 解释器", "Python 包发行版", "代码编辑器", "操作系统"],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 是一种编译型语言。",
+      "answer": "False"
+    },
+    {
+      "id": 23,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 代码在执行前需要先编译。",
+      "answer": "False"
+    },
+    {
+      "id": 24,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 支持多种编程范式。",
+      "answer": "True"
+    },
+    {
+      "id": 25,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 是开源免费的。",
+      "answer": "True"
+    },
+    {
+      "id": 26,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Python 2.x 仍然是官方推荐使用的版本。",
+      "answer": "False"
+    },
+    {
+      "id": 27,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 代码块通过缩进来定义。",
+      "answer": "True"
+    },
+    {
+      "id": 28,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "所有 Python 实现都使用 GIL。",
+      "answer": "False"
+    },
+    {
+      "id": 29,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "Python 可以在 Windows、Linux、Mac 等操作系统上运行。",
+      "answer": "True"
+    },
+    {
+      "id": 30,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Python 3.x 完全向后兼容 Python 2.x。",
+      "answer": "False"
+    },
+    {
+      "id": 31,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "在 Python 中，变量不需要声明类型。",
+      "answer": "True"
+    },
+    {
+      "id": 32,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Jython 代码可以调用 Java 类库。",
+      "answer": "True"
+    },
+    {
+      "id": 33,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "Python 的创始人是 _____ van Rossum。",
+      "answer": "Guido"
+    },
+    {
+      "id": 34,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "Python 源代码文件的标准扩展名是 _____。",
+      "answer": ".py"
+    },
+    {
+      "id": 35,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "单行注释以 _____ 符号开头。",
+      "answer": "#"
+    },
+    {
+      "id": 36,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "PEP 的全称是 _____。",
+      "answer": "Python Enhancement Proposal"
+    },
+    {
+      "id": 37,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "Python 是一种 _____ 型（解释型/编译型）语言。",
+      "answer": "解释型"
+    },
+    {
+      "id": 38,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "CPython 是 Python 的 _____ 实现。",
+      "answer": "官方"
+    },
+    {
+      "id": 39,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "多行注释可以使用三引号来表示，如 _____hello world_____。",
+      "answer": "''' 或 \"\"\""
+    },
+    {
+      "id": 40,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "使用 _____ 命令可以安装 Python 包。",
+      "answer": "pip"
+    },
+    {
+      "id": 41,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "虚拟环境可以 _____（隔离/统一）项目依赖。",
+      "answer": "隔离"
+    },
+    {
+      "id": 42,
+      "type": "fill_blank",
+      "difficulty": "medium",
+      "question": "Jython 运行在 _____ 虚拟机之上。",
+      "answer": "JVM"
+    },
+    {
+      "id": 43,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：打印 Hello, World!",
+      "requirement": "使用 print() 函数输出 Hello, World!"
+    },
+    {
+      "id": 44,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：计算并打印 1+2+3+...+100 的和",
+      "requirement": "使用循环计算 1 到 100 的累加和"
+    },
+    {
+      "id": 45,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：打印当前 Python 版本信息",
+      "requirement": "使用 sys 模块获取版本信息"
+    },
+    {
+      "id": 46,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：打印你的名字和当前日期",
+      "requirement": "使用 datetime 模块获取当前日期"
+    },
+    {
+      "id": 47,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：查看已安装的所有包及其版本",
+      "requirement": "使用 pip list 命令"
+    },
+    {
+      "id": 48,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：在 Python 交互模式下计算 2 的 10 次方",
+      "requirement": "使用 ** 运算符"
+    },
+    {
+      "id": 49,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：创建一个简单的 Python 脚本并运行它",
+      "requirement": "创建包含多行代码的 .py 文件并执行"
+    },
+    {
+      "id": 50,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：使用帮助功能查看 print 函数的使用方法",
+      "requirement": "使用 help(print)"
+    }
+  ]
+}

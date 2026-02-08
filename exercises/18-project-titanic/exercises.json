@@ -1,0 +1,95 @@
+{
+  "topic": "泰坦尼克号项目实战",
+  "total_questions": 60,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "泰坦尼克号数据集包含什么信息？",
+      "options": ["乘客个人信息", "船的信息", "天气信息", "都可以"],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "目标变量是什么？",
+      "options": ["Age", "Fare", "Survived", "Pclass"],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "如何加载泰坦尼克号数据？",
+      "options": ["sns.load_dataset('titanic')", "pd.read_csv('titanic.csv')", "两者都可以", "pd.read_excel('titanic.xlsx')"],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Embarked 列表示什么？",
+      "options": ["登船港口", "目的地", "船舱等级", "票价"],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Pclass 列表示什么？",
+      "options": ["登船港口", "乘客等级", "生存状态", "性别"],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "数据集存在缺失值。",
+      "answer": "True"
+    },
+    {
+      "id": 7,
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Age 列需要进行缺失值处理。",
+      "answer": "True"
+    },
+    {
+      "id": 8,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 查看数据基本信息。",
+      "answer": "df.info()"
+    },
+    {
+      "id": 9,
+      "type": "fill_blank",
+      "difficulty": "easy",
+      "question": "使用 _____ 查看生存率。",
+      "answer": "df['Survived'].mean()"
+    },
+    {
+      "id": 10,
+      "type": "coding",
+      "difficulty": "easy",
+      "question": "编写程序：加载并探索数据",
+      "requirement": "加载数据并查看基本信息"
+    },
+    {
+      "id": 11,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：分析生存率与性别的关系",
+      "requirement": "按性别分组计算生存率"
+    },
+    {
+      "id": 12,
+      "type": "coding",
+      "difficulty": "medium",
+      "question": "编写程序：处理缺失值",
+      "requirement": "填充 Age 列的缺失值"
+    }
+  ]
+}
