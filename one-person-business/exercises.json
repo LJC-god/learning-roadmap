@@ -1,0 +1,447 @@
+{
+  "topic": "Dan Koe 一人公司完整学习路线",
+  "total_questions": 195,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 1: 一人公司概念",
+      "question": "一人公司的核心优势是什么？",
+      "options": [
+        "A. 低启动成本和全球市场覆盖",
+        "B. 需要雇佣大量员工",
+        "C. 需要实体办公空间",
+        "D. 需要大量初始资金"
+      ],
+      "answer": "A",
+      "explanation": "一人公司的核心优势是：一个人 + 互联网，极低成本启动，全球市场覆盖，完全自动化。"
+    },
+    {
+      "id": 2,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 1: 一人公司概念",
+      "question": "一人公司意味着完全不需要与人互动。",
+      "answer": "False",
+      "explanation": "一人公司仍然需要与受众互动，建立信任和个人品牌。完全孤立的模式无法成功。"
+    },
+    {
+      "id": 3,
+      "type": "fill_in_blank",
+      "difficulty": "easy",
+      "chapter": "Week 1: 一人公司概念",
+      "question": "收入公式是：收入 = 受众 × ____ × 价格",
+      "answer": "转化率",
+      "explanation": "收入公式的核心三要素：受众 × 转化率 × 价格"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "chapter": "Week 1: 一人公司概念",
+      "question": "\"1000个铁杆粉丝\"理论的作者是谁？",
+      "options": [
+        "A. Kevin Kelly",
+        "B. Dan Koe",
+        "C. Tim Ferriss",
+        "D. Seth Godin"
+      ],
+      "answer": "A",
+      "explanation": "1000个铁杆粉丝理论由 Kevin Kelly 提出，但 Dan Koe 将其发扬光大用于一人公司。"
+    },
+    {
+      "id": 5,
+      "type": "coding",
+      "difficulty": "medium",
+      "chapter": "Week 1: 一人公司概念",
+      "question": "如果你的转化率是2%，每用户平均收入是100元，你需要多少受众才能月入10000元？\n\n请写出计算公式和答案。",
+      "answer": "解析：10000 ÷ (100 × 0.02) = 5000 受众\n\n如果转化率提升到5%，需要多少受众？"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "chapter": "Week 2: 个人品牌定位",
+      "question": "以下哪个是好的个人定位陈述？",
+      "options": [
+        "A. 我帮助人们变得更好",
+        "B. 我帮助25-35岁的职场人从月薪8000提升到20000",
+        "C. 我是成功学教练",
+        "D. 我教人赚钱"
+      ],
+      "answer": "B",
+      "explanation": "好的定位需要具体：明确的目标人群 + 明确的结果 + 具体的数字。"
+    },
+    {
+      "id": 7,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 2: 个人品牌定位",
+      "question": "\"帮助所有人\"是一个好的定位策略。",
+      "answer": "False",
+      "explanation": "帮助所有人等于没有定位。好的定位需要足够具体，能让你在细分市场中脱颖而出。"
+    },
+    {
+      "id": 8,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 2: 个人品牌定位",
+      "question": "ICP 指的是 ____",
+      "answer": "Ideal Customer Profile（理想客户画像）",
+      "explanation": "ICP 是理想客户画像，包括人口统计特征、痛点、支付能力等。"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "chapter": "Week 2: 个人品牌定位",
+      "question": "个人品牌定位需要满足哪三个条件？",
+      "options": [
+        "A. 有市场需求、有独特性、你擅长",
+        "B. 有市场需求、热门、你感兴趣",
+        "C. 有利润空间、你擅长、竞争激烈",
+        "D. 高客单价、竞争少、你了解"
+      ],
+      "answer": "A",
+      "explanation": "好的定位三要素：市场需求 + 独特性 + 你的专长。"
+    },
+    {
+      "id": 10,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 2: 个人品牌定位",
+      "question": "写出你的定位陈述：\n\n我是 [身份]，帮助 [目标客户] 实现 [他们想要的结果]，\n通过 [你的独特方法]，不同于 [竞争对手]，\n因为 [你的独特背景]。\n\n请用中文填写完整。"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 3: 知识体系构建",
+      "question": "\"80/20法则\"在知识学习中意味着什么？",
+      "options": [
+        "A. 20%的知识产生80%的结果",
+        "B. 80%的时间应该用于学习",
+        "C. 20%的学生掌握80%的知识",
+        "D. 学习需要80%的时间"
+      ],
+      "answer": "A",
+      "explanation": "80/20法则（帕累托法则）意味着找到那20%的核心知识，可以产生80%的实际效果。"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 3: 知识体系构建",
+      "question": "\"T型人才\"指的是在一个领域非常深入，其他领域也很深入的人才。",
+      "answer": "False",
+      "explanation": "\"T型人才\"是指在一个领域深入（T的竖），同时对其他相关领域有广泛了解（T的横）的人才。"
+    },
+    {
+      "id": 13,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 3: 知识体系构建",
+      "question": "费曼学习法的四个步骤：学习 → 用简单语言____ → 发现盲点 → 简化再简化",
+      "answer": "解释",
+      "explanation": "费曼学习法的核心是：通过教学的方式检验自己是否真正理解。"
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "chapter": "Week 3: 知识体系构建",
+      "question": "知识体系金字塔中，最底层是什么？",
+      "options": [
+        "A. 专家地位",
+        "B. 知识产品",
+        "C. 学习能力",
+        "D. 知识框架"
+      ],
+      "answer": "C",
+      "explanation": "金字塔从下到上：学习能力 → 核心技能 → 知识框架 → 知识产品 → 专家地位"
+    },
+    {
+      "id": 15,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 3: 知识体系构建",
+      "question": "创建一个你的知识框架图，包括：\n1. 你的核心技能（2个）\n2. 你的独特方法论（1个）\n3. 你能解决的核心问题（3个）"
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 4: 内容创作能力",
+      "question": "\"钩子内容\"（Hook Content）的主要目的是什么？",
+      "options": [
+        "A. 直接销售产品",
+        "B. 吸引注意力并引发好奇",
+        "C. 详细解释概念",
+        "D. 提供完整解决方案"
+      ],
+      "answer": "B",
+      "explanation": "钩子内容的目的是在信息过载的环境中抓住受众注意力，是内容漏斗的第一步。"
+    },
+    {
+      "id": 17,
+      "type": "true_false",
+      "difficulty": "medium",
+      "chapter": "Week 4: 内容创作能力",
+      "question": "内容应该平均分配精力在所有类型上。",
+      "answer": "False",
+      "explanation": "Dan Koe 建议将80%精力放在高价值内容上，20%放在钩子内容上。"
+    },
+    {
+      "id": 18,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 4: 内容创作能力",
+      "question": "AIDA 模型代表：Attention（注意）、Interest（兴趣）、____（欲望）、Action（行动）",
+      "answer": "Desire（欲望）",
+      "explanation": "AIDA 是经典的销售漏斗模型，用于内容创作也非常有效。"
+    },
+    {
+      "id": 19,
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "chapter": "Week 4: 内容创作能力",
+      "question": "\"内容再循环\"（Content Repurposing）的最佳实践是什么？",
+      "options": [
+        "A. 照搬别人的内容",
+        "B. 将一个长内容转化为多个短内容",
+        "C. 一次创作，无限分发",
+        "D. 只做短视频"
+      ],
+      "answer": "B",
+      "explanation": "最佳实践是将一个核心内容（如长视频）转化为多个形式（文章、音频、社交帖子等）。"
+    },
+    {
+      "id": 20,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 4: 内容创作能力",
+      "question": "设计一个为期一周的内容日历：\n- 周一：\n- 周二：\n- 周三：\n- 周四：\n- 周五：\n- 周六：\n- 周日："
+    },
+    {
+      "id": 21,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 5: 数字产品开发",
+      "question": "\"最小可行产品\"（MVP）指的是什么？",
+      "options": [
+        "A. 最小可能的价格",
+        "B. 具备核心功能的最简版本",
+        "C. 最便宜的产品",
+        "D. 最小规模的产品"
+      ],
+      "answer": "B",
+      "explanation": "MVP 是具备核心功能的最简版本，用于快速验证市场需求。"
+    },
+    {
+      "id": 22,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 5: 数字产品开发",
+      "question": "一人公司应该先有产品再有受众。",
+      "answer": "False",
+      "explanation": "Dan Koe 建议：先建立受众，再根据受众需求开发产品。"
+    },
+    {
+      "id": 23,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 5: 数字产品开发",
+      "question": "产品阶梯模型从下到上：免费内容 → 电子书 → ____ → 课程 → 高级咨询",
+      "answer": "电子书 / 数字产品 / 中端产品",
+      "explanation": "典型的产品阶梯：免费内容 → 低价电子书 → 中价课程 → 高价咨询"
+    },
+    {
+      "id": 24,
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "chapter": "Week 5: 数字产品开发",
+      "question": "Dan Koe 为什么建议高价策略？",
+      "options": [
+        "A. 高价更容易销售",
+        "B. 高价减少客户数量，提高服务质量",
+        "C. 高价意味着高品质",
+        "D. 高价是行业标准"
+      ],
+      "answer": "B",
+      "explanation": "高价策略让你服务更少的客户，但获得更高的收入，同时提供更好的服务。"
+    },
+    {
+      "id": 25,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 5: 数字产品开发",
+      "question": "设计你的第一个数字产品：\n1. 产品名称：\n2. 解决的问题：\n3. 目标用户：\n4. 核心内容（至少3点）：\n5. 定价："
+    },
+    {
+      "id": 26,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 6: 流量系统",
+      "question": "\"内容营销\"属于哪种流量类型？",
+      "options": [
+        "A. 付费流量",
+        "B. 免费流量",
+        "C. 两者都不是",
+        "D. 付费和免费都是"
+      ],
+      "answer": "B",
+      "explanation": "内容营销是通过创造有价值内容吸引受众，属于免费流量策略。"
+    },
+    {
+      "id": 27,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 6: 流量系统",
+      "question": "算法不会影响内容的分发和曝光。",
+      "answer": "False",
+      "explanation": "平台的算法决定谁能看到你的内容，理解算法对流量至关重要。"
+    },
+    {
+      "id": 28,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 6: 流量系统",
+      "question": "内容漏斗的转化路径通常是：钩子 → 价值内容 → ____ → 产品销售",
+      "answer": "信任 / 转化内容 / 行动号召",
+      "explanation": "从钩子吸引注意力，到价值内容建立信任，最后是转化内容促进行动。"
+    },
+    {
+      "id": 29,
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "chapter": "Week 6: 流量系统",
+      "question": "\"内容再循环\"（Content Repurposing）的最佳实践是什么？",
+      "options": [
+        "A. 在所有平台发布相同内容",
+        "B. 将一个核心内容转化为多种形式",
+        "C. 只专注于一个平台",
+        "D. 付费推广所有内容"
+      ],
+      "answer": "B",
+      "explanation": "最佳实践是将一个核心内容（如长视频）转化为多种形式以覆盖不同受众。"
+    },
+    {
+      "id": 30,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 6: 流量系统",
+      "question": "设计你的内容分发策略：\n1. 主要发布平台（选择2-3个）：\n2. 每个平台的发布频率：\n3. 内容再循环计划："
+    },
+    {
+      "id": 31,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 7: 销售系统",
+      "question": "\"价值先行\"在销售中意味着什么？",
+      "options": [
+        "A. 先给价值，再谈销售",
+        "B. 先要付费，再给价值",
+        "C. 价值不重要，销售才重要",
+        "D. 价值和价格无关"
+      ],
+      "answer": "A",
+      "explanation": "价值先行是指在销售之前，先通过免费内容建立信任和价值。"
+    },
+    {
+      "id": 32,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 7: 销售系统",
+      "question": "稀缺性（Scarcity）只能通过限时来实现。",
+      "answer": "False",
+      "explanation": "稀缺性可以通过数量限制、时间限制、独家访问等多种方式实现。"
+    },
+    {
+      "id": 33,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 7: 销售系统",
+      "question": "Robert Cialdini 提出的6个影响力原则之一：互惠、承诺与一致、社会认同、权威、喜好、____",
+      "answer": "稀缺",
+      "explanation": "稀缺性是驱动购买的强大心理因素。"
+    },
+    {
+      "id": 34,
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "chapter": "Week 7: 销售系统",
+      "question": "销售漏斗中，从1000个受众到最终购买客户，典型转化率是多少？",
+      "options": [
+        "A. 10%",
+        "B. 5%",
+        "C. 1%",
+        "D. 0.1%"
+      ],
+      "answer": "C",
+      "explanation": "典型漏斗转化：1000人 → 100人（价值内容）→ 10人（转化）→ 1人（购买），约1%。"
+    },
+    {
+      "id": 35,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 7: 销售系统",
+      "question": "设计你的销售漏斗：\n1. 钩子内容类型：\n2. 价值内容主题：\n3. 转化策略：\n4. 行动号召："
+    },
+    {
+      "id": 36,
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "chapter": "Week 8: 自动化系统",
+      "question": "\"自动化\"在一人公司中的正确理解是？",
+      "options": [
+        "A. 完全不用工作",
+        "B. 不重复做同样的工作",
+        "C. 雇佣机器人",
+        "D. 外包所有工作"
+      ],
+      "answer": "B",
+      "explanation": "自动化是让系统替你工作，而不是让你不工作。重点是消除重复任务。"
+    },
+    {
+      "id": 37,
+      "type": "true_false",
+      "difficulty": "easy",
+      "chapter": "Week 8: 自动化系统",
+      "question": "SOP（标准操作程序）只适用于大型企业。",
+      "answer": "False",
+      "explanation": "SOP 对一人公司尤其重要，它帮助你系统化工作，提高效率。"
+    },
+    {
+      "id": 38,
+      "type": "fill_in_blank",
+      "difficulty": "medium",
+      "chapter": "Week 8: 自动化系统",
+      "question": "Zapier 和 Make 属于 ____ 工具，用于连接不同的应用程序",
+      "answer": "自动化 / iPaaS",
+      "explanation": "这类工具称为 iPaaS（集成平台即服务），用于连接不同工具实现自动化。"
+    },
+    {
+      "id": 39,
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "chapter": "Week 8: 自动化系统",
+      "question": "在自动化金字塔中，应该优先自动化什么？",
+      "options": [
+        "A. 最花时间的任务",
+        "B. 重复性高的任务",
+        "C. 高价值的任务",
+        "D. 最简单的任务"
+      ],
+      "answer": "B",
+      "explanation": "应该优先自动化那些重复性高且不产生差异化价值的任务。"
+    },
+    {
+      "id": 40,
+      "type": "coding",
+      "difficulty": "hard",
+      "chapter": "Week 8: 自动化系统",
+      "question": "列出至少5个你应该自动化的任务，以及对应的工具：\n\n1. \n2. \n3. \n4. \n5. "
+    }
+  ]
+}

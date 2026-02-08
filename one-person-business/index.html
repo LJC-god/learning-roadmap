@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan Koe 一人公司 - 练习题库</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .option { transition: all 0.2s ease; cursor: pointer; }
+        .option:hover { background: #e0f2fe; border-color: #0ea5e9; }
+        .option.selected { background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; border-color: #0ea5e9; }
+        .tf-option { transition: all 0.2s ease; cursor: pointer; }
+        .tf-option:hover { transform: scale(1.02); }
+        .tf-option.selected { background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; }
+        .submit-btn { background: linear-gradient(135deg, #0ea5e9, #8b5cf6); transition: all 0.3s ease; }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-primary-50 via-white to-purple-50 min-h-screen">
+    <div class="bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Dan Koe 一人公司完整学习路线</h1>
+            <p class="text-xl opacity-90">12周学习计划，195道练习题，从概念到实战</p>
+            <div class="mt-6 flex justify-center gap-6 flex-wrap">
+                <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3">
+                    <div class="text-2xl font-bold">195</div>
+                    <div class="text-sm opacity-80">道练习题</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3">
+                    <div class="text-2xl font-bold">12</div>
+                    <div class="text-sm opacity-80">周学习</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-xl px-6 py-3">
+                    <div class="text-2xl font-bold">4</div>
+                    <div class="text-sm opacity-80">大模块</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-8">
+        <form id="quiz-form" class="space-y-8">
+
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">选择题目</h2>
+                <div class="space-y-6">
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 1 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 1: 一人公司概念</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">一人公司的核心优势是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_1" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 低启动成本和全球市场覆盖</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_1" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 需要雇佣大量员工</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_1" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 需要实体办公空间</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_1" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 需要大量初始资金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 2 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">中等</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 1: 一人公司概念</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"1000个铁杆粉丝"理论的作者是谁？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_2" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. Kevin Kelly</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_2" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. Dan Koe</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_2" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. Tim Ferriss</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_2" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. Seth Godin</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 3 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">中等</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 2: 个人品牌定位</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">以下哪个是好的个人定位陈述？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_3" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 我帮助人们变得更好</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_3" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 我帮助25-35岁的职场人从月薪8000提升到20000</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_3" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 我是成功学教练</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_3" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 我教人赚钱</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 4 题</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">困难</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 2: 个人品牌定位</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">个人品牌定位需要满足哪三个条件？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_4" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 有市场需求、有独特性、你擅长</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_4" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 有市场需求、热门、你感兴趣</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_4" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 有利润空间、你擅长、竞争激烈</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_4" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 高客单价、竞争少、你了解</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 5 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 3: 知识体系构建</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"80/20法则"在知识学习中意味着什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_5" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 20%的知识产生80%的结果</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_5" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 80%的时间应该用于学习</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_5" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 20%的学生掌握80%的知识</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_5" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 学习需要80%的时间</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 6 题</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">中等</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 3: 知识体系构建</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">知识体系金字塔中，最底层是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_6" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 专家地位</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_6" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 知识产品</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_6" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 学习能力</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_6" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 知识框架</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 7 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 4: 内容创作能力</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"钩子内容"（Hook Content）的主要目的是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_7" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 直接销售产品</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_7" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 吸引注意力并引发好奇</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_7" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 详细解释概念</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_7" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 提供完整解决方案</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 8 题</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">困难</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 4: 内容创作能力</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"内容再循环"（Content Repurposing）的最佳实践是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_8" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 照搬别人的内容</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_8" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 将一个长内容转化为多个短内容</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_8" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 一次创作，无限分发</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_8" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 只做短视频</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 9 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 5: 数字产品开发</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"最小可行产品"（MVP）指的是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_9" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 最小可能的价格</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_9" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 具备核心功能的最简版本</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_9" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 最便宜的产品</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_9" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 最小规模的产品</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 10 题</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">困难</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 5: 数字产品开发</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">Dan Koe 为什么建议高价策略？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_10" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 高价更容易销售</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_10" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 高价减少客户数量，提高服务质量</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_10" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 高价意味着高品质</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_10" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 高价是行业标准</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 11 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 6: 流量系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"内容营销"属于哪种流量类型？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_11" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 付费流量</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_11" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 免费流量</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_11" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 两者都不是</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_11" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 付费和免费都是</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 12 题</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">困难</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 6: 流量系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"内容再循环"（Content Repurposing）的最佳实践是什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_12" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 在所有平台发布相同内容</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_12" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 将一个核心内容转化为多种形式</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_12" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 只专注于一个平台</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_12" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 付费推广所有内容</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 13 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 7: 销售系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"价值先行"在销售中意味着什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_13" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 先给价值，再谈销售</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_13" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 先要付费，再给价值</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_13" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 价值不重要，销售才重要</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_13" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 价值和价格无关</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 14 题</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">困难</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 7: 销售系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">销售漏斗中，从1000个受众到最终购买客户，典型转化率是多少？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_14" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 10%</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_14" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 5%</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_14" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 1%</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_14" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 0.1%</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 15 题</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">简单</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 8: 自动化系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"自动化"在一人公司中的正确理解是？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_15" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 完全不用工作</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_15" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 不重复做同样的工作</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_15" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 雇佣机器人</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_15" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 外包所有工作</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-lg text-sm">第 16 题</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">困难</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 8: 自动化系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">在自动化金字塔中，应该优先自动化什么？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_16" value="A" class="w-5 h-5 text-primary-500">
+                                <span>A. A. 最花时间的任务</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_16" value="B" class="w-5 h-5 text-primary-500">
+                                <span>B. B. 重复性高的任务</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_16" value="C" class="w-5 h-5 text-primary-500">
+                                <span>C. C. 高价值的任务</span>
+                            </label>
+
+                            <label class="option flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200">
+                                <input type="radio" name="mc_16" value="D" class="w-5 h-5 text-primary-500">
+                                <span>D. D. 最简单的任务</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">判断题目</h2>
+                <div class="space-y-6">
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 1 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 1: 一人公司概念</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">一人公司意味着完全不需要与人互动。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_1', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_1', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_1" id="tf_1_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 2 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 2: 个人品牌定位</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"帮助所有人"是一个好的定位策略。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_2', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_2', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_2" id="tf_2_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 3 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 3: 知识体系构建</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">"T型人才"指的是在一个领域非常深入，其他领域也很深入的人才。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_3', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_3', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_3" id="tf_3_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 4 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 4: 内容创作能力</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">内容应该平均分配精力在所有类型上。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_4', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_4', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_4" id="tf_4_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 5 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 5: 数字产品开发</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">一人公司应该先有产品再有受众。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_5', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_5', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_5" id="tf_5_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 6 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 6: 流量系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">算法不会影响内容的分发和曝光。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_6', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_6', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_6" id="tf_6_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 7 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 7: 销售系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">稀缺性（Scarcity）只能通过限时来实现。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_7', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_7', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_7" id="tf_7_value">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm">第 8 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 8: 自动化系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">SOP（标准操作程序）只适用于大型企业。</p>
+                        <div class="flex gap-4">
+                            <div class="tf-option selected flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_8', 'True')">✓ True</div>
+                            <div class="tf-option flex-1 p-4 bg-white rounded-xl border-2 border-gray-200 text-center" onclick="selectTF(this, 'tf_8', 'False')">✗ False</div>
+                        </div>
+                        <input type="hidden" name="tf_8" id="tf_8_value">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">填空题目</h2>
+                <div class="space-y-6">
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 1 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 1: 一人公司概念</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">收入公式是：收入 = 受众 × ____ × 价格</p>
+                        <input type="text" name="fill_1" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 2 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 2: 个人品牌定位</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">ICP 指的是 ____</p>
+                        <input type="text" name="fill_2" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 3 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 3: 知识体系构建</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">费曼学习法的四个步骤：学习 → 用简单语言____ → 发现盲点 → 简化再简化</p>
+                        <input type="text" name="fill_3" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 4 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 4: 内容创作能力</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">AIDA 模型代表：Attention（注意）、Interest（兴趣）、____（欲望）、Action（行动）</p>
+                        <input type="text" name="fill_4" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 5 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 5: 数字产品开发</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">产品阶梯模型从下到上：免费内容 → 电子书 → ____ → 课程 → 高级咨询</p>
+                        <input type="text" name="fill_5" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 6 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 6: 流量系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">内容漏斗的转化路径通常是：钩子 → 价值内容 → ____ → 产品销售</p>
+                        <input type="text" name="fill_6" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 7 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 7: 销售系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">Robert Cialdini 提出的6个影响力原则之一：互惠、承诺与一致、社会认同、权威、喜好、____</p>
+                        <input type="text" name="fill_7" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm">第 8 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 8: 自动化系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">Zapier 和 Make 属于 ____ 工具，用于连接不同的应用程序</p>
+                        <input type="text" name="fill_8" placeholder="在这里填写答案..." class="w-full p-4 bg-white rounded-xl border-2 border-gray-200 focus:border-yellow-400 outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">开放思考题</h2>
+                <div class="space-y-6">
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 1 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 1: 一人公司概念</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">如果你的转化率是2%，每用户平均收入是100元，你需要多少受众才能月入10000元？<br><br>请写出计算公式和答案。</p>
+                        <textarea name="code_1" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 2 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 2: 个人品牌定位</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">写出你的定位陈述：<br><br>我是 [身份]，帮助 [目标客户] 实现 [他们想要的结果]，<br>通过 [你的独特方法]，不同于 [竞争对手]，<br>因为 [你的独特背景]。<br><br>请用中文填写完整。</p>
+                        <textarea name="code_2" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 3 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 3: 知识体系构建</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">创建一个你的知识框架图，包括：<br>1. 你的核心技能（2个）<br>2. 你的独特方法论（1个）<br>3. 你能解决的核心问题（3个）</p>
+                        <textarea name="code_3" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 4 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 4: 内容创作能力</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">设计一个为期一周的内容日历：<br>- 周一：<br>- 周二：<br>- 周三：<br>- 周四：<br>- 周五：<br>- 周六：<br>- 周日：</p>
+                        <textarea name="code_4" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 5 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 5: 数字产品开发</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">设计你的第一个数字产品：<br>1. 产品名称：<br>2. 解决的问题：<br>3. 目标用户：<br>4. 核心内容（至少3点）：<br>5. 定价：</p>
+                        <textarea name="code_5" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 6 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 6: 流量系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">设计你的内容分发策略：<br>1. 主要发布平台（选择2-3个）：<br>2. 每个平台的发布频率：<br>3. 内容再循环计划：</p>
+                        <textarea name="code_6" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 7 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 7: 销售系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">设计你的销售漏斗：<br>1. 钩子内容类型：<br>2. 价值内容主题：<br>3. 转化策略：<br>4. 行动号召：</p>
+                        <textarea name="code_7" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm">第 8 题</span>
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-lg text-sm">Week 8: 自动化系统</span>
+                        </div>
+                        <p class="text-gray-800 text-lg mb-4">列出至少5个你应该自动化的任务，以及对应的工具：<br><br>1. <br>2. <br>3. <br>4. <br>5. </p>
+                        <textarea name="code_8" placeholder="在这里写下你的思考和答案..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 outline-none text-green-400 font-mono" rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="submit-btn inline-flex items-center gap-3 px-12 py-5 text-white font-bold text-xl rounded-2xl shadow-lg">
+                    提交答案
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function selectTF(element, name, value) {
+            const parent = element.parentElement;
+            parent.querySelectorAll(".tf-option").forEach(el => el.classList.remove("selected"));
+            element.classList.add("selected");
+            document.getElementById(name + "_value").value = value;
+        }
+        
+        document.getElementById("quiz-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("答案已保存！可以叫我帮你检查。");
+            // Save to localStorage and download
+            const formData = new FormData(this);
+            const answers = { topic: "Dan Koe 一人公司", answers: {} };
+            
+            for (let [key, value] of formData.entries()) {
+                answers.answers[key] = value;
+            }
+            localStorage.setItem("dan_koe", JSON.stringify(answers));
+            const blob = new Blob([JSON.stringify(answers, null, 2)], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "dan_koe_answers.json";
+            a.click();
+        });
+    </script>
+</body>
+</html>
