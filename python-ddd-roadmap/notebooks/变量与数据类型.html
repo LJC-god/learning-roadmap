@@ -58,19 +58,42 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
         }
+        
+        .video-section {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-primary-50 via-white to-purple-50 min-h-screen">
-    <!-- Header -->
-    <div class="bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 text-white py-12">
+    <!-- Video Section -->
+    <div class="video-section text-white py-8">
         <div class="container mx-auto px-4">
-            <a href="../../index.html" class="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <span>返回首页</span>
-            </a>
-            
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <a href="../../index.html" class="flex items-center gap-2 text-white/80 hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        <span>返回首页</span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <div class="text-white/90 text-lg">📺 相关视频教程：</div>
+                    <a href="https://www.youtube.com/results?search_query=Python+变量+数据类型" target="_blank" class="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-2 rounded-full font-bold hover:bg-white/90 transition shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        <span>观看视频</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 text-white py-12 -mt-4">
+        <div class="container mx-auto px-4">
             <div class="flex flex-wrap items-center justify-between gap-6">
                 <div>
                     <div class="text-white/80 text-sm mb-2">Python → DDD 架构路线</div>
@@ -925,7 +948,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建变量 a、b、c，分别赋值 10、20、30</p>
-                        <textarea name="code_1" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_1" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -934,7 +957,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：交换两个变量的值</p>
-                        <textarea name="code_2" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_2" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -943,7 +966,7 @@
                             <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：判断一个变量的类型是否为字符串</p>
-                        <textarea name="code_3" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_3" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -952,7 +975,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：将字符串 '123' 转换为整数并相加</p>
-                        <textarea name="code_4" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_4" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -961,7 +984,7 @@
                             <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：打印一个浮点数的整数部分和小数部分</p>
-                        <textarea name="code_5" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_5" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -970,7 +993,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：创建一个复数并分别提取实部和虚部</p>
-                        <textarea name="code_6" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_6" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -979,7 +1002,7 @@
                             <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium">中等</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：比较 '==' 和 'is' 的区别</p>
-                        <textarea name="code_7" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_7" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
 
                     <div class="question-card bg-gray-50 rounded-2xl p-6 border-2 border-transparent hover:border-purple-200 transition-all">
@@ -988,7 +1011,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">简单</span>
                         </div>
                         <p class="text-gray-800 text-lg mb-4 leading-relaxed">编写程序：将十进制数转换为二进制、八进制、十六进制</p>
-                        <textarea name="code_8" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8" style="font-family: 'Monaco', 'Menlo', 'Courier New', monospace;"></textarea>
+                        <textarea name="code_8" placeholder="# 在这里编写你的代码..." class="w-full p-4 bg-slate-900 rounded-xl border-2 border-slate-700 focus:border-purple-400 focus:outline-none transition-colors text-lg font-mono text-green-400" rows="8"></textarea>
                     </div>
                 </div>
             </div>

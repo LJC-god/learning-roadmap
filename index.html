@@ -77,6 +77,14 @@
             animation: float 4s ease-in-out infinite;
         }
         
+        .video-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .video-btn:hover {
+            transform: scale(1.1);
+        }
+        
         .topic-card:nth-child(2) .topic-icon { animation-delay: 0.5s; }
         .topic-card:nth-child(3) .topic-icon { animation-delay: 1s; }
         .topic-card:nth-child(4) .topic-icon { animation-delay: 1.5s; }
@@ -102,6 +110,11 @@
                 <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                     从基础到实战，系统化学习 Python 数据分析与可视化
                 </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#python-ddd" class="bg-white/20 backdrop-blur px-6 py-2 rounded-full text-white hover:bg-white/30 transition">🐍 Python 基础 → DDD</a>
+                    <a href="#data-analyst" class="bg-white/20 backdrop-blur px-6 py-2 rounded-full text-white hover:bg-white/30 transition">📊 数据分析</a>
+                    <a href="#streamlit" class="bg-white/20 backdrop-blur px-6 py-2 rounded-full text-white hover:bg-white/30 transition">🎨 Streamlit</a>
+                </div>
             </div>
             
             <!-- Stats Bar -->
@@ -127,7 +140,7 @@
         <div class="space-y-16">
             
             <!-- Python → DDD 路线 -->
-            <div class="card-gradient rounded-3xl p-8 shadow-2xl">
+            <div id="python-ddd" class="card-gradient rounded-3xl p-8 shadow-2xl">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="text-5xl">🐍</div>
                     <div>
@@ -137,36 +150,56 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-                    <a href="python-ddd-roadmap/notebooks/Python 环境与基础.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">💻</div>
                         <h3 class="font-bold text-gray-800 mb-2">Python 环境与基础</h3>
-                        <p class="text-sm text-primary-600 font-medium">70 道练习题</p>
-                    </a>
-                    <a href="python-ddd-roadmap/notebooks/变量与数据类型.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">70 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="python-ddd-roadmap/notebooks/Python 环境与基础.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Python+入门+教程" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">📦</div>
                         <h3 class="font-bold text-gray-800 mb-2">变量与数据类型</h3>
-                        <p class="text-sm text-primary-600 font-medium">70 道练习题</p>
-                    </a>
-                    <a href="python-ddd-roadmap/notebooks/流程控制.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">70 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="python-ddd-roadmap/notebooks/变量与数据类型.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Python+变量+数据类型" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🔄</div>
                         <h3 class="font-bold text-gray-800 mb-2">流程控制</h3>
-                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
-                    </a>
-                    <a href="python-ddd-roadmap/notebooks/数据结构.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">65 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="python-ddd-roadmap/notebooks/流程控制.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Python+流程控制+if+for" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🗂️</div>
                         <h3 class="font-bold text-gray-800 mb-2">数据结构</h3>
-                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
-                    </a>
-                    <a href="python-ddd-roadmap/notebooks/函数.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">65 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="python-ddd-roadmap/notebooks/数据结构.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Python+列表+字典+元组" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">⚡</div>
                         <h3 class="font-bold text-gray-800 mb-2">函数</h3>
-                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
-                    </a>
+                        <p class="text-sm text-primary-600 font-medium mb-3">65 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="python-ddd-roadmap/notebooks/函数.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Python+函数+def" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- 数据分析师路线 -->
-            <div class="card-gradient rounded-3xl p-8 shadow-2xl">
+            <div id="data-analyst" class="card-gradient rounded-3xl p-8 shadow-2xl">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="text-5xl">📊</div>
                     <div>
@@ -176,76 +209,128 @@
                 </div>
                 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                    <a href="data-analyst-roadmap/notebooks/NumPy 数组创建.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🔢</div>
                         <h3 class="font-bold text-gray-800 mb-2">NumPy 数组创建</h3>
-                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/NumPy 数组操作.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">60 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/NumPy 数组创建.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=NumPy+入门+教程" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">⚙️</div>
                         <h3 class="font-bold text-gray-800 mb-2">NumPy 数组操作</h3>
-                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/NumPy 索引与切片.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">60 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/NumPy 数组操作.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=NumPy+数组操作" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🔍</div>
                         <h3 class="font-bold text-gray-800 mb-2">NumPy 索引与切片</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/NumPy 常用函数.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/NumPy 索引与切片.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=NumPy+索引+切片" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">📐</div>
                         <h3 class="font-bold text-gray-800 mb-2">NumPy 常用函数</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas DataFrame.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/NumPy 常用函数.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=NumPy+函数+教程" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">📋</div>
                         <h3 class="font-bold text-gray-800 mb-2">Pandas DataFrame</h3>
-                        <p class="text-sm text-primary-600 font-medium">65 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据读取.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">65 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Pandas DataFrame.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Pandas+DataFrame+入门" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">📖</div>
                         <h3 class="font-bold text-gray-800 mb-2">Pandas 数据读取</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据清洗.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Pandas 数据读取.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Pandas+读取+csv+excel" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🧹</div>
                         <h3 class="font-bold text-gray-800 mb-2">Pandas 数据清洗</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据筛选.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Pandas 数据清洗.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Pandas+数据清洗" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🎯</div>
                         <h3 class="font-bold text-gray-800 mb-2">Pandas 数据筛选</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 分组聚合.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Pandas 数据筛选.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Pandas+数据筛选+filter" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">📈</div>
                         <h3 class="font-bold text-gray-800 mb-2">Pandas 分组聚合</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Pandas 数据合并.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Pandas 分组聚合.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Pandas+groupby+分组聚合" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🔗</div>
                         <h3 class="font-bold text-gray-800 mb-2">Pandas 数据合并</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Matplotlib 可视化.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Pandas 数据合并.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Pandas+merge+concat+数据合并" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">📊</div>
                         <h3 class="font-bold text-gray-800 mb-2">Matplotlib 可视化</h3>
-                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/Seaborn 可视化.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">60 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Matplotlib 可视化.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Matplotlib+可视化+教程" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🎨</div>
                         <h3 class="font-bold text-gray-800 mb-2">Seaborn 可视化</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="data-analyst-roadmap/notebooks/泰坦尼克号项目实战.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/Seaborn 可视化.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Seaborn+可视化+教程" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🚢</div>
                         <h3 class="font-bold text-gray-800 mb-2">泰坦尼克号项目实战</h3>
-                        <p class="text-sm text-primary-600 font-medium">60 道练习题</p>
-                    </a>
+                        <p class="text-sm text-primary-600 font-medium mb-3">60 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="data-analyst-roadmap/notebooks/泰坦尼克号项目实战.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=泰坦尼克号+kaggle+数据分析项目" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Streamlit 可视化路线 -->
-            <div class="card-gradient rounded-3xl p-8 shadow-2xl">
+            <div id="streamlit" class="card-gradient rounded-3xl p-8 shadow-2xl">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="text-5xl">🎨</div>
                     <div>
@@ -255,16 +340,24 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                    <a href="streamlit-roadmap/notebooks/Streamlit 基础.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🏗️</div>
                         <h3 class="font-bold text-gray-800 mb-2">Streamlit 基础</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
-                    <a href="streamlit-roadmap/notebooks/Streamlit 组件.html" class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="streamlit-roadmap/notebooks/Streamlit 基础.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Streamlit+入门+教程" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
+                    <div class="topic-card card-gradient rounded-2xl p-6 text-center shadow-lg border border-gray-100">
                         <div class="topic-icon mb-4">🧩</div>
                         <h3 class="font-bold text-gray-800 mb-2">Streamlit 组件</h3>
-                        <p class="text-sm text-primary-600 font-medium">55 道练习题</p>
-                    </a>
+                        <p class="text-sm text-primary-600 font-medium mb-3">55 道练习题</p>
+                        <div class="flex gap-2 justify-center">
+                            <a href="streamlit-roadmap/notebooks/Streamlit 组件.html" class="video-btn bg-gradient-to-r from-primary-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm font-bold">🎯 练习</a>
+                            <a href="https://www.youtube.com/results?search_query=Streamlit+组件+widget" target="_blank" class="video-btn bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold">📺 视频</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -281,6 +374,7 @@
         <!-- Footer -->
         <div class="mt-16 text-center text-white/60">
             <p>🚀 学习路线 · 练习题库 · 持续更新</p>
+            <p class="mt-2 text-sm">💡 提示：点击「📺 视频」按钮可查看相关学习视频</p>
         </div>
     </div>
 </body>
