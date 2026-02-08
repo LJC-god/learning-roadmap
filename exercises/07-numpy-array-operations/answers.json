@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "NumPy 数组运算默认是元素级运算，对应位置的元素进行加法。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "np.sort() 是排序函数，其他都是数学运算函数：sum 求和，mean 求平均值，sqrt 求平方根。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "广播是 NumPy 的强大特性，允许不同形状的数组进行运算，自动扩展到兼容形状。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "NumPy 使用向量化运算，arr * 2 会将数组中的每个元素都乘以 2，结果是一个新数组。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "sum",
+      "explanation": "np.sum(arr) 计算数组所有元素的和。也可以使用 arr.sum() 方法。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "sqrt",
+      "explanation": "np.sqrt(arr) 计算数组每个元素的平方根，返回一个新数组。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import numpy as np; a = np.array([1, 2, 3]); b = np.array([4, 5, 6]); print('和:', a + b); print('差:', a - b)",
+      "explanation": "和 = [5, 7, 9]，差 = [-3, -3, -3]。NumPy 自动进行元素级运算。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import numpy as np; arr = np.array([1, 4, 9, 16]); print('平方根:', np.sqrt(arr)); print('平均值:', np.mean(arr))",
+      "explanation": "平方根 = [1, 2, 3, 4]，平均值 = (1+4+9+16)/4 = 7.5。"
+    }
+  ]
+}

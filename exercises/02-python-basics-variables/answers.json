@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "列表 (list) 是可变数据类型，可以修改其内容。字符串、元组和数字都是不可变数据类型。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "A",
+      "explanation": "Python 中变量赋值是引用传递。当执行 b = a 时，b 和 a 指向同一个对象。但后续 a = 20 只是将 a 重新指向新的对象，b 的值不变仍然是 10。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Python 是动态类型语言，变量在赋值时自动确定类型，不需要像 Java 或 C 那样预先声明类型。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "在 Python 中，True 等价于 1，False 等价于 0，可以参与数值运算。例如：True + True = 2。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "type()",
+      "explanation": "type() 是 Python 的内置函数，用于返回变量的数据类型，例如：type(x) 返回 x 的类型。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "None",
+      "explanation": "None 是 Python 中的特殊常量，表示空值或无值，类似于其他语言中的 null。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "name = '张三'; age = 25; height = 1.75; print(name, age, height)",
+      "explanation": "Python 中可以使用逗号分隔多个变量，print 会自动添加空格分隔。也可以使用 f-string：print(f'姓名：{name}，年龄：{age}，身高：{height}')"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "s = '3.14'; f = float(s); i = 42; result = f * 2; print(f, str(i), result)",
+      "explanation": "使用 float() 将字符串转换为浮点数，使用 str() 将整数转换为字符串。3.14 * 2 = 6.28"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "D",
+      "explanation": "Eclipse 是一个 Java IDE，不是 Python 的官方 IDE。PyCharm、VS Code 和 Jupyter Notebook 都是常用的 Python 开发环境。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "A",
+      "explanation": "pip install 包名 是使用 pip 安装 Python 包的标准命令。其他选项都是不正确的语法。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "false",
+      "explanation": "Python 2 和 Python 3 不完全兼容，有很多语法和标准库的差异。Python 2 的代码通常需要在 Python 3 中进行修改才能运行。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "conda 是一个强大的环境管理工具，可以创建隔离的虚拟环境，每个环境可以有不同的 Python 版本和包版本。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "Win",
+      "explanation": "Windows 键（通常显示 Windows 标志）+ R 组合键可以快速打开运行对话框。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "python",
+      "explanation": "在命令行中输入 'python --version' 可以显示 Python 版本号，输入 'python' 可以启动 Python 解释器。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "print('Hello, Python World!')",
+      "explanation": "使用 print() 函数输出字符串。Python 3 中 print 是一个函数，需要使用括号。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import numpy; print(numpy.__version__)",
+      "explanation": "首先需要安装 numpy (pip install numpy)，然后导入并查看版本。简化写法：import numpy as np; print(np.__version__)"
+    }
+  ]
+}

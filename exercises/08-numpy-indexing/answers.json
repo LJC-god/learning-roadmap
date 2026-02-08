@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "索引从 0 开始，arr[0]=10, arr[1]=20, arr[2]=30, arr[3]=40, arr[4]=50。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "NumPy 使用行优先索引，arr[1, 2] 表示第 2 行第 3 列的元素。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Python 中大多数序列类型的索引都从 0 开始，这是 Python 的设计规范。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "arr[::2] 等同于 arr[0:len(arr):2]，步长为 2，从第一个元素开始，每隔一个取一个。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "-1",
+      "explanation": "负数索引从数组末尾开始计数，-1 表示最后一个元素，-2 表示倒数第二个。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "1:4",
+      "explanation": "切片语法 [start:stop] 从 start 开始，到 stop 结束（不包含 stop）。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import numpy as np; arr = np.arange(10); print(arr[3:8])",
+      "explanation": "arr[3:8] 选取索引 3 到 7 的元素，即 [3, 4, 5, 6, 7]。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import numpy as np; arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]); print(arr[2])",
+      "explanation": "arr[2] 直接选取第 3 行（索引从 0 开始），输出 [7, 8, 9]。"
+    }
+  ]
+}

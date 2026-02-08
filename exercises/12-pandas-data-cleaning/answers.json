@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "A",
+      "explanation": "isnull() 返回布尔 DataFrame，True 表示缺失值。notnull() 相反，empty() 检测是否为空 DataFrame。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "A",
+      "explanation": "dropna() 删除包含缺失值的行/列，fillna() 填充缺失值，replace() 替换值。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "fillna() 可以用固定值、均值、前向填充等方法填充缺失值。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "drop_duplicates() 默认比较所有列的值，只保留第一次出现的行。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "isnull",
+      "explanation": "df.isnull().sum() 返回每列缺失值数量的 Series。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "lower",
+      "explanation": "df['列名'].str.lower() 将字符串转换为小写，upper() 转换为大写。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import pandas as pd; import numpy as np; df = pd.DataFrame({'A': [1, 2, np.nan], 'B': [5, np.nan, np.nan]}); print(df.isnull().sum())",
+      "explanation": "isnull() 返回布尔 DataFrame，sum() 默认按列求和得到每列缺失值数量。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import pandas as pd; import numpy as np; df = pd.DataFrame({'A': [1, 2, 2], 'B': [4, np.nan, np.nan]}); df['B'] = df['B'].fillna(df['B'].mean()); df = df.drop_duplicates(); print(df)",
+      "explanation": "fillna(df['B'].mean()) 用 B 列均值填充缺失值，drop_duplicates() 删除重复行。"
+    }
+  ]
+}

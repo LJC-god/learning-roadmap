@@ -1,0 +1,57 @@
+<div class="exercise-section">
+  <h2>数据合并 - 练习题</h2>
+
+  <!-- 选择题 1 -->
+  <div class="exercise" data-type="choice" data-difficulty="easy">
+    <p>1. 以下哪个函数用于合并两个 DataFrame？</p>
+    <input type="radio" name="q1" value="A"> A. df.join()
+    <input type="radio" name="q1" value="B"> B. pd.concat()
+    <input type="radio" name="q1" value="C"> C. pd.merge()
+    <input type="radio" name="q1" value="D"> 以上都是
+  </div>
+
+  <!-- 选择题 2 -->
+  <div class="exercise" data-type="choice" data-difficulty="medium">
+    <p>2. pd.concat() 的默认合并方式是什么？</p>
+    <input type="radio" name="q2" value="A"> A. outer join
+    <input type="radio" name="q2" value="B"> B. inner join
+    <input type="radio" name="q2" value="C"> C. left join
+    <input type="radio" name="q2" value="D"> D. cross join
+  </div>
+
+  <!-- 判断题 1 -->
+  <div class="exercise" data-type="true-false" data-difficulty="easy">
+    <p>3. merge() 用于基于列的值进行合并，类似 SQL 的 JOIN 操作。</p>
+    <input type="radio" name="q3" value="true"> 正确
+    <input type="radio" name="q3" value="false"> 错误
+  </div>
+
+  <!-- 判断题 2 -->
+    <div class="exercise" data-type="true-false" data-difficulty="medium">
+    <p>4. join() 方法默认使用索引进行合并。</p>
+    <input type="radio" name="q4" value="true"> 正确
+    <input type="radio" name="q4" value="false"> 错误
+  </div>
+
+  <!-- 填空题 1 -->
+  <div class="exercise" data-type="fill-blank" data-difficulty="easy">
+    <p>5. pd.concat([df1, df2], <input type="text" name="q5" class="fill-blank">=0) 用于垂直堆叠两个 DataFrame。</p>
+  </div>
+
+  <!-- 填空题 2 -->
+  <div class="exercise" data-type="fill-blank" data-difficulty="medium">
+    <p>6. pd.merge(df1, df2, on='key') 默认使用 <input type="text" name="q6" class="fill-blank"> 合并方式。</p>
+  </div>
+
+  <!-- 编程题 1 -->
+  <div class="exercise" data-type="code" data-difficulty="easy">
+    <p>7. 创建两个 DataFrame，基于公共列 'ID' 进行内连接合并。</p>
+    <textarea name="q7" class="code-input" rows="14" placeholder="在此输入你的代码..."></textarea>
+  </div>
+
+  <!-- 编程题 2 -->
+  <div class="exercise" data-type="code" data-difficulty="medium">
+    <p>8. 创建两个 DataFrame，使用外连接合并，保留两个表的所有数据。</p>
+    <textarea name="q8" class="code-input" rows="16" placeholder="在此输入你的代码..."></textarea>
+  </div>
+</div>

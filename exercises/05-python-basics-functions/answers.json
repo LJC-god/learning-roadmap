@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "B",
+      "explanation": "Python 中使用 def 关键字定义函数，语法为：def 函数名(参数列表): 函数体"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "A",
+      "explanation": "add(5) 使用默认参数 b=10，返回 5+10=15。add(5, 15) 覆盖默认参数，返回 5+15=20。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Python 语法要求默认参数必须在普通参数之后，否则会导致语法错误。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Python 函数可以通过 return a, b 的形式返回多个值，实际上返回的是一个元组。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "my_function()",
+      "explanation": "函数调用时使用函数名加上括号，即使没有参数也需要括号。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "return",
+      "explanation": "return 关键字用于从函数中返回一个值，可以返回任何类型的数据。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "def greet(name): return f'Hello, {name}!'; print(greet('张三'))",
+      "explanation": "使用 f-string 格式化字符串，返回 'Hello, 张三!'。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "def calculate_area(radius): return 3.14 * radius * radius; print(calculate_area(5))",
+      "explanation": "圆的面积公式是 πr²，当 radius=5 时，面积为 3.14*5*5=78.5。"
+    }
+  ]
+}

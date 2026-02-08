@@ -1,0 +1,57 @@
+<div class="exercise-section">
+  <h2>数据筛选 - 练习题</h2>
+
+  <!-- 选择题 1 -->
+  <div class="exercise" data-type="choice" data-difficulty="easy">
+    <p>1. 以下哪个运算符用于 DataFrame 的布尔索引筛选？</p>
+    <input type="radio" name="q1" value="A"> A. = 
+    <input type="radio" name="q1" value="B"> B. ==
+    <input type="radio" name="q1" value="C"> C. ===
+    <input type="radio" name="q1" value="D"> B 和 C
+  </div>
+
+  <!-- 选择题 2 -->
+  <div class="exercise" data-type="choice" data-difficulty="medium">
+    <p>2. 要筛选列 'Age' 大于 25 的行，应使用什么语法？</p>
+    <input type="radio" name="q2" value="A"> A. df[df['Age'] > 25]
+    <input type="radio" name="q2" value="B"> B. df['Age'] > 25
+    <input type="radio" name="q2" value="C"> A 和 B 都对
+    <input type="radio" name="q2" value="D"> df.Age > 25
+  </div>
+
+  <!-- 判断题 1 -->
+  <div class="exercise" data-type="true-false" data-difficulty="easy">
+    <p>3. 可以使用 loc[] 基于标签进行筛选，也可以使用 iloc[] 基于整数位置进行筛选。</p>
+    <input type="radio" name="q3" value="true"> 正确
+    <input type="radio" name="q3" value="false"> 错误
+  </div>
+
+  <!-- 判断题 2 -->
+  <div class="exercise" data-type="true-false" data-difficulty="medium">
+    <p>4. 使用 &（与）和 |（或）运算符组合多个条件时，每个条件需要用括号括起来。</p>
+    <input type="radio" name="q4" value="true"> 正确
+    <input type="radio" name="q4" value="false"> 错误
+  </div>
+
+  <!-- 填空题 1 -->
+  <div class="exercise" data-type="fill-blank" data-difficulty="easy">
+    <p>5. 要筛选列 'Name' 包含 '张' 的行，应使用 <input type="text" name="q5" class="fill-blank"> 字符串方法。</p>
+  </div>
+
+  <!-- 填空题 2 -->
+  <div class="exercise" data-type="fill-blank" data-difficulty="medium">
+    <p>6. 要根据位置选择特定行和列，应使用 <input type="text" name="q6" class="fill-blank">[]。</p>
+  </div>
+
+  <!-- 编程题 1 -->
+  <div class="exercise" data-type="code" data-difficulty="easy">
+    <p>7. 创建 DataFrame，筛选年龄大于 25 的所有行。</p>
+    <textarea name="q7" class="code-input" rows="10" placeholder="在此输入你的代码..."></textarea>
+  </div>
+
+  <!-- 编程题 2 -->
+  <div class="exercise" data-type="code" data-difficulty="medium">
+    <p>8. 创建 DataFrame，筛选年龄大于 25 且城市为 '北京' 的行。</p>
+    <textarea name="q8" class="code-input" rows="12" placeholder="在此输入你的代码..."></textarea>
+  </div>
+</div>

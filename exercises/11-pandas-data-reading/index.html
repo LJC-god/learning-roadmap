@@ -1,0 +1,57 @@
+<div class="exercise-section">
+  <h2>数据读取 - 练习题</h2>
+
+  <!-- 选择题 1 -->
+  <div class="exercise" data-type="choice" data-difficulty="easy">
+    <p>1. 要读取 CSV 文件，应使用哪个函数？</p>
+    <input type="radio" name="q1" value="A"> A. pd.read_excel()
+    <input type="radio" name="q1" value="B"> B. pd.read_csv()
+    <input type="radio" name="q1" value="C"> C. pd.read_json()
+    <input type="radio" name="q1" value="D"> D. pd.read_html()
+  </div>
+
+  <!-- 选择题 2 -->
+  <div class="exercise" data-type="choice" data-difficulty="medium">
+    <p>2. read_csv() 函数中，哪个参数用于指定分隔符？</p>
+    <input type="radio" name="q2" value="A"> A. delimiter
+    <input type="radio" name="q2" value="B"> B. sep
+    <input type="radio" name="q2" value="C"> C. delimiter 或 sep
+    <input type="radio" name="q2" value="D"> D. separator
+  </div>
+
+  <!-- 判断题 1 -->
+  <div class="exercise" data-type="true-false" data-difficulty="easy">
+    <p>3. pd.read_csv() 默认将第一行数据作为列标题。</p>
+    <input type="radio" name="q3" value="true"> 正确
+    <input type="radio" name="q3" value="false"> 错误
+  </div>
+
+  <!-- 判断题 2 -->
+  <div class="exercise" data-type="true-false" data-difficulty="medium">
+    <p>4. 可以使用 pd.read_excel() 读取 Excel 文件，并指定读取的工作表名称。</p>
+    <input type="radio" name="q4" value="true"> 正确
+    <input type="radio" name="q4" value="false"> 错误
+  </div>
+
+  <!-- 填空题 1 -->
+  <div class="exercise" data-type="fill-blank" data-difficulty="easy">
+    <p>5. 要读取前 n 行数据，应使用 read_csv() 的 <input type="text" name="q5" class="fill-blank"> 参数。</p>
+  </div>
+
+  <!-- 填空题 2 -->
+  <div class="exercise" data-type="fill-blank" data-difficulty="medium">
+    <p>6. 要指定某个列作为 DataFrame 的索引，应使用 read_csv() 的 <input type="text" name="q6" class="fill-blank"> 参数。</p>
+  </div>
+
+  <!-- 编程题 1 -->
+  <div class="exercise" data-type="code" data-difficulty="easy">
+    <p>7. 编写代码，读取名为 data.csv 的 CSV 文件，并显示前 5 行数据。</p>
+    <textarea name="q7" class="code-input" rows="6" placeholder="在此输入你的代码..."></textarea>
+  </div>
+
+  <!-- 编程题 2 -->
+  <div class="exercise" data-type="code" data-difficulty="medium">
+    <p>8. 编写代码，读取 Excel 文件 sales.xlsx，跳过第一行，使用第三列作为索引。</p>
+    <textarea name="q8" class="code-input" rows="8" placeholder="在此输入你的代码..."></textarea>
+  </div>
+</div>

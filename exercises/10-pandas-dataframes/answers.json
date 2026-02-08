@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "Pandas 2.0+ 版本已移除 Panel，现在主要数据结构是 Series（一维）和 DataFrame（二维）。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "DataFrame 的每列可以是不同的数据类型（Series），这是 DataFrame 的强大特性之一。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Series 是带索引的一维数组，索引可以是自定义的，不一定是数字。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "DataFrame 可以看作字典结构，每列是一个 Series，它们共享相同的索引。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "import",
+      "explanation": "标准导入语句是：import pandas as pd"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "columns",
+      "explanation": "df.columns 返回所有列名（Index 对象），df.columns.tolist() 返回列名列表。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import pandas as pd; s = pd.Series([10, 20, 30, 40], index=['a', 'b', 'c', 'd']); print(s)",
+      "explanation": "Series 的 index 参数指定自定义索引。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import pandas as pd; df = pd.DataFrame({'Name': ['张三', '李四', '王五'], 'Age': [25, 30, 28]}); print(df)",
+      "explanation": "使用字典创建 DataFrame，字典的键是列名，值是列表数据。"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "D",
+      "explanation": "标准做法是 'import numpy as np'，这样可以使用 np. 前缀来访问 numpy 的函数。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "B",
+      "explanation": "numpy.zeros(shape) 创建全 0 数组，numpy.ones(shape) 创建全 1 数组。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "np.array([列表]) 是最常用的创建数组方式，可以将 Python 列表转换为 NumPy 数组。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "np.arange(start, stop, step) 创建等差数列数组，不包括 stop。0,2,4,6,8 共 5 个元素。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "(3, 4)",
+      "explanation": "np.zeros((3, 4)) 创建一个形状为 3 行 4 列的二维数组。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "linspace",
+      "explanation": "np.linspace(0, 1, 10) 在 0 到 1 之间生成 10 个等间距的点，包括 0 和 1。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import numpy as np; arr = np.array([1, 2, 3, 4, 5]); print(arr)",
+      "explanation": "使用 np.array() 将列表转换为 NumPy 数组。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import numpy as np; arr = np.ones((2, 3)); print(arr); print('形状:', arr.shape)",
+      "explanation": "np.ones((2, 3)) 创建 2×3 的全 1 数组，arr.shape 返回数组的形状 (2, 3)。"
+    }
+  ]
+}

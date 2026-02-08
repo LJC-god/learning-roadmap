@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "D",
+      "explanation": "泰坦尼克号数据集包含 Pclass（船票等级）、Fare（票价）、Survived（是否生存）等特征。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "B",
+      "explanation": "Survived 是目标变量，1 表示乘客生存，0 表示乘客死亡。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "泰坦尼克号数据集是 Kaggle 上最经典的数据科学入门练习题。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Age、Cabin 等列存在大量缺失值，需要在建模前进行处理。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "sns",
+      "explanation": "sns.load_dataset('titanic') 从 Seaborn 内置数据集加载。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "mean",
+      "explanation": "Survived 是 0/1 编码，mean() 计算平均值即生存率。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import seaborn as sns; import pandas as pd; df = sns.load_dataset('titanic'); print(df.head()); print(df.info())",
+      "explanation": "head() 查看前 5 行，info() 查看数据类型和缺失值。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import seaborn as sns; df = sns.load_dataset('titanic'); print('整体生存率:', df['Survived'].mean()); print('按性别分组生存率:'); print(df.groupby('Sex')['Survived'].mean())",
+      "explanation": "女性生存率通常高于男性，这是泰坦尼克号数据集的一个显著特征。"
+    }
+  ]
+}

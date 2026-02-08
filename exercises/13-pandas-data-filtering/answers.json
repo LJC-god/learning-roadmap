@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "B",
+      "explanation": "Python 使用 == 进行相等比较，= 用于赋值。布尔索引筛选需要返回布尔值。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "A",
+      "explanation": "df['Age'] > 25 返回布尔 Series，用于索引 df[] 筛选行。A 选项正确。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "loc[] 基于标签（索引和列名）筛选，iloc[] 基于整数位置（0, 1, 2...）筛选。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "Python 运算符优先级要求将每个条件用括号括起来，如 (cond1) & (cond2)。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "str.contains()",
+      "explanation": "df['Name'].str.contains('张') 返回布尔 Series，筛选包含 '张' 的行。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "iloc",
+      "explanation": "iloc[] 基于整数位置索引，如 iloc[0:5, 0:3] 选择前 5 行前 3 列。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "import pandas as pd; df = pd.DataFrame({'Name': ['张三', '李四', '王五'], 'Age': [25, 30, 28]}); print(df[df['Age'] > 25])",
+      "explanation": "筛选条件 df['Age'] > 25 返回 [False, True, True]，只保留年龄大于 25 的行。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "import pandas as pd; df = pd.DataFrame({'Name': ['张三', '李四', '王五'], 'Age': [25, 30, 28], 'City': ['北京', '上海', '北京']}); print(df[(df['Age'] > 25) & (df['City'] == '北京')])",
+      "explanation": "使用 & 组合多个条件，必须用括号括起来。结果：只有王五满足条件。"
+    }
+  ]
+}

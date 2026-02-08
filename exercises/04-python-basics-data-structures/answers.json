@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "answer": "C",
+      "explanation": "Python 中使用方括号 [] 来创建和访问列表元素，如 lst[0] 访问第一个元素。"
+    },
+    {
+      "id": "q2",
+      "type": "choice",
+      "answer": "B",
+      "explanation": "字典使用键来访问对应的值。d['a'] 返回键 'a' 对应的值 1。"
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "answer": "false",
+      "explanation": "列表索引从 0 开始，不是 1。第一个元素的索引是 0，第二个是 1，以此类推。"
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "answer": "true",
+      "explanation": "字典的键必须是不可变类型。列表和字典本身是可变的，不能作为字典的键。"
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "answer": "len",
+      "explanation": "len() 函数返回容器类型的元素个数，例如 len([1,2,3]) 返回 3。"
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "answer": "append",
+      "explanation": "append() 方法用于在列表末尾添加单个元素。extend() 用于添加多个元素。"
+    },
+    {
+      "id": "q7",
+      "type": "code",
+      "answer": "fruits = ['apple', 'banana', 'orange']; print(fruits[1])",
+      "explanation": "列表索引从 0 开始，fruits[0] 是 'apple'，fruits[1] 是 'banana'（第二个元素），fruits[2] 是 'orange'。"
+    },
+    {
+      "id": "q8",
+      "type": "code",
+      "answer": "student = {'name': '李明', 'age': 20, 'score': 95}; student['city'] = '北京'; print(student.keys())",
+      "explanation": "使用 student['city'] = '北京' 添加新键值对，使用 student.keys() 获取所有键的视图。"
+    }
+  ]
+}
