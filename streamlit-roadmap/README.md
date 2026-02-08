@@ -14,23 +14,28 @@ Streamlit 基础 → 组件深入 → 状态管理 → 多页面 → 部署上�
 streamlit-roadmap/
 ├── README.md
 ├── notebooks/
-│   ├── 01_streamlit_basics.ipynb         # 基础组件
-│   ├── 02_streamlit_widgets.ipynb       # 输入组件
-│   ├── 03_streamlit_layout.ipynb        # 布局组件
-│   ├── 04_streamlit_state.ipynb         # 状态管理
-│   ├── 05_streamlit_cache.ipynb         # 缓存优化
-│   ├── 06_streamlit_charts.ipynb       # 图表组件
-│   ├── 07_streamlit_multipage.ipynb    # 多页面应用
-│   ├── 08_streamlit_deploy.ipynb       # 部署上线
-│   └── 09_streamlit_project.ipynb      # 综合项目
+│   ├── 01_16_visualization_matplotlib.ipynb    # Matplotlib 可视化基础
+│   ├── 02_17_visualization_seaborn.ipynb       # Seaborn 统计可视化
+│   ├── 03_streamlit_widgets.ipynb              # Streamlit 输入组件
+│   ├── 04_streamlit_layout.ipynb               # Streamlit 布局组件
+│   ├── 05_streamlit_state.ipynb                # Streamlit 状态管理
+│   ├── 06_streamlit_cache.ipynb                # Streamlit 缓存优化
+│   ├── 07_streamlit_charts.ipynb               # Streamlit 图表组件
+│   ├── 08_streamlit_multipage.ipynb            # Streamlit 多页面应用
+│   ├── 09_streamlit_deploy.ipynb               # Streamlit 部署上线
+│   └── 10_streamlit_project.ipynb              # Streamlit 综合项目
 ```
 
 ## 📚 学习内容
 
-### 第一阶段：基础入门 (1周)
-1. Streamlit 基础组件
-2. 文本与媒体显示
-3. 简单交互控件
+### 第一阶段：可视化基础 (1周)
+1. Matplotlib 基础图表
+2. Seaborn 统计可视化
+
+### 第二阶段：Streamlit 基础 (1周)
+3. Streamlit 基础组件
+4. 文本与媒体显示
+5. 简单交互控件
 
 ### 第二阶段：输入组件 (1周)
 4. 文本、数字输入

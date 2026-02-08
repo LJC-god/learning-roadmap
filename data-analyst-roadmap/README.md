@@ -14,15 +14,19 @@ Python 基础 → NumPy → Pandas → 数据可视化 → 实战项目
 data-analyst-roadmap/
 ├── README.md
 ├── notebooks/
-│   ├── 01_numpy_arrays.ipynb             # NumPy 数组
-│   ├── 02_pandas_dataframe.ipynb        # Pandas DataFrame
-│   ├── 03_pandas_advanced.ipynb         # Pandas 进阶
-│   ├── 04_data_cleaning.ipynb           # 数据清洗
-│   ├── 05_data_analysis.ipynb           # 数据分析
-│   ├── 06_matplotlib.ipynb              # Matplotlib
-│   ├── 07_seaborn.ipynb                 # Seaborn
-│   ├── 08_plotly.ipynb                 # Plotly
-│   └── 09_titanic_project.ipynb         # 泰坦尼克号项目
+│   ├── 01_06_numpy_array_creation.ipynb      # NumPy 数组创建
+│   ├── 02_07_numpy_array_operations.ipynb    # NumPy 数组操作
+│   ├── 03_08_numpy_indexing.ipynb            # NumPy 索引与切片
+│   ├── 04_09_numpy_common_functions.ipynb    # NumPy 常用函数
+│   ├── 05_10_pandas_dataframes.ipynb         # Pandas DataFrame
+│   ├── 06_11_pandas_data_reading.ipynb       # Pandas 数据读取
+│   ├── 07_12_pandas_data_cleaning.ipynb      # Pandas 数据清洗
+│   ├── 08_13_pandas_data_filtering.ipynb     # Pandas 数据筛选
+│   ├── 09_14_pandas_groupby.ipynb            # Pandas 分组聚合
+│   ├── 10_15_pandas_merge.ipynb              # Pandas 数据合并
+│   ├── 11_16_visualization_matplotlib.ipynb  # Matplotlib 可视化
+│   ├── 12_17_visualization_seaborn.ipynb     # Seaborn 可视化
+│   └── 13_18_project_titanic.ipynb           # 泰坦尼克号项目实战
 ```
 
 ## 📚 学习内容
@@ -34,27 +38,21 @@ data-analyst-roadmap/
 
 ### 第二阶段：NumPy (1周)
 - 数组创建与操作
-- 数组运算
-- 广播机制
+- 数组运算与索引
+- 常用函数与广播机制
 
 ### 第三阶段：Pandas (2周)
-- DataFrame 基础
+- DataFrame 基础操作
+- 数据读取与清洗
 - 数据筛选与过滤
-- 分组聚合
-- 数据合并
+- 分组聚合与数据合并
 
-### 第四阶段：数据清洗 (1周)
-- 缺失值处理
-- 异常值检测
-- 数据类型转换
+### 第四阶段：数据可视化 (1周)
+- Matplotlib 基础图表
+- Seaborn 统计可视化
 
-### 第五阶段：数据可视化 (1周)
-- Matplotlib 基础
-- Seaborn 统计图
-- Plotly 交互图
-
-### 第六阶段：实战项目 (1周)
-- 泰坦尼克号生存预测
+### 第五阶段：实战项目 (1周)
+- 泰坦尼克号生存预测项目实战
 
 ## 📝 练习说明
 

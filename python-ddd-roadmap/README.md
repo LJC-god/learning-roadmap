@@ -14,25 +14,27 @@ Python 基础 → 面向对象 → 设计模式 → 整洁架构 → DDD 核心�
 python-ddd-roadmap/
 ├── README.md
 ├── notebooks/
-│   ├── 01_variables_and_types.ipynb      # 变量与数据类型
-│   ├── 02_control_flow.ipynb             # 流程控制
-│   ├── 03_data_structures.ipynb          # 数据结构
-│   ├── 04_functions.ipynb                # 函数
-│   ├── 05_oop_basics.ipynb              # 面向对象基础
-│   ├── 06_oop_advanced.ipynb            # 面向对象进阶
-│   ├── 07_design_patterns.ipynb         # 设计模式
-│   ├── 08_clean_architecture.ipynb      # 整洁架构
-│   ├── 09_ddd_core.ipynb                # DDD 核心概念
-│   └── 10_ddd_practice.ipynb            # DDD 实战
+│   ├── 01_01_python_basics_environment.ipynb    # Python 环境与基础
+│   ├── 02_02_python_basics_variables.ipynb      # 变量与数据类型
+│   ├── 03_03_python_basics_control_flow.ipynb   # 流程控制
+│   ├── 04_04_python_basics_data_structures.ipynb # 数据结构
+│   ├── 05_05_python_basics_functions.ipynb      # 函数
+│   ├── 06_oop_basics.ipynb                      # 面向对象基础
+│   ├── 07_oop_advanced.ipynb                    # 面向对象进阶
+│   ├── 08_design_patterns.ipynb                 # 设计模式
+│   ├── 09_clean_architecture.ipynb              # 整洁架构
+│   ├── 10_ddd_core.ipynb                        # DDD 核心概念
+│   └── 11_ddd_practice.ipynb                    # DDD 实战
 ```
 
 ## 📚 学习内容
 
 ### 第一阶段：Python 基础 (1-4周)
-1. 变量与数据类型
-2. 流程控制 (if/for/while)
-3. 数据结构 (list/dict/tuple/set)
-4. 函数与模块
+1. Python 环境与基础
+2. 变量与数据类型
+3. 流程控制 (if/for/while)
+4. 数据结构 (list/dict/tuple/set)
+5. 函数与模块
 
 ### 第二阶段：面向对象 (2-3周)
 5. 类与对象
