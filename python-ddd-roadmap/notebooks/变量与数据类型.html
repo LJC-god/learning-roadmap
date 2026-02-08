@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量与数据类型 - 练习题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .breadcrumb {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2em;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .question-number {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .option:hover {
+            background: #e8eaff;
+        }
+        
+        .option.selected {
+            border-color: #667eea;
+            background: #e8eaff;
+        }
+        
+        .option input {
+            margin-right: 10px;
+        }
+        
+        .tf-options {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .tf-option {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid #ddd;
+        }
+        
+        .tf-option:hover {
+            border-color: #667eea;
+        }
+        
+        .tf-option.selected {
+            border-color: #667eea;
+            background: #e8eaff;
+        }
+        
+        .fill-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.2s ease;
+        }
+        
+        .fill-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .code-area {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+            resize: vertical;
+        }
+        
+        .code-area:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .difficulty {
+            font-size: 0.8em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .difficulty.easy {
+            background: #28a745;
+            color: white;
+        }
+        
+        .difficulty.medium {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .difficulty.hard {
+            background: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← 返回首页</a>
+        
+        <div class="header">
+            <div class="breadcrumb">Python → DDD 架构路线</div>
+            <h1>变量与数据类型</h1>
+            <div class="stats">
+                <span class="stat">选择题: 20 题</span>
+                <span class="stat">判断题: 10 题</span>
+                <span class="stat">填空题: 0 题</span>
+                <span class="stat">编程题: 8 题</span>
+                <span class="stat">总计: 70 题</span>
+            </div>
+        </div>
+        
+        <form id="quiz-form">
+
+        <div class="section">
+            <h2>📝 选择题</h2>
+
+            <div class="question" data-id="mc_1">
+                <div class="question-number">
+                    第 1 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">以下哪个不是 Python 的基本数据类型？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="A">
+                        <span>A. int</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="B">
+                        <span>B. float</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="C">
+                        <span>C. array</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="D">
+                        <span>D. str</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_2">
+                <div class="question-number">
+                    第 2 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">在 Python 中，变量必须先声明类型才能使用。</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="A">
+                        <span>A. 正确</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="B">
+                        <span>B. 错误</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="C">
+                        <span>C. 有时需要</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="D">
+                        <span>D. 视情况而定</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_3">
+                <div class="question-number">
+                    第 3 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">下列哪个是 Python 的整数类型？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="A">
+                        <span>A. int</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="B">
+                        <span>B. float</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="C">
+                        <span>C. str</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="D">
+                        <span>D. bool</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_4">
+                <div class="question-number">
+                    第 4 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">Python 中，布尔类型的值包括哪些？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="A">
+                        <span>A. 0 和 1</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="B">
+                        <span>B. True 和 False</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="C">
+                        <span>C. yes 和 no</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="D">
+                        <span>D. on 和 off</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_5">
+                <div class="question-number">
+                    第 5 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">type(3.14) 返回的结果是什么类型？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="A">
+                        <span>A. int</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="B">
+                        <span>B. float</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="C">
+                        <span>C. str</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="D">
+                        <span>D. decimal</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_6">
+                <div class="question-number">
+                    第 6 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">如何将字符串转换为整数？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="A">
+                        <span>A. int('123')</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="B">
+                        <span>B. str(123)</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="C">
+                        <span>C. float('123')</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="D">
+                        <span>D. bool('123')</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_7">
+                <div class="question-number">
+                    第 7 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">以下哪个函数可以获取变量的数据类型？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="A">
+                        <span>A. type()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="B">
+                        <span>B. typeof()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="C">
+                        <span>C. datatype()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="D">
+                        <span>D. gettype()</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_8">
+                <div class="question-number">
+                    第 8 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">0b1010 表示什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="A">
+                        <span>A. 二进制数 10</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="B">
+                        <span>B. 八进制数 10</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="C">
+                        <span>C. 十六进制数 10</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="D">
+                        <span>D. 十进制数 10</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_9">
+                <div class="question-number">
+                    第 9 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">0xFF 表示什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="A">
+                        <span>A. 二进制数 255</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="B">
+                        <span>B. 八进制数 255</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="C">
+                        <span>C. 十六进制数 255</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="D">
+                        <span>D. 十进制数 255</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_10">
+                <div class="question-number">
+                    第 10 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">以下哪个是合法的变量名？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="A">
+                        <span>A. 2variable</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="B">
+                        <span>B. variable-2</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="C">
+                        <span>C. _variable</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="D">
+                        <span>D. class</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_11">
+                <div class="question-number">
+                    第 11 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">以下哪个是 Python 的关键字？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_11" value="A">
+                        <span>A. myvar</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_11" value="B">
+                        <span>B. variable</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_11" value="C">
+                        <span>C. class</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_11" value="D">
+                        <span>D. my_class</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_12">
+                <div class="question-number">
+                    第 12 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">Python 中，单引号和双引号创建字符串有区别吗？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_12" value="A">
+                        <span>A. 有</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_12" value="B">
+                        <span>B. 没有</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_12" value="C">
+                        <span>C. 有时有</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_12" value="D">
+                        <span>D. 取决于内容</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_13">
+                <div class="question-number">
+                    第 13 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">str(123.45) 的结果是什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_13" value="A">
+                        <span>A. 123</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_13" value="B">
+                        <span>B. 123.45</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_13" value="C">
+                        <span>C. 123.0</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_13" value="D">
+                        <span>D. 错误</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_14">
+                <div class="question-number">
+                    第 14 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">len('hello') 返回什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_14" value="A">
+                        <span>A. 4</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_14" value="B">
+                        <span>B. 5</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_14" value="C">
+                        <span>C. 6</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_14" value="D">
+                        <span>D. hello</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_15">
+                <div class="question-number">
+                    第 15 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">hex(255) 返回什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_15" value="A">
+                        <span>A. 0xff</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_15" value="B">
+                        <span>B. 0xFF</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_15" value="C">
+                        <span>C. 0xff</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_15" value="D">
+                        <span>D. 0xFf</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_16">
+                <div class="question-number">
+                    第 16 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">以下哪个不是不可变数据类型？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_16" value="A">
+                        <span>A. int</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_16" value="B">
+                        <span>B. str</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_16" value="C">
+                        <span>C. list</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_16" value="D">
+                        <span>D. tuple</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_17">
+                <div class="question-number">
+                    第 17 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">complex(1, 2) 创建的复数是什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_17" value="A">
+                        <span>A. 1+2i</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_17" value="B">
+                        <span>B. 1+2j</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_17" value="C">
+                        <span>C. 1.0+2.0j</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_17" value="D">
+                        <span>D. 3j</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_18">
+                <div class="question-number">
+                    第 18 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">type(None) 返回什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_18" value="A">
+                        <span>A. NoneType</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_18" value="B">
+                        <span>B. Null</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_18" value="C">
+                        <span>C. Void</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_18" value="D">
+                        <span>D. None</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_19">
+                <div class="question-number">
+                    第 19 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">round(3.14159, 2) 的结果是什么？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_19" value="A">
+                        <span>A. 3.14</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_19" value="B">
+                        <span>B. 3.142</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_19" value="C">
+                        <span>C. 3.1</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_19" value="D">
+                        <span>D. 3.0</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_20">
+                <div class="question-number">
+                    第 20 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">在 Python 中，变量赋值使用什么运算符？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_20" value="A">
+                        <span>A. ==</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_20" value="B">
+                        <span>B. =</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_20" value="C">
+                        <span>C. <-</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_20" value="D">
+                        <span>D. :=</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✓ 判断题</h2>
+
+            <div class="question" data-id="tf_1">
+                <div class="question-number">
+                    第 1 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">Python 变量在赋值时不需要声明类型。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_1" id="tf_1_value">
+            </div>
+
+            <div class="question" data-id="tf_2">
+                <div class="question-number">
+                    第 2 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">Python 中的字符串是不可变的。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_2" id="tf_2_value">
+            </div>
+
+            <div class="question" data-id="tf_3">
+                <div class="question-number">
+                    第 3 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">Python 的整数类型有大小限制。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_3', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_3', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_3" id="tf_3_value">
+            </div>
+
+            <div class="question" data-id="tf_4">
+                <div class="question-number">
+                    第 4 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">在 Python 中，1 == '1' 返回 True。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_4', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_4', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_4" id="tf_4_value">
+            </div>
+
+            <div class="question" data-id="tf_5">
+                <div class="question-number">
+                    第 5 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">True 在数值运算中等价于 1。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_5', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_5', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_5" id="tf_5_value">
+            </div>
+
+            <div class="question" data-id="tf_6">
+                <div class="question-number">
+                    第 6 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">False 在数值运算中等价于 0。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_6', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_6', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_6" id="tf_6_value">
+            </div>
+
+            <div class="question" data-id="tf_7">
+                <div class="question-number">
+                    第 7 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">is 和 == 运算符完全等价。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_7', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_7', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_7" id="tf_7_value">
+            </div>
+
+            <div class="question" data-id="tf_8">
+                <div class="question-number">
+                    第 8 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">Python 支持链式赋值。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_8', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_8', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_8" id="tf_8_value">
+            </div>
+
+            <div class="question" data-id="tf_9">
+                <div class="question-number">
+                    第 9 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">Python 支持多变量同时赋值。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_9', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_9', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_9" id="tf_9_value">
+            </div>
+
+            <div class="question" data-id="tf_10">
+                <div class="question-number">
+                    第 10 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">del 可以删除变量。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_10', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_10', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_10" id="tf_10_value">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💻 编程题</h2>
+
+            <div class="question" data-id="code_1">
+                <div class="question-number">
+                    第 1 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">编写程序：创建变量 a、b、c，分别赋值 10、20、30</div>
+                <textarea class="code-area" name="code_1" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_2">
+                <div class="question-number">
+                    第 2 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">编写程序：交换两个变量的值</div>
+                <textarea class="code-area" name="code_2" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_3">
+                <div class="question-number">
+                    第 3 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">编写程序：判断一个变量的类型是否为字符串</div>
+                <textarea class="code-area" name="code_3" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_4">
+                <div class="question-number">
+                    第 4 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">编写程序：将字符串 '123' 转换为整数并相加</div>
+                <textarea class="code-area" name="code_4" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_5">
+                <div class="question-number">
+                    第 5 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">编写程序：打印一个浮点数的整数部分和小数部分</div>
+                <textarea class="code-area" name="code_5" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_6">
+                <div class="question-number">
+                    第 6 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">编写程序：创建一个复数并分别提取实部和虚部</div>
+                <textarea class="code-area" name="code_6" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_7">
+                <div class="question-number">
+                    第 7 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">编写程序：比较 '==' 和 'is' 的区别</div>
+                <textarea class="code-area" name="code_7" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_8">
+                <div class="question-number">
+                    第 8 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">编写程序：将十进制数转换为二进制、八进制、十六进制</div>
+                <textarea class="code-area" name="code_8" placeholder="在这里编写代码"></textarea>
+            </div>
+        </div>
+
+            <button type="submit" class="submit-btn">📤 提交答案</button>
+        </form>
+        
+        <div class="success-message" id="success-message">
+            ✅ 答案已保存！可以继续完成其他题目，或者让我帮你检查。
+        </div>
+    </div>
+    
+    <script>
+        // 选择判断题
+        function selectTF(element, name, value) {
+            const parent = element.parentElement;
+            parent.querySelectorAll('.tf-option').forEach(el => {
+                el.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            document.getElementById(name + '_value').value = value;
+        }
+        
+        // 处理表单提交
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const answers = {
+                topic: "变量与数据类型",
+                roadmap: "Python → DDD 架构路线",
+                submittedAt: new Date().toISOString(),
+                totalQuestions: 70,
+                answers: {}
+            };
+            
+            // 收集答案
+
+            const mc_1 = formData.get('mc_1');
+            if (mc_1) answers.answers['mc_1'] = mc_1;
+
+            const mc_2 = formData.get('mc_2');
+            if (mc_2) answers.answers['mc_2'] = mc_2;
+
+            const mc_3 = formData.get('mc_3');
+            if (mc_3) answers.answers['mc_3'] = mc_3;
+
+            const mc_4 = formData.get('mc_4');
+            if (mc_4) answers.answers['mc_4'] = mc_4;
+
+            const mc_5 = formData.get('mc_5');
+            if (mc_5) answers.answers['mc_5'] = mc_5;
+
+            const mc_6 = formData.get('mc_6');
+            if (mc_6) answers.answers['mc_6'] = mc_6;
+
+            const mc_7 = formData.get('mc_7');
+            if (mc_7) answers.answers['mc_7'] = mc_7;
+
+            const mc_8 = formData.get('mc_8');
+            if (mc_8) answers.answers['mc_8'] = mc_8;
+
+            const mc_9 = formData.get('mc_9');
+            if (mc_9) answers.answers['mc_9'] = mc_9;
+
+            const mc_10 = formData.get('mc_10');
+            if (mc_10) answers.answers['mc_10'] = mc_10;
+
+            const mc_11 = formData.get('mc_11');
+            if (mc_11) answers.answers['mc_11'] = mc_11;
+
+            const mc_12 = formData.get('mc_12');
+            if (mc_12) answers.answers['mc_12'] = mc_12;
+
+            const mc_13 = formData.get('mc_13');
+            if (mc_13) answers.answers['mc_13'] = mc_13;
+
+            const mc_14 = formData.get('mc_14');
+            if (mc_14) answers.answers['mc_14'] = mc_14;
+
+            const mc_15 = formData.get('mc_15');
+            if (mc_15) answers.answers['mc_15'] = mc_15;
+
+            const mc_16 = formData.get('mc_16');
+            if (mc_16) answers.answers['mc_16'] = mc_16;
+
+            const mc_17 = formData.get('mc_17');
+            if (mc_17) answers.answers['mc_17'] = mc_17;
+
+            const mc_18 = formData.get('mc_18');
+            if (mc_18) answers.answers['mc_18'] = mc_18;
+
+            const mc_19 = formData.get('mc_19');
+            if (mc_19) answers.answers['mc_19'] = mc_19;
+
+            const mc_20 = formData.get('mc_20');
+            if (mc_20) answers.answers['mc_20'] = mc_20;
+
+            const tf_1 = formData.get('tf_1');
+            if (tf_1) answers.answers['tf_1'] = tf_1;
+
+            const tf_2 = formData.get('tf_2');
+            if (tf_2) answers.answers['tf_2'] = tf_2;
+
+            const tf_3 = formData.get('tf_3');
+            if (tf_3) answers.answers['tf_3'] = tf_3;
+
+            const tf_4 = formData.get('tf_4');
+            if (tf_4) answers.answers['tf_4'] = tf_4;
+
+            const tf_5 = formData.get('tf_5');
+            if (tf_5) answers.answers['tf_5'] = tf_5;
+
+            const tf_6 = formData.get('tf_6');
+            if (tf_6) answers.answers['tf_6'] = tf_6;
+
+            const tf_7 = formData.get('tf_7');
+            if (tf_7) answers.answers['tf_7'] = tf_7;
+
+            const tf_8 = formData.get('tf_8');
+            if (tf_8) answers.answers['tf_8'] = tf_8;
+
+            const tf_9 = formData.get('tf_9');
+            if (tf_9) answers.answers['tf_9'] = tf_9;
+
+            const tf_10 = formData.get('tf_10');
+            if (tf_10) answers.answers['tf_10'] = tf_10;
+
+            const code_1 = formData.get('code_1');
+            if (code_1) answers.answers['code_1'] = code_1;
+
+            const code_2 = formData.get('code_2');
+            if (code_2) answers.answers['code_2'] = code_2;
+
+            const code_3 = formData.get('code_3');
+            if (code_3) answers.answers['code_3'] = code_3;
+
+            const code_4 = formData.get('code_4');
+            if (code_4) answers.answers['code_4'] = code_4;
+
+            const code_5 = formData.get('code_5');
+            if (code_5) answers.answers['code_5'] = code_5;
+
+            const code_6 = formData.get('code_6');
+            if (code_6) answers.answers['code_6'] = code_6;
+
+            const code_7 = formData.get('code_7');
+            if (code_7) answers.answers['code_7'] = code_7;
+
+            const code_8 = formData.get('code_8');
+            if (code_8) answers.answers['code_8'] = code_8;
+
+            // 保存到 localStorage
+            localStorage.setItem('变量与数据类型', JSON.stringify(answers));
+            
+            // 创建可下载文件
+            const blob = new Blob([JSON.stringify(answers, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '变量与数据类型_answers.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            // 显示成功消息
+            document.getElementById('success-message').style.display = 'block';
+            window.scrollTo(0, 0);
+            
+            setTimeout(() => {
+                document.getElementById('success-message').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

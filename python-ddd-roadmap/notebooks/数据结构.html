@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据结构 - 练习题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .breadcrumb {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2em;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .question-number {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .option:hover {
+            background: #e8eaff;
+        }
+        
+        .option.selected {
+            border-color: #667eea;
+            background: #e8eaff;
+        }
+        
+        .option input {
+            margin-right: 10px;
+        }
+        
+        .tf-options {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .tf-option {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid #ddd;
+        }
+        
+        .tf-option:hover {
+            border-color: #667eea;
+        }
+        
+        .tf-option.selected {
+            border-color: #667eea;
+            background: #e8eaff;
+        }
+        
+        .fill-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.2s ease;
+        }
+        
+        .fill-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .code-area {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+            resize: vertical;
+        }
+        
+        .code-area:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .difficulty {
+            font-size: 0.8em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .difficulty.easy {
+            background: #28a745;
+            color: white;
+        }
+        
+        .difficulty.medium {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .difficulty.hard {
+            background: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← 返回首页</a>
+        
+        <div class="header">
+            <div class="breadcrumb">Python → DDD 架构路线</div>
+            <h1>数据结构</h1>
+            <div class="stats">
+                <span class="stat">选择题: 10 题</span>
+                <span class="stat">判断题: 3 题</span>
+                <span class="stat">填空题: 0 题</span>
+                <span class="stat">编程题: 3 题</span>
+                <span class="stat">总计: 65 题</span>
+            </div>
+        </div>
+        
+        <form id="quiz-form">
+
+        <div class="section">
+            <h2>📝 选择题</h2>
+
+            <div class="question" data-id="mc_1">
+                <div class="question-number">
+                    第 1 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">以下哪个不是 Python 的基本数据结构？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="A">
+                        <span>A. list</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="B">
+                        <span>B. tuple</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="C">
+                        <span>C. array</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_1" value="D">
+                        <span>D. dictionary</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_2">
+                <div class="question-number">
+                    第 2 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">列表使用什么括号？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="A">
+                        <span>A. ()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="B">
+                        <span>B. []</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="C">
+                        <span>C. {}</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_2" value="D">
+                        <span>D. <></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_3">
+                <div class="question-number">
+                    第 3 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">元组使用什么括号？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="A">
+                        <span>A. ()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="B">
+                        <span>B. []</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="C">
+                        <span>C. {}</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_3" value="D">
+                        <span>D. <></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_4">
+                <div class="question-number">
+                    第 4 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">字典使用什么括号？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="A">
+                        <span>A. ()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="B">
+                        <span>B. []</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="C">
+                        <span>C. {}</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_4" value="D">
+                        <span>D. <></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_5">
+                <div class="question-number">
+                    第 5 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">以下哪个数据结构是不可变的？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="A">
+                        <span>A. list</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="B">
+                        <span>B. dict</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="C">
+                        <span>C. set</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_5" value="D">
+                        <span>D. tuple</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_6">
+                <div class="question-number">
+                    第 6 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">如何获取列表的第一个元素？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="A">
+                        <span>A. list[0]</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="B">
+                        <span>B. list[1]</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="C">
+                        <span>C. list.first()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_6" value="D">
+                        <span>D. list[1:]</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_7">
+                <div class="question-number">
+                    第 7 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">列表的哪个方法可以添加元素？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="A">
+                        <span>A. add()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="B">
+                        <span>B. append()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="C">
+                        <span>C. insert()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_7" value="D">
+                        <span>D. 两者都可以</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_8">
+                <div class="question-number">
+                    第 8 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">如何删除列表中的元素？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="A">
+                        <span>A. remove()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="B">
+                        <span>B. del</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="C">
+                        <span>C. pop()</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_8" value="D">
+                        <span>D. 都可以</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_9">
+                <div class="question-number">
+                    第 9 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">set 有什么特点？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="A">
+                        <span>A. 有序</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="B">
+                        <span>B. 无序不重复</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="C">
+                        <span>C. 可修改</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_9" value="D">
+                        <span>D. 可包含所有类型</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question" data-id="mc_10">
+                <div class="question-number">
+                    第 10 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">字典的键有什么限制？</div>
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="A">
+                        <span>A. 必须是字符串</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="B">
+                        <span>B. 必须唯一</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="C">
+                        <span>C. 必须是数字</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="mc_10" value="D">
+                        <span>D. 必须有序</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✓ 判断题</h2>
+
+            <div class="question" data-id="tf_1">
+                <div class="question-number">
+                    第 1 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">列表是有序的数据结构。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_1', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_1" id="tf_1_value">
+            </div>
+
+            <div class="question" data-id="tf_2">
+                <div class="question-number">
+                    第 2 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">元组是不可变的。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_2', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_2" id="tf_2_value">
+            </div>
+
+            <div class="question" data-id="tf_3">
+                <div class="question-number">
+                    第 3 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">集合不支持索引操作。</div>
+                <div class="tf-options">
+                    <div class="tf-option" onclick="selectTF(this, 'tf_3', 'True')">
+                        ✓ True
+                    </div>
+                    <div class="tf-option" onclick="selectTF(this, 'tf_3', 'False')">
+                        ✗ False
+                    </div>
+                </div>
+                <input type="hidden" name="tf_3" id="tf_3_value">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💻 编程题</h2>
+
+            <div class="question" data-id="code_1">
+                <div class="question-number">
+                    第 1 题
+                    <span class="difficulty easy">easy</span>
+                </div>
+                <div class="question-text">编写程序：创建列表并添加元素</div>
+                <textarea class="code-area" name="code_1" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_2">
+                <div class="question-number">
+                    第 2 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">编写程序：使用列表推导式创建新列表</div>
+                <textarea class="code-area" name="code_2" placeholder="在这里编写代码"></textarea>
+            </div>
+
+            <div class="question" data-id="code_3">
+                <div class="question-number">
+                    第 3 题
+                    <span class="difficulty medium">medium</span>
+                </div>
+                <div class="question-text">编写程序：使用字典存储和访问数据</div>
+                <textarea class="code-area" name="code_3" placeholder="在这里编写代码"></textarea>
+            </div>
+        </div>
+
+            <button type="submit" class="submit-btn">📤 提交答案</button>
+        </form>
+        
+        <div class="success-message" id="success-message">
+            ✅ 答案已保存！可以继续完成其他题目，或者让我帮你检查。
+        </div>
+    </div>
+    
+    <script>
+        // 选择判断题
+        function selectTF(element, name, value) {
+            const parent = element.parentElement;
+            parent.querySelectorAll('.tf-option').forEach(el => {
+                el.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            document.getElementById(name + '_value').value = value;
+        }
+        
+        // 处理表单提交
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const answers = {
+                topic: "数据结构",
+                roadmap: "Python → DDD 架构路线",
+                submittedAt: new Date().toISOString(),
+                totalQuestions: 65,
+                answers: {}
+            };
+            
+            // 收集答案
+
+            const mc_1 = formData.get('mc_1');
+            if (mc_1) answers.answers['mc_1'] = mc_1;
+
+            const mc_2 = formData.get('mc_2');
+            if (mc_2) answers.answers['mc_2'] = mc_2;
+
+            const mc_3 = formData.get('mc_3');
+            if (mc_3) answers.answers['mc_3'] = mc_3;
+
+            const mc_4 = formData.get('mc_4');
+            if (mc_4) answers.answers['mc_4'] = mc_4;
+
+            const mc_5 = formData.get('mc_5');
+            if (mc_5) answers.answers['mc_5'] = mc_5;
+
+            const mc_6 = formData.get('mc_6');
+            if (mc_6) answers.answers['mc_6'] = mc_6;
+
+            const mc_7 = formData.get('mc_7');
+            if (mc_7) answers.answers['mc_7'] = mc_7;
+
+            const mc_8 = formData.get('mc_8');
+            if (mc_8) answers.answers['mc_8'] = mc_8;
+
+            const mc_9 = formData.get('mc_9');
+            if (mc_9) answers.answers['mc_9'] = mc_9;
+
+            const mc_10 = formData.get('mc_10');
+            if (mc_10) answers.answers['mc_10'] = mc_10;
+
+            const tf_1 = formData.get('tf_1');
+            if (tf_1) answers.answers['tf_1'] = tf_1;
+
+            const tf_2 = formData.get('tf_2');
+            if (tf_2) answers.answers['tf_2'] = tf_2;
+
+            const tf_3 = formData.get('tf_3');
+            if (tf_3) answers.answers['tf_3'] = tf_3;
+
+            const code_1 = formData.get('code_1');
+            if (code_1) answers.answers['code_1'] = code_1;
+
+            const code_2 = formData.get('code_2');
+            if (code_2) answers.answers['code_2'] = code_2;
+
+            const code_3 = formData.get('code_3');
+            if (code_3) answers.answers['code_3'] = code_3;
+
+            // 保存到 localStorage
+            localStorage.setItem('数据结构', JSON.stringify(answers));
+            
+            // 创建可下载文件
+            const blob = new Blob([JSON.stringify(answers, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '数据结构_answers.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            // 显示成功消息
+            document.getElementById('success-message').style.display = 'block';
+            window.scrollTo(0, 0);
+            
+            setTimeout(() => {
+                document.getElementById('success-message').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的答案 - 学习路线</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .answers-list {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .answer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .answer-item:hover {
+            background: #e8eaff;
+            transform: translateX(5px);
+        }
+        
+        .answer-info {
+            flex: 1;
+        }
+        
+        .answer-topic {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .answer-meta {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .answer-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-view {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-view:hover {
+            background: #5568d3;
+        }
+        
+        .btn-download {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-download:hover {
+            background: #218838;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 返回首页</a>
+        
+        <h1>📁 我的答案</h1>
+        
+        <div class="instructions">
+            <h3>💡 使用说明</h3>
+            <ol>
+                <li>在练习页面完成题目后，点击「提交答案」</li>
+                <li>答案会自动保存并下载为 JSON 文件</li>
+                <li>将下载的文件上传到 <code>answers/</code> 文件夹</li>
+                <li>完成后告诉我，我会帮你检查答案</li>
+            </ol>
+        </div>
+        
+        <div id="answers-list" class="answers-list">
+            <div class="empty-state">
+                <div class="icon">📝</div>
+                <h3>还没有提交答案</h3>
+                <p>开始练习并提交你的第一份答案吧！</p>
+            </div>
+        </div>
+        
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat-item">
+                <div class="stat-number" id="total-answers">0</div>
+                <div class="stat-label">已提交</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="total-questions">0</div>
+                <div class="stat-label">累计题目</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 读取本地存储的答案
+        function loadLocalAnswers() {
+            const answers = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.includes('_answers') || key.includes('环境') || key.includes('类型') || 
+                    key.includes('控制') || key.includes('结构') || key.includes('函数') ||
+                    key.includes('数组') || key.includes('DataFrame') || key.includes('读取') ||
+                    key.includes('清洗') || key.includes('筛选') || key.includes('分组') ||
+                    key.includes('合并') || key.includes('可视化') || key.includes('实战') ||
+                    key.includes('基础') || key.includes('组件')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        answers.push(data);
+                    } catch (e) {
+                        console.error('解析答案失败:', key);
+                    }
+                }
+            }
+            return answers;
+        }
+        
+        // 渲染答案列表
+        function renderAnswers() {
+            const answers = loadLocalAnswers();
+            const listEl = document.getElementById('answers-list');
+            const statsEl = document.getElementById('stats');
+            
+            if (answers.length === 0) {
+                listEl.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📝</div>
+                        <h3>还没有提交答案</h3>
+                        <p>开始练习并提交你的第一份答案吧！</p>
+                    </div>
+                `;
+                statsEl.style.display = 'none';
+                return;
+            }
+            
+            // 更新统计
+            statsEl.style.display = 'flex';
+            document.getElementById('total-answers').textContent = answers.length;
+            document.getElementById('total-questions').textContent = 
+                answers.reduce((sum, a) => sum + (a.totalQuestions || 0), 0);
+            
+            // 渲染列表
+            listEl.innerHTML = answers.map(answer => {
+                const date = new Date(answer.submittedAt || Date.now()).toLocaleString('zh-CN');
+                const topicKey = answer.topic.replace(/[^\w]/g, '_');
+                const fileName = `${topicKey}_answers.json`;
+                
+                return `
+                    <div class="answer-item">
+                        <div class="answer-info">
+                            <div class="answer-topic">${answer.topic}</div>
+                            <div class="answer-meta">提交时间: ${date} | ${answer.totalQuestions} 题</div>
+                        </div>
+                        <div class="answer-actions">
+                            <a href="#" class="btn btn-view" onclick="viewAnswer('${topicKey}')">查看</a>
+                            <a href="#" class="btn btn-download" onclick="downloadAnswer('${topicKey}')">下载</a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // 查看答案
+        function viewAnswer(topicKey) {
+            const data = localStorage.getItem(topicKey);
+            if (data) {
+                const answer = JSON.parse(data);
+                alert('答案详情：\n\n' + JSON.stringify(answer.answers, null, 2));
+            }
+        }
+        
+        // 下载答案
+        function downloadAnswer(topicKey) {
+            const data = localStorage.getItem(topicKey);
+            if (data) {
+                const answer = JSON.parse(data);
+                const topicName = answer.topic;
+                const fileName = `${topicName.replace(/[^\w]/g, '_')}_answers.json`;
+                
+                const blob = new Blob([JSON.stringify(answer, null, 2)], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+        
+        // 页面加载时渲染
+        renderAnswers();
+        
+        // 监听存储变化
+        window.addEventListener('storage', renderAnswers);
+    </script>
+</body>
+</html>
